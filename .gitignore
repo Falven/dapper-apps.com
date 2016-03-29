@@ -41,3 +41,6 @@ node_modules
 #sass
 .sass-cache/
 
+#sublime
+*.sublime-project
+*.sublime-worspace
