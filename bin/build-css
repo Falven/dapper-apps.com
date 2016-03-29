@@ -1,1 +1,2 @@
- node-sass --output-style compressed -w ./views/sass/ -o ./public/stylesheets/
+node-sass --output-style compressed ./views/sass/ -o ./public/stylesheets/
+autoprefixer -b 'last 2 versions' <assets/styles/main.css | cssmin > dist/main.css

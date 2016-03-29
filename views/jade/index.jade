@@ -1,5 +1,47 @@
 extends layout
 
+block styles
+    link(rel="stylesheet", href="/stylesheets/index.css")
+
 block content
-  h1= title
-  p Welcome to #{title}
+    main
+        article
+            header.slider
+                figure#gallery-home.slider-item
+                    img(alt="Dapper-Apps Logo" src="/images/gallery/dapper-apps/logo.svg")
+                    figcaption Simple, clean, social apps.
+                figure#gallery-kami.slider-item
+                    img(alt="Kami's Nightmare Logo." src="/images/gallery/kamis-nightmare/logo.png")
+                    figcaption
+            section#contact
+                h1 Meet the team
+                .centered
+                    .contact-col
+                        img.portrait-image(alt="Francisco Aguilera Portrait" src="/images/people/fran-portrait.png")
+                        h2 Francisco Aguilera
+                        h3 CEO, Head Developer and Graphic Designer
+                        p Francisco is a Pittsburgh-born entrepreneur and the original founder and visionary of Dapper-Apps LLC. His experience working for some of the best tech companies and innovators in Computer Science and diversity have made him into a top notch global developer.
+                    .contact-col
+                        img.portrait-image(alt="Antonio Assenza Portrait" src="/images/people/tony-portrait.png")
+                        h2 Antonio Assenza
+                        h3 CFO, Head of Business and Public Relations
+                        p Antonio has gained vast experience working for different companies globally as part of their finance department and as a business consultant. A fierce inventor, Antonio loves pushing the boundaries of conventional ideas.
+                    .contact-col
+                        img.portrait-image(alt="Rafael Aguilera Portrait" src="/images/people/rafa-portrait.png")
+                        h2 Rafael Aguilera
+                        h3 Head Composer, Animator and Graphic Designer
+                        p Rafael is a Computer Scientist specializing in animation, design and musical composition. He has a wide range of experience and over 9 years of training in Music and Art. We always count on him to compose clever additions for our products.
+                    h4 Go ahead, send us a line. We want to hear about your product or idea.
+            footer
+                ul
+                    li
+                        a.nostyle.social-link(href="https://www.facebook.com/therealdapperapps")
+                            img(src="/images/social/fb-logo.svg")
+                        a.nostyle.social-link(href="https://instagram.com/DapperApps/")
+                            img(src="/images/social/it-logo.svg")
+                    li
+                        a.nostyle.social-link
+                            img(src="/images/social/tw-logo.svg")
+                    li
+                        a.nostyle.social-link(href="https://www.youtube.com/channel/UCE8YmlcsA2NbutQBRuc7frQ/")
+                            img(src="/images/social/yt-logo.svg")

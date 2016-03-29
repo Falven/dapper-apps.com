@@ -1,0 +1,46 @@
+/* Common CSS styles */
+body {
+  margin: 0;
+  font-family: Open-Sans, Lato, Helvetica, Arial, sans-serif;
+  font-size: 18px;
+  /*line-height: 26px;*/
+  /*letter-spacing: 1px;*/ }
+
+section, header, footer, .centered {
+  overflow: hidden; }
+
+a.nostyle:link {
+  text-decoration: inherit;
+  color: inherit;
+  cursor: auto; }
+
+a.nostyle:visited {
+  text-decoration: inherit;
+  color: inherit;
+  cursor: auto; }
+
+figure {
+  margin: 0; }
+
+.centered {
+  margin-left: 10%;
+  margin-right: 10%; }
+
+/* Footer */
+footer {
+  text-align: center;
+  background-color: #222; }
+  footer ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0; }
+    footer ul li {
+      display: inline; }
+
+.social-link > img {
+  width: 5%;
+  height: 5%; }
+
+/* Footer */
+
+/*# sourceMappingURL=fonts.scss.map */
