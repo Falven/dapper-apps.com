@@ -1,0 +1,1 @@
+ node-sass --output-style compressed -w ./views/sass/ -o ./public/stylesheets/
