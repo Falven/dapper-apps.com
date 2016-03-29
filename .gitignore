@@ -44,3 +44,6 @@ node_modules
 #sublime
 *.sublime-project
 *.sublime-workspace
+
+#environment variables
+*.env
