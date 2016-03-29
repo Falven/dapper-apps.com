@@ -21,11 +21,15 @@ article {
 .slider {
 	left: 0;
 	position: relative;
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
 	display: flex;
 	width: 200%;
 	height: auto;
 	background-color: lightgrey;
-	animation: slide 15s ease 2s infinite alternate;
+	-webkit-animation: slide 15s ease 2s infinite alternate;
+	        animation: slide 15s ease 2s infinite alternate;
 }
 
 .slider-item {
@@ -34,9 +38,14 @@ article {
 	margin: 0;
 }
 
+@-webkit-keyframes slide {
+	0% {-webkit-transform: translateX(0);transform: translateX(0);}
+	100% {-webkit-transform: translateX(-100vw);transform: translateX(-100vw);}
+}
+
 @keyframes slide {
-	0% {transform: translateX(0);}
-	100% {transform: translateX(-100vw);}
+	0% {-webkit-transform: translateX(0);transform: translateX(0);}
+	100% {-webkit-transform: translateX(-100vw);transform: translateX(-100vw);}
 }
 
 #gallery-home {

@@ -4,9 +4,11 @@
   "private": true,
   "scripts": {
     "start": "node ./bin/www",
-    "prestart": "build-css",
-    "build-css": "./bin/build-css",
-    "prefix-css": "autoprefixer -h",
+    "prebuild:css": "postcss --use autoprefixer ./views/sass/*.scss -d ./views/sass/",
+    "build:css": "node-sass --output-style compressed ./views/sass/ -o ./public/styles/",
+    "prebuild:js": "jshint ./public/scripts/*",
+    "build:js": "",
+    "build": "npm run build:css && npm run build:js",
     "env": "env"
   },
   "dependencies": {
@@ -20,6 +22,10 @@
   },
   "devDependencies": {
     "autoprefixer": "^6.3.5",
-    "node-sass": "^3.4.2"
+    "jshint": "^2.9.1",
+    "node-sass": "^3.4.2",
+    "postcss": "^5.0.19",
+    "postcss-cli": "^2.5.1",
+    "postcss-scss": "^0.1.7"
   }
 }
