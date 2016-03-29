@@ -43,4 +43,4 @@ node_modules
 
 #sublime
 *.sublime-project
-*.sublime-worspace
+*.sublime-workspace
