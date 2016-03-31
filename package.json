@@ -6,9 +6,12 @@
     "start": "node ./bin/www",
     "prebuild:css": "postcss --use autoprefixer ./views/sass/*.scss -d ./views/sass/",
     "build:css": "node-sass --output-style compressed ./views/sass/ -o ./public/styles/",
-    "prebuild:js": "jshint ./public/scripts/*",
-    "build:js": "",
+    "build:css:watch": "node-sass --output-style compressed -w ./views/sass/ -o ./public/styles/",
+    "prebuild:js": "jshint ./views/scripts/*",
+    "build:js": "recursive-uglifyjs ./views/scripts/ -m -c -o ./public/scripts/",
     "build": "npm run build:css && npm run build:js",
+    "build:watch": "watch 'npm run build' .",
+    "clean": "rm -r ./public/scripts/* && rm -r ./public/styles/*",
     "env": "env"
   },
   "dependencies": {
@@ -22,10 +25,17 @@
   },
   "devDependencies": {
     "autoprefixer": "^6.3.5",
-    "jshint": "^2.9.1",
-    "node-sass": "^3.4.2",
-    "postcss": "^5.0.19",
-    "postcss-cli": "^2.5.1",
-    "postcss-scss": "^0.1.7"
+    "cssnano": "^3.5.2",
+    "grunt": "~0.4.5",
+    "grunt-contrib-clean": "^1.0.0",
+    "grunt-contrib-concat": "^1.0.0",
+    "grunt-contrib-jshint": "^0.10.0",
+    "grunt-contrib-nodeunit": "~0.4.1",
+    "grunt-contrib-uglify": "~0.5.0",
+    "grunt-contrib-watch": "^1.0.0",
+    "grunt-postcss": "^0.8.0",
+    "grunt-sass": "^1.1.0",
+    "load-grunt-tasks": "^3.4.1",
+    "pixrem": "^3.0.0"
   }
 }
