@@ -1,6 +1,6 @@
 module.exports = function (grunt) {
     
-    'use strict'
+    'use strict';
 
     require('load-grunt-tasks')(grunt);
 
@@ -16,15 +16,25 @@ module.exports = function (grunt) {
         },
 
         postcss: {
-            options: {
-                map: false,
-                processors: [
-                    require('pixrem')(),
-                    require('autoprefixer')(),
-                    require('cssnano')()
-                ]
+            dev: {
+                options: {
+                    map: false,
+                    processors: [
+                        require('pixrem')(),
+                        require('autoprefixer')()
+                    ]
+                },
+                src: 'dist/styles/*.css'
             },
             dist: {
+                options: {
+                    map: false,
+                    processors: [
+                        require('pixrem')(),
+                        require('autoprefixer')(),
+                        require('cssnano')()
+                    ]
+                },
                 src: 'dist/styles/*.css'
             }
         },
@@ -70,7 +80,7 @@ module.exports = function (grunt) {
             },
             styles: {
                 files: [ '**/*.scss' ],
-                tasks: [ 'sass' ]
+                tasks: [ 'sass', 'postcss:dev' ]
             }
         },
 
@@ -88,6 +98,7 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-contrib-clean');
 
     grunt.registerTask('default', [ 'watch' ]);
-    grunt.registerTask('dev', [ 'sass', 'jshint' ]);
-    grunt.registerTask('dist', [ 'clean', 'sass', 'postcss', 'uglify', 'concat' ]);
+    grunt.registerTask('dev', [ 'clean', 'sass', 'postcss:dev', 'jshint' ]);
+    grunt.registerTask('dist', [ 'clean', 'sass', 'postcss:dist', 'uglify', 'concat' ]);
+    grunt.registerTask('clean' [ 'clean' ]);
 };
