@@ -92,7 +92,7 @@ module.exports = function (grunt) {
         livereload: true
       },
       express: {
-        files:  [ '**/*.js' ],
+        files:  [ 'dev/sass/*.scss', 'dev/js/*.js' ],
         tasks:  [ 'express:dev' ],
         options: {
           spawn: false
