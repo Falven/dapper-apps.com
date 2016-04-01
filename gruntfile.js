@@ -72,19 +72,22 @@ module.exports = function (grunt) {
     },
 
     watch: {
+      options: {
+        livereload: true
+      },
       express: {
         files:  [ '**/*.js' ],
         tasks:  [ 'express:dev' ],
         options: {
-          spawn: false // for grunt-contrib-watch v0.5.0+, "nospawn: true" for lower versions. Without this option specified express won't be reloaded
+          spawn: false
         }
       },
       scripts: {
-        files: [ '**/*.js' ],
+        files: [ 'dev/js/*.js' ],
         tasks: [ 'jshint' ]
       },
       styles: {
-        files: [ '**/*.scss' ],
+        files: [ 'dev/sass/*.scss' ],
         tasks: [ 'sass', 'postcss:dev' ]
       }
     },
@@ -103,8 +106,7 @@ module.exports = function (grunt) {
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-contrib-clean');
 
-  grunt.registerTask('default', [ 'watch' ]);
+  grunt.registerTask('server', [ 'express:dev', 'watch' ]);
   grunt.registerTask('dev', [ 'clean', 'sass', 'postcss:dev', 'jshint' ]);
   grunt.registerTask('dist', [ 'clean', 'sass', 'postcss:dist', 'uglify', 'concat' ]);
-  grunt.registerTask('clean' [ 'clean' ]);
 };
