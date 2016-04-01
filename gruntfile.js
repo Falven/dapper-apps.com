@@ -71,6 +71,29 @@ module.exports = function (grunt) {
       }
     },
 
+    express: {
+      options: {
+        // Override defaults here
+      },
+      dev: {
+        options: {
+          script: 'bin/www',
+          node_env: 'development'
+        }
+      },
+      prod: {
+        options: {
+          script: 'bin/www',
+          node_env: 'production'
+        }
+      },
+      test: {
+        options: {
+          script: 'path/to/test/server.js'
+        }
+      }
+    },
+
     watch: {
       options: {
         livereload: true
