@@ -17,21 +17,14 @@ module.exports = function (grunt) {
       dev: {
         options: {
           map: false,
-          processors: [
-          require('pixrem')(),
-          require('autoprefixer')()
-          ]
+          processors: [ require('pixrem')(), require('autoprefixer')() ]
         },
         src: 'dist/styles/*.css'
       },
       dist: {
         options: {
           map: false,
-          processors: [
-          require('pixrem')(),
-          require('autoprefixer')(),
-          require('cssnano')()
-          ]
+          processors: [ require('pixrem')(), require('autoprefixer')(), require('cssnano')() ]
         },
         src: 'dist/styles/*.css'
       }
