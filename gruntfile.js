@@ -1,128 +1,181 @@
 module.exports = function (grunt) {
   'use strict';
+
   require('load-grunt-tasks')(grunt);
 
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
-
     sass: {
-      dist: {
+      options: {
+          includePaths: [ 'views/sass/' ],
+          sourceMap: false
+      },
+      dev: {
+        options: {
+          outputStyle: 'expanded'
+        },
         files: {
-          'dist/styles/index.css': 'dev/sass/index.scss'
+          'public/stylesheets/index.css': 'views/sass/index.scss'
+        }
+      },
+      dist: {
+        options: {
+          outputStyle: 'compressed'
+        },
+        files: {
+          'public/stylesheets/index.css': 'views/sass/index.scss'
         }
       }
     },
 
     postcss: {
+      options: {
+        map: false,
+        processors: [
+          require('autoprefixer')()
+        ]
+      },
       dev: {
-        options: {
-          map: false,
-          processors: [ require('pixrem')(), require('autoprefixer')() ]
-        },
-        src: 'dist/styles/*.css'
+        src: 'public/stylesheets/*.css'
       },
       dist: {
-        options: {
-          map: false,
-          processors: [ require('pixrem')(), require('autoprefixer')(), require('cssnano')() ]
-        },
-        src: 'dist/styles/*.css'
-      }
-    },
-
-    jshint: {
-      options: {
-        globals: {
-          jQuery: true
-        }
-      },
-      files: [ 'Gruntfile.js', 'dev/js/*.js' ]
-    },
-
-    uglify: {
-      options: {
-        mangle: true,
-        compress: {
-          drop_console: true,
-          global_defs: {
-            "DEBUG": false
-          },
-          dead_code: true,
-          unused: true
-        },
-        sourceMap: false
-      },
-      files: {
-        'dev/js/*.min.js': [ 'dev/js/*.js' ]
+        src: 'public/stylesheets/*.css'
       }
     },
 
     concat: {
-      scripts: {
-        src: [ 'dev/js/*.min.js' ],
-        dest: 'dist/scripts/index.js'
+      dev: {
+        src: 'views/js/*.js',
+        dest: 'public/javascripts/index.js'
+      },
+      dist: {
+        src: 'public/javascripts/*.js',
+        dest: 'public/javascripts/index.js'
       }
     },
 
-    express: {
-      options: {
-        // Override defaults here
-      },
+    jshint: {
       dev: {
         options: {
-          script: 'bin/www',
-          node_env: 'development'
-        }
+          curly: true,
+          eqeqeq: true,
+          eqnull: true,
+          browser: true,
+          globals: {
+            jQuery: true
+          }
+        },
+        src: [ 'gruntfile.js', 'public/javascripts/index.js' ]
       },
-      prod: {
+      dist: {
         options: {
-          script: 'bin/www',
-          node_env: 'production'
-        }
-      },
-      test: {
-        options: {
-          script: 'path/to/test/server.js'
-        }
+          curly: true,
+          eqeqeq: true,
+          eqnull: true,
+          browser: true,
+          globals: {
+            jQuery: true
+          }
+        },
+        src: [ 'gruntfile.js', 'public/javascripts/index.js' ]
       }
     },
 
-    watch: {
-      options: {
-        livereload: true
-      },
-      express: {
-        files:  [ 'dev/sass/*.scss', 'dev/js/*.js' ],
-        tasks:  [ 'express:dev' ],
+    uglify: {
+      dev: {
         options: {
-          spawn: false
+          mangle: false,
+          compress: false,
+          beautify: true,
+          sourceMap: false
+        },
+        files: {
+          'public/javascripts/index.js': 'public/javascripts/index.js'
         }
       },
-      scripts: {
-        files: [ 'dev/js/*.js' ],
-        tasks: [ 'jshint' ]
-      },
-      styles: {
-        files: [ 'dev/sass/*.scss' ],
-        tasks: [ 'sass', 'postcss:dev' ]
+      dist: {
+        options: {
+          mangle: true,
+          compress: {
+            drop_console: true,
+            global_defs: {
+              "DEBUG": false
+            },
+            dead_code: true,
+            unused: true
+          },
+          sourceMap: false
+        },
+        files: {
+          'public/javascripts/index.min.js': 'public/javascripts/index.js'
+        }
       }
     },
 
     clean: {
-      build: [ 'dist/styles/', 'dist/scripts/' ]
+      dev: null,
+      dist: 'public/javascripts/index.js'
+    },
+
+    express: {
+      options: {
+      },
+      dev: {
+        options: {
+          script: 'app.js',
+          node_env: 'development'
+        }
+      },
+      dist: {
+        options: {
+          script: 'app.js',
+          node_env: 'production'
+        }
+      }
+    },
+
+    open : {
+      dev : {
+        path: 'http://localhost:3000'
+      }
+    },
+
+    watch: {
+      css: {
+        files: 'views/sass/*.scss',
+        tasks: [ 'sass:dev', 'postcss:dev' ]
+      },
+      js: {
+        files: [ 'gruntfile.js', 'views/js/*.js' ],
+        tasks: [ 'concat:dev', 'jshint:dev', 'uglify:dev' ]
+      },
+      livereload: {
+        options: {
+          livereload: true
+        },
+        files: [ 'views/jade/*', 'public/**/*' ]
+      }
     }
   });
 
-  grunt.loadNpmTasks('grunt-sass');
-  grunt.loadNpmTasks('grunt-postcss');
-  grunt.loadNpmTasks('grunt-express-server');
-  grunt.loadNpmTasks('grunt-contrib-jshint');
-  grunt.loadNpmTasks('grunt-contrib-uglify');
-  grunt.loadNpmTasks('grunt-contrib-concat');
-  grunt.loadNpmTasks('grunt-contrib-watch');
-  grunt.loadNpmTasks('grunt-contrib-clean');
-
-  grunt.registerTask('server', [ 'express:dev', 'watch' ]);
-  grunt.registerTask('dev', [ 'clean', 'sass', 'postcss:dev', 'jshint' ]);
-  grunt.registerTask('dist', [ 'clean', 'sass', 'postcss:dist', 'uglify', 'concat' ]);
+  grunt.registerTask('default', [
+    'express:dev',
+    'open:dev',
+    'watch'
+  ]);
+  grunt.registerTask('dev', [
+    'sass:dev',
+    'postcss:dev',
+    'concat:dev',
+    'jshint:dev',
+    'uglify:dev'
+  ]);
+  grunt.registerTask('dist', [
+    'sass:dist',
+    'postcss:dist',
+    'concat:dist',
+    'jshint:dist',
+    'uglify:dist',
+    'clean:dist'
+  ]);
 };
