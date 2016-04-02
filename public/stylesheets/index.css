@@ -1,0 +1,341 @@
+/* Common Fonts */
+@font-face {
+  font-family: 'Lato';
+  src: url("/media/fonts/lato/lato-bla-webfont.eot");
+  src: url("/media/fonts/lato/lato-bla-webfont.eot?#iefix") format("embedded-opentype"), url("/media/fonts/lato/lato-bla-webfont.woff") format("woff"), url("/media/fonts/lato/lato-bla-webfont.ttf") format("truetype"), url("/media/fonts/lato/lato-bla-webfont.svg#latoblack") format("svg");
+  font-weight: 900;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Lato';
+  src: url("/media/fonts/lato/lato-blaita-webfont.eot");
+  src: url("/media/fonts/lato/lato-blaita-webfont.eot?#iefix") format("embedded-opentype"), url("/media/fonts/lato/lato-blaita-webfont.woff") format("woff"), url("/media/fonts/lato/lato-blaita-webfont.ttf") format("truetype"), url("/media/fonts/lato/lato-blaita-webfont.svg#latoblack_italic") format("svg");
+  font-weight: 900;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Lato';
+  src: url("/media/fonts/lato/lato-bol-webfont.eot");
+  src: url("/media/fonts/lato/lato-bol-webfont.eot?#iefix") format("embedded-opentype"), url("/media/fonts/lato/lato-bol-webfont.woff") format("woff"), url("/media/fonts/lato/lato-bol-webfont.ttf") format("truetype"), url("/media/fonts/lato/lato-bol-webfont.svg#latobold") format("svg");
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Lato';
+  src: url("/media/fonts/lato/lato-bolita-webfont.eot");
+  src: url("/media/fonts/lato/lato-bolita-webfont.eot?#iefix") format("embedded-opentype"), url("/media/fonts/lato/lato-bolita-webfont.woff") format("woff"), url("/media/fonts/lato/lato-bolita-webfont.ttf") format("truetype"), url("/media/fonts/lato/lato-bolita-webfont.svg#latobold_italic") format("svg");
+  font-weight: bold;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Lato';
+  src: url("/media/fonts/lato/lato-hai-webfont.eot");
+  src: url("/media/fonts/lato/lato-hai-webfont.eot?#iefix") format("embedded-opentype"), url("/media/fonts/lato/lato-hai-webfont.woff") format("woff"), url("/media/fonts/lato/lato-hai-webfont.ttf") format("truetype"), url("/media/fonts/lato/lato-hai-webfont.svg#latohairline") format("svg");
+  font-weight: 200;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Lato';
+  src: url("/media/fonts/lato/lato-haiita-webfont.eot");
+  src: url("/media/fonts/lato/lato-haiita-webfont.eot?#iefix") format("embedded-opentype"), url("/media/fonts/lato/lato-haiita-webfont.woff") format("woff"), url("/media/fonts/lato/lato-haiita-webfont.ttf") format("truetype"), url("/media/fonts/lato/lato-haiita-webfont.svg#latohairline_italic") format("svg");
+  font-weight: 200;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Lato';
+  src: url("/media/fonts/lato/lato-lig-webfont.eot");
+  src: url("/media/fonts/lato/lato-lig-webfont.eot?#iefix") format("embedded-opentype"), url("/media/fonts/lato/lato-lig-webfont.woff") format("woff"), url("/media/fonts/lato/lato-lig-webfont.ttf") format("truetype"), url("/media/fonts/lato/lato-lig-webfont.svg#latolight") format("svg");
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Lato';
+  src: url("/media/fonts/lato/lato-ligita-webfont.eot");
+  src: url("/media/fonts/lato/lato-ligita-webfont.eot?#iefix") format("embedded-opentype"), url("/media/fonts/lato/lato-ligita-webfont.woff") format("woff"), url("/media/fonts/lato/lato-ligita-webfont.ttf") format("truetype"), url("/media/fonts/lato/lato-ligita-webfont.svg#latolight_italic") format("svg");
+  font-weight: normal;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Lato';
+  src: url("/media/fonts/lato/lato-reg-webfont.eot");
+  src: url("/media/fonts/lato/lato-reg-webfont.eot?#iefix") format("embedded-opentype"), url("/media/fonts/lato/lato-reg-webfont.woff") format("woff"), url("/media/fonts/lato/lato-reg-webfont.ttf") format("truetype"), url("/media/fonts/lato/lato-reg-webfont.svg#latoregular") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Lato';
+  src: url("/media/fonts/lato/lato-regita-webfont.eot");
+  src: url("/media/fonts/lato/lato-regita-webfont.eot?#iefix") format("embedded-opentype"), url("/media/fonts/lato/lato-regita-webfont.woff") format("woff"), url("/media/fonts/lato/lato-regita-webfont.ttf") format("truetype"), url("/media/fonts/lato/lato-regita-webfont.svg#latoitalic") format("svg");
+  font-weight: normal;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Open-Sans';
+  src: url("/media/fonts/open-sans/opensans-bold-webfont.eot");
+  src: url("/media/fonts/open-sans/opensans-bold-webfont.eot?#iefix") format("embedded-opentype"), url("/media/fonts/open-sans/opensans-bold-webfont.woff2") format("woff2"), url("/media/fonts/open-sans/opensans-bold-webfont.woff") format("woff"), url("/media/fonts/open-sans/opensans-bold-webfont.ttf") format("truetype"), url("/media/fonts/open-sans/opensans-bold-webfont.svg#open_sansbold") format("svg");
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Open-Sans';
+  src: url("/media/fonts/open-sans/opensans-light-webfont.eot");
+  src: url("/media/fonts/open-sans/opensans-light-webfont.eot?#iefix") format("embedded-opentype"), url("/media/fonts/open-sans/opensans-light-webfont.woff2") format("woff2"), url("/media/fonts/open-sans/opensans-light-webfont.woff") format("woff"), url("/media/fonts/open-sans/opensans-light-webfont.ttf") format("truetype"), url("/media/fonts/open-sans/opensans-light-webfont.svg#open_sanslight") format("svg");
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Open-Sans';
+  src: url("/media/fonts/open-sans/opensans-regular-webfont.eot");
+  src: url("/media/fonts/open-sans/opensans-regular-webfont.eot?#iefix") format("embedded-opentype"), url("/media/fonts/open-sans/opensans-regular-webfont.woff2") format("woff2"), url("/media/fonts/open-sans/opensans-regular-webfont.woff") format("woff"), url("/media/fonts/open-sans/opensans-regular-webfont.ttf") format("truetype"), url("/media/fonts/open-sans/opensans-regular-webfont.svg#open_sansregular") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Open-Sans';
+  src: url("/media/fonts/open-sans/opensans-semibold-webfont.eot");
+  src: url("/media/fonts/open-sans/opensans-semibold-webfont.eot?#iefix") format("embedded-opentype"), url("/media/fonts/open-sans/opensans-semibold-webfont.woff2") format("woff2"), url("/media/fonts/open-sans/opensans-semibold-webfont.woff") format("woff"), url("/media/fonts/open-sans/opensans-semibold-webfont.ttf") format("truetype"), url("/media/fonts/open-sans/opensans-semibold-webfont.svg#open_sanssemibold") format("svg");
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Raleway';
+  src: url("/media/fonts/raleway/raleway-bold-webfont.eot");
+  src: url("/media/fonts/raleway/raleway-bold-webfont.eot?#iefix") format("embedded-opentype"), url("/media/fonts/raleway/raleway-bold-webfont.woff2") format("woff2"), url("/media/fonts/raleway/raleway-bold-webfont.woff") format("woff"), url("/media/fonts/raleway/raleway-bold-webfont.ttf") format("truetype"), url("/media/fonts/raleway/raleway-bold-webfont.svg#ralewaybold") format("svg");
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Raleway';
+  src: url("/media/fonts/raleway/raleway-italic-webfont.eot");
+  src: url("/media/fonts/raleway/raleway-italic-webfont.eot?#iefix") format("embedded-opentype"), url("/media/fonts/raleway/raleway-italic-webfont.woff2") format("woff2"), url("/media/fonts/raleway/raleway-italic-webfont.woff") format("woff"), url("/media/fonts/raleway/raleway-italic-webfont.ttf") format("truetype"), url("/media/fonts/raleway/raleway-italic-webfont.svg#ralewayitalic") format("svg");
+  font-weight: normal;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Raleway';
+  src: url("/media/fonts/raleway/raleway-regular-webfont.eot");
+  src: url("/media/fonts/raleway/raleway-regular-webfont.eot?#iefix") format("embedded-opentype"), url("/media/fonts/raleway/raleway-regular-webfont.woff2") format("woff2"), url("/media/fonts/raleway/raleway-regular-webfont.woff") format("woff"), url("/media/fonts/raleway/raleway-regular-webfont.ttf") format("truetype"), url("/media/fonts/raleway/raleway-regular-webfont.svg#ralewayregular") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Metropolis-1920';
+  src: url("/media/fonts/metropolis_1920/metropolis_1920-webfont.eot");
+  src: url("/media/fonts/metropolis_1920/metropolis_1920-webfont.eot?#iefix") format("embedded-opentype"), url("/media/fonts/metropolis_1920/metropolis_1920-webfont.woff2") format("woff2"), url("/media/fonts/metropolis_1920/metropolis_1920-webfont.woff") format("woff"), url("/media/fonts/metropolis_1920/metropolis_1920-webfont.ttf") format("truetype"), url("/media/fonts/metropolis_1920/metropolis_1920-webfont.svg#metropolis_1920regular") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Lucky';
+  src: url("/media/fonts/filmotype_lucky/filmotype_lucky-webfont.eot");
+  src: url("/media/fonts/filmotype_lucky/filmotype_lucky-webfont.eot?#iefix") format("embedded-opentype"), url("/media/fonts/filmotype_lucky/filmotype_lucky-webfont.woff2") format("woff2"), url("/media/fonts/filmotype_lucky/filmotype_lucky-webfont.woff") format("woff"), url("/media/fonts/filmotype_lucky/filmotype_lucky-webfont.ttf") format("truetype"), url("/media/fonts/filmotype_lucky/filmotype_lucky-webfont.svg#filmotype_luckyregular") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+html, body, ul, ol {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Open-Sans, Lato, Helvetica, Arial, sans-serif;
+  font-size: 18px;
+  /*line-height: 26px;*/
+  /*letter-spacing: 1px;*/
+}
+
+figure {
+  margin: 0;
+}
+
+footer {
+  text-align: center;
+}
+
+#contact, footer {
+  padding: 4.9% 0;
+}
+
+.slider-item, footer {
+  text-align: center;
+}
+
+body {
+  margin: 0;
+}
+
+article {
+  overflow: hidden;
+  max-width: 100%;
+}
+
+.slider {
+  left: 0;
+  position: relative;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 200%;
+  height: auto;
+  background-color: #d3d3d3;
+  -webkit-animation: a 15s ease 2s infinite alternate;
+          animation: a 15s ease 2s infinite alternate;
+}
+
+.slider-item {
+  width: 100%;
+  height: auto;
+  margin: 0;
+}
+
+@-webkit-keyframes a {
+  0% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+  to {
+    -webkit-transform: translateX(-100vw);
+            transform: translateX(-100vw);
+  }
+}
+
+@keyframes a {
+  0% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+  to {
+    -webkit-transform: translateX(-100vw);
+            transform: translateX(-100vw);
+  }
+}
+
+#gallery-home {
+  background: url(/images/gallery/dapper-apps/background.png) no-repeat bottom;
+  background-size: cover;
+}
+
+#gallery-home img {
+  width: 25%;
+  height: 25%;
+  max-width: 4489px;
+  max-height: 3139px;
+}
+
+#gallery-home figcaption {
+  font-family: Lucky, Open-Sans, Lato, "Lucida Grande", "Lucida Sans Unicode", Tahoma, Sans-Serif;
+  font-size: 2.1vw;
+  color: #fff;
+}
+
+#gallery-kami {
+  background: url(/images/gallery/kamis-nightmare/background.png) no-repeat bottom;
+  background-size: cover;
+}
+
+#gallery-kami img {
+  width: 40%;
+  height: 40%;
+  max-width: 946px;
+  max-height: 457px;
+}
+
+#gallery-kami figcaption {
+  font-family: Raleway, Open-Sans, Lato, Helvetica, Arial, sans-serif;
+  font-weight: lighter;
+  font-size: 18pt;
+  color: #fff;
+}
+
+#contact {
+  font-family: Raleway, Open-Sans, Lato, Helvetica, Arial, sans-serif;
+  text-align: center;
+  background-color: #f2f2f2;
+}
+
+#contact h1 {
+  font-weight: 400;
+  font-size: 3.25vw;
+  color: #b9874c;
+  margin: 0 0 4.9%;
+}
+
+#contact h2 {
+  font-weight: 500;
+  margin: 16px 0 0;
+}
+
+#contact h2, #contact h3 {
+  font-size: 1.4vw;
+}
+
+#contact h3 {
+  font-weight: 400;
+  margin: 0 0 16px;
+}
+
+#contact p {
+  margin: 0;
+}
+
+#contact h4, #contact p {
+  font-weight: lighter;
+  font-size: 1.1vw;
+}
+
+#contact h4 {
+  margin: 56px 0 0;
+}
+
+.contact-col {
+  float: left;
+  width: 33.33%;
+  box-sizing: border-box;
+  padding: 16px;
+}
+
+.portrait-image {
+  width: 50%;
+  height: 50%;
+  max-width: 570px;
+  max-height: 570px;
+}
+
+footer {
+  background-color: #222;
+}
+
+footer ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+footer ul li {
+  display: inline;
+}
+
+.social-link > img {
+  width: 5%;
+  height: 5%;
+}
