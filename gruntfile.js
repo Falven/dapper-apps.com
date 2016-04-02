@@ -122,13 +122,13 @@ module.exports = function (grunt) {
       },
       dev: {
         options: {
-          script: 'app.js',
+          script: 'bin/www',
           node_env: 'development'
         }
       },
       dist: {
         options: {
-          script: 'app.js',
+          script: 'bin/www',
           node_env: 'production'
         }
       }
