@@ -1,0 +1,141 @@
+$items: 3;
+$item-height: 400px;
+$transition-speed: 700ms;
+$button-color: #FFF;
+$buttons-left: 50%;
+$buttons-bottom: 12px;
+$button-dimensions: 14px;
+$button-border-size: 2px;
+$button-margin: 20px;
+
+.slider {
+  position: relative;
+  margin: 25px;
+  overflow: hidden;
+  border-radius: 2px;
+  box-shadow: 1px 2px 10px 0px rgba(0,0,0,0.3);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#radio1,
+#radio2,
+#radio3 {
+  display: none;
+}
+
+.button {
+  border: $button-border-size solid $button-color;
+  height: $button-dimensions;
+  width: $button-dimensions;
+  left: $buttons-left;
+  bottom: $buttons-bottom;
+  z-index: 5;
+  cursor: pointer;
+}
+
+.active {
+  width: $button-dimensions / 2;
+  height: $button-dimensions / 2;
+  background-color: $button-color;
+  left: calc(#{$buttons-left} - #{$button-margin} + #{$button-dimensions} / 4);
+  bottom: $buttons-bottom + $button-dimensions / 4;
+  z-index: 10;
+  transition: all $transition-speed ease;
+}
+
+.button,
+.active {
+  box-sizing: border-box;
+  position: absolute;
+  border-radius: 50%;
+}
+
+.b1 {
+  margin-left: -$button-margin;
+}
+
+.b2 {
+  margin-left: 0;
+}
+
+.b3 {
+  margin-left: $button-margin;
+}
+
+#radio1:checked ~ .active {
+  transform: translateX(0);
+}
+
+#radio2:checked ~ .active {
+  transform: translateX($button-margin);
+}
+
+#radio3:checked ~ .active {
+  transform: translateX($button-margin * 2);
+}
+
+#radio1:checked ~ .slider-items {
+  transform: translateX(0);
+}
+
+#radio2:checked ~ .slider-items {
+  transform: translateX(-100% / $items);
+}
+
+#radio3:checked ~ .slider-items {
+  transform: translateX(-100% / $items * 2);
+}
+
+.slider-items {
+  display: flex;
+  width: $items * 100%;
+  transition: transform $transition-speed ease;
+}
+
+.slider-item {
+  width: 100%;
+  height: $item-height;
+  margin: 0;
+}
+
+.s1 {
+  // background-color: #1BBE9E;
+  border-radius: 2px;
+  background: url(/images/slider/dapper-apps/background.png) no-repeat bottom;
+  background-size: cover;
+  img {
+      width: 25%;
+      height: 25%;
+      max-width: 4489px;
+      max-height: 3139px
+  }
+  figcaption {
+      font-family: Lucky, $fallback-fonts;
+      font-size: 2.1vw;
+      color: #fff
+  }
+}
+
+.s2 {
+  // background-color: #EA4C89;
+  border-radius: 2px;
+  background: url(/images/slider/kamis-nightmare/background.png) no-repeat bottom;
+  background-size: cover;
+  img {
+      width: 40%;
+      height: 40%;
+      max-width: 946px;
+      max-height: 457px
+  }
+  figcaption {
+      font-family: Raleway, Open-Sans, Lato, Helvetica, Arial, sans-serif;
+      font-weight: lighter;
+      font-size: 18pt;
+      color: #fff
+  }
+}
+
+.s3 {
+  background-color: #75C1E8;
+}
