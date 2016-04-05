@@ -112,7 +112,7 @@ $button-margin: 20px;
     vertical-align: middle;
   }
   > figcaption {
-    font-family: Lucky, $fallback-fonts;
+    // font-family: Lucky, $fallback-fonts;
     font-size: 18pt;
     color: #fff;
   }
@@ -132,8 +132,20 @@ $button-margin: 20px;
   background: url(/images/slider/at-franco/background.png) no-repeat bottom;
   background-size: cover;
   > figcaption {
-    font-family: bonvenocf, $fallback-fonts;
+    font-family: BonvenoCF, $fallback-fonts;
     font-size: 36pt;
     color: #fff;
   }
+}
+
+.font1 {
+  font-family: Dapps-DancingScript, $fallback-fonts;
+}
+
+.font2 {
+  font-family: Dapps-Pacifico, $fallback-fonts;
+}
+
+.font3 {
+  font-family: Dapps-GrandHotel, $fallback-fonts;
 }
