@@ -1,8 +1,10 @@
-var obj = document.getElementsByClassName("slider-items");
+var slider = document.getElementById("slider");
 
-obj.addEventListener("touchmove", function(event) {
+var items = document.getElementsByClassName("slider-items");
+
+slider.addEventListener("touchmove", function(event) {
     if (event.targetTouches.length === 1) {
         var touch = event.targetTouches[0];
-        obj.style.left = touch.pageX + "px";
+        items.style.left = touch.pageX + "px";
     }
 }, false);
