@@ -1,16 +1,43 @@
-if (document.readyState === "complete" || document.readyState === "interactive") {
-    init();
-} else {
-    document.addEventListener("DOMContentLoaded", init);
-}
+document.addEventListener("DOMContentLoaded", init);
 
-function init(event) {
-    var slider = document.getElementById("slider");
-    var items = document.getElementsByClassName("slider-items");
-    slider.addEventListener("touchmove", function(event) {
+function init() {}
+
+function sliderTouchController(slider, sliderItems) {
+    var sliderItem = sliderItems[0];
+    var startX = 0;
+    var endX = 0;
+    var translateX = 0;
+    var sliderWidth = slider.offsetWidth;
+    var translateSuccess = sliderWidth / 5;
+    this.onSliderTouchStart = function(event) {
+        console.log("onSliderItemsTouchStart");
         if (event.targetTouches.length === 1) {
             var touch = event.targetTouches[0];
-            items[0].style.transform = "translateX(" + touch.pageX + "px)";
+            startX = touch.clientX;
+            console.log("startX = " + startX);
         }
-    }, false);
+    };
+    this.onSliderTouchMove = function(event) {
+        if (event.targetTouches.length === 1) {
+            var touch = event.targetTouches[0];
+            translateX = touch.clientX - startX;
+            if (Math.abs(translateX) < translateSuccess) {
+                sliderItem.style.transform = "translateX(" + translateX + "px)";
+            } else {
+                console.log("translate success.");
+                sliderItem.style.transform = "";
+            }
+        }
+    };
+    this.onSliderTouchEnd = function(event) {
+        console.log("onSliderItemsTouchEnd");
+        if (event.targetTouches.length === 1) {
+            this.endTouch = event.targetTouches[0];
+            endX = touch.clientX;
+            console.log("endX = " + endX);
+        }
+    };
+    slider.addEventListener("touchstart", this.onSliderTouchStart, false);
+    slider.addEventListener("touchmove", this.onSliderTouchMove, false);
+    slider.addEventListener("touchend", this.onSliderTouchEnd, false);
 }
