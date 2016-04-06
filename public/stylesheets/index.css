@@ -175,6 +175,7 @@ html, body, ul, ol {
 body {
   font-family: Open-Sans, Dapps-Lato, "Lucida Grande", "Lucida Sans Unicode", Tahoma, Sans-Serif;
   font-size: 18px;
+  background-color: #f2f2f2;
   /*line-height: 26px;*/
   /*letter-spacing: 1px;*/
 }
@@ -354,7 +355,7 @@ body {
 #contact {
   font-family: Dapps-Raleway, Open-Sans, Dapps-Lato, "Lucida Grande", "Lucida Sans Unicode", Tahoma, Sans-Serif;
   text-align: center;
-  background-color: #f2f2f2;
+  background-color: #fff;
   margin: 15px 25px 15px 25px;
   overflow: hidden;
   border-radius: 2px;
