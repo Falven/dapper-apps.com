@@ -111,11 +111,11 @@ $button-margin: 20px;
     max-height: 3139px;
     vertical-align: middle;
   }
-  // > figcaption {
-  //   font-family: Dapps-DancingScript, $fallback-fonts;
-  //   font-size: 18pt;
-  //   color: #fff;
-  // }
+  > figcaption {
+    // font-family: Dapps-DancingScript, $fallback-fonts;
+    font-size: 18pt;
+    color: #fff;
+  }
 }
 
 .s2 {

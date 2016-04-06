@@ -312,6 +312,11 @@ body {
   vertical-align: middle;
 }
 
+.s1 > figcaption {
+  font-size: 18pt;
+  color: #fff;
+}
+
 .s2 {
   background: url(/images/slider/kamis-nightmare/background.png) no-repeat bottom;
   background-size: cover;
