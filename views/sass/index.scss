@@ -9,14 +9,19 @@ body {
   font-family: $fallback-fonts;
   font-size: 18px;
   background-color: #f2f2f2;
-  /*line-height: 26px;*/
-  /*letter-spacing: 1px;*/
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  line-height: 1.66667;
+  letter-spacing: 0em;
 }
 $header-background-color: #222;
 $footer-background-color: $header-background-color;
 $section-background-color: #fff;
 $header-margin: 25px 25px 15px 25px;
 $section-margin: 15px 25px 15px 25px;
+$section-padding: 50px 0;
 $footer-margin: 15px 25px 25px 25px;
 
 @import 'header';

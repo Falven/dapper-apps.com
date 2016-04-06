@@ -112,7 +112,7 @@ $button-margin: 20px;
     vertical-align: middle;
   }
   > figcaption {
-    // font-family: Dapps-DancingScript, $fallback-fonts;
+    font-family: Dapps-Pacifico, $fallback-fonts;
     font-size: 18pt;
     color: #fff;
   }
@@ -136,16 +136,4 @@ $button-margin: 20px;
     font-size: 34pt;
     color: #fff;
   }
-}
-
-.f1 {
-  font-family: Dapps-GrandHotel, $fallback-fonts;
-}
-
-.f2 {
-  font-family: Dapps-DancingScript, $fallback-fonts;
-}
-
-.f3 {
-  font-family: Dapps-Pacifico, $fallback-fonts;
 }
