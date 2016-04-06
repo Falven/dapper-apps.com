@@ -312,12 +312,6 @@ body {
   vertical-align: middle;
 }
 
-.s1 > figcaption {
-  font-family: Dapps-DancingScript, Open-Sans, Dapps-Lato, "Lucida Grande", "Lucida Sans Unicode", Tahoma, Sans-Serif;
-  font-size: 18pt;
-  color: #fff;
-}
-
 .s2 {
   background: url(/images/slider/kamis-nightmare/background.png) no-repeat bottom;
   background-size: cover;
@@ -340,15 +334,15 @@ body {
   color: #fff;
 }
 
-.font1 {
+.f1 {
   font-family: Dapps-GrandHotel, Open-Sans, Dapps-Lato, "Lucida Grande", "Lucida Sans Unicode", Tahoma, Sans-Serif;
 }
 
-.font2 {
+.f2 {
   font-family: Dapps-DancingScript, Open-Sans, Dapps-Lato, "Lucida Grande", "Lucida Sans Unicode", Tahoma, Sans-Serif;
 }
 
-.font3 {
+.f3 {
   font-family: Dapps-Pacifico, Open-Sans, Dapps-Lato, "Lucida Grande", "Lucida Sans Unicode", Tahoma, Sans-Serif;
 }
 
