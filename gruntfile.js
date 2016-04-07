@@ -137,6 +137,9 @@ module.exports = function (grunt) {
     open : {
       dev : {
         path: 'http://localhost:3000'
+      },
+      dist: {
+        path: 'http://localhost:3000'
       }
     },
 
@@ -177,5 +180,11 @@ module.exports = function (grunt) {
     'jshint:dist',
     'uglify:dist',
     'clean:dist'
+  ]);
+  grunt.registerTask('server', [
+    'dist',
+    'express:dist',
+    'open:dist',
+    'keepalive'
   ]);
 };
