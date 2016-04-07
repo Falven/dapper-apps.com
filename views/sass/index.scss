@@ -29,3 +29,6 @@ $footer-margin: 15px 25px 25px 25px;
 @import 'contact';
 
 @import 'footer';
+
+/* Make sure media queries get linked last */
+@import 'media';

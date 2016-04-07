@@ -3,10 +3,10 @@ $item-height: 600px;
 $foreground-transition-speed: 700ms;
 $active-transition-speed: $foreground-transition-speed;
 $background-transition-speed: 900ms;
-$active-z-index: 15;
-$button-z-index: 10;
-$foreground-z-index: 5;
-$background-z-index: auto;
+$active-z-index: 2;
+$button-z-index: 1;
+$foreground-z-index: 0;
+$background-z-index: -1;
 $button-color: #fff;
 $buttons-left: 49.3%;
 $buttons-bottom: 12px;
@@ -97,6 +97,7 @@ $button-margin: 20px;
 .slider-backgrounds, .slider-items {
   display: flex;
   width: $items * 100%;
+  position: relative;
 }
 
 .sb1,
@@ -111,12 +112,12 @@ $button-margin: 20px;
 
 .slider-backgrounds {
   transition: transform $background-transition-speed ease;
+  z-index: $background-z-index;
 }
 
 .sb1 {
   left: 0;
   right: 200%;
-  // 1BBE9E
   background: #8e44ad url(/images/slider/dapper-apps/background.png) no-repeat bottom;
   background-size: cover;
 }
@@ -135,17 +136,10 @@ $button-margin: 20px;
   background-size: cover;
 }
 
-.sb1,
-.sb2,
-.sb3 {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  z-index: $background-z-index;
-}
-
 .slider-items {
   transition: transform $foreground-transition-speed ease;
+  z-index: $foreground-z-index;
+  margin-top: -$item-height;
 }
 
 .si1 {
@@ -186,5 +180,4 @@ $button-margin: 20px;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  z-index: $foreground-z-index;
 }
