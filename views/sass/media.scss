@@ -1,78 +1,272 @@
-/* Responsive Design */
+/* 16:9 */
+@media only screen
+and (min-device-width: 0px)
+and (max-device-width: 480px) {
+  .sb1 {
+    background-image: url(/images/slider/dapper-apps/dapper-background_480.png);
+  }
 
-@media screen and (max-width : 7680px) {
+  .sb2 {
+    background-image: url(/images/slider/kamis-nightmare/kami-background_480.png);
+  }
+
+  .sb3 {
+    background-image: url(/images/slider/at-franco/franco-background_480.png);
+  }
 }
 
-@media screen and (max-width : 6400px) {
+@media only screen
+and (min-device-width: 0px)
+and (max-device-width: 640px) {
+  .sb1 {
+    background-image: url(/images/slider/dapper-apps/dapper-background_640.png);
+  }
+
+  .sb2 {
+    background-image: url(/images/slider/kamis-nightmare/kami-background_640.png);
+  }
+
+  .sb3 {
+    background-image: url(/images/slider/at-franco/franco-background_640.png);
+  }
 }
 
-@media screen and (max-width : 5120px) {
+@media only screen
+and (min-device-width: 640px)
+and (max-device-width: 720px) {
+  .sb1 {
+    background-image: url(/images/slider/dapper-apps/dapper-background_720.png);
+  }
+
+  .sb2 {
+    background-image: url(/images/slider/kamis-nightmare/kami-background_720.png);
+  }
+
+  .sb3 {
+    background-image: url(/images/slider/at-franco/franco-background_720.png);
+  }
 }
 
-@media screen and (max-width : 4096px) {
+@media only screen
+and (min-device-width: 720px)
+and (max-device-width: 848px) {
+  .sb1 {
+    background-image: url(/images/slider/dapper-apps/dapper-background_848.png);
+  }
+
+  .sb2 {
+    background-image: url(/images/slider/kamis-nightmare/kami-background_848.png);
+  }
+
+  .sb3 {
+    background-image: url(/images/slider/at-franco/franco-background_848.png);
+  }
 }
 
-@media screen and (max-width : 3840px) {
+@media only screen
+and (min-device-width: 848px)
+and (max-device-width: 960px) {
+  .sb1 {
+    background-image: url(/images/slider/dapper-apps/dapper-background_960.png);
+  }
+
+  .sb2 {
+    background-image: url(/images/slider/kamis-nightmare/kami-background_960.png);
+  }
+
+  .sb3 {
+    background-image: url(/images/slider/at-franco/franco-background_960.png);
+  }
 }
 
-@media screen and (max-width : 3440px) {
+@media only screen
+and (min-device-width: 960px)
+and (max-device-width: 1024px) {
+  .sb1 {
+    background-image: url(/images/slider/dapper-apps/dapper-background_1024.png);
+  }
+
+  .sb2 {
+    background-image: url(/images/slider/kamis-nightmare/kami-background_1024.png);
+  }
+
+  .sb3 {
+    background-image: url(/images/slider/at-franco/franco-background_1024.png);
+  }
 }
 
-@media screen and (max-width : 3440px) {
+@media only screen
+and (min-device-width: 1024px)
+and (max-device-width: 1280px) {
+  .sb1 {
+    background-image: url(/images/slider/dapper-apps/dapper-background_1280.png);
+  }
+
+  .sb2 {
+    background-image: url(/images/slider/kamis-nightmare/kami-background_1280.png);
+  }
+
+  .sb3 {
+    background-image: url(/images/slider/at-franco/franco-background_1280.png);
+  }
 }
 
-@media screen and (max-width : 3200px) {
+@media only screen
+and (min-device-width: 1280px)
+and (max-device-width: 1366px) {
+  .sb1 {
+    background-image: url(/images/slider/dapper-apps/dapper-background_1366.png);
+  }
+
+  .sb2 {
+    background-image: url(/images/slider/kamis-nightmare/kami-background_1366.png);
+  }
+
+  .sb3 {
+    background-image: url(/images/slider/at-franco/franco-background_1366.png);
+  }
 }
 
-@media screen and (max-width : 2880px) {
+@media only screen
+and (min-device-width: 1366px)
+and (max-device-width: 1600px) {
+  .sb1 {
+    background-image: url(/images/slider/dapper-apps/dapper-background_1600.png);
+  }
+
+  .sb2 {
+    background-image: url(/images/slider/kamis-nightmare/kami-background_1600.png);
+  }
+
+  .sb3 {
+    background-image: url(/images/slider/at-franco/franco-background_1600.png);
+  }
 }
 
-@media screen and (max-width : 2560px) {
+@media only screen
+and (min-device-width: 1600px)
+and (max-device-width: 1920px) {
+  .sb1 {
+    background-image: url(/images/slider/dapper-apps/dapper-background_1920.png);
+  }
+
+  .sb2 {
+    background-image: url(/images/slider/kamis-nightmare/kami-background_1920.png);
+  }
+
+  .sb3 {
+    background-image: url(/images/slider/at-franco/franco-background_1920.png);
+  }
 }
 
-@media screen and (max-width : 2160px) {
+@media only screen
+and (min-device-width: 1920px)
+and (max-device-width: 2048px) {
+  .sb1 {
+    background-image: url(/images/slider/dapper-apps/dapper-background_2048.png);
+  }
+
+  .sb2 {
+    background-image: url(/images/slider/kamis-nightmare/kami-background_2048.png);
+  }
+
+  .sb3 {
+    background-image: url(/images/slider/at-franco/franco-background_2048.png);
+  }
 }
 
-@media screen and (max-width : 2048px) {
+@media only screen
+and (min-device-width: 2048px)
+and (max-device-width: 2560px) {
+  .sb1 {
+    background-image: url(/images/slider/dapper-apps/dapper-background_2560.png);
+  }
+
+  .sb2 {
+    background-image: url(/images/slider/kamis-nightmare/kami-background_2107.png);
+  }
+
+  .sb3 {
+    background-image: url(/images/slider/at-franco/franco-background_2560.png);
+  }
 }
 
-@media screen and (max-width : 1920px) {
+@media only screen
+and (min-device-width: 2048px)
+and (max-device-width: 2880px) {
+  .sb1 {
+    background-image: url(/images/slider/dapper-apps/dapper-background_2880.png);
+  }
+
+  .sb2 {
+    background-image: url(/images/slider/kamis-nightmare/kami-background_2107.png);
+  }
+
+  .sb3 {
+    background-image: url(/images/slider/at-franco/franco-background_2880.png);
+  }
 }
 
-@media screen and (max-width : 1680px) {
+@media only screen
+and (min-device-width: 2880px)
+and (max-device-width: 3200px) {
+  .sb1 {
+    background-image: url(/images/slider/dapper-apps/dapper-background_3200.png);
+  }
+
+  .sb2 {
+    background-image: url(/images/slider/kamis-nightmare/kami-background_2107.png);
+  }
+
+  .sb3 {
+    background-image: url(/images/slider/at-franco/franco-background_3200.png);
+  }
 }
 
-@media screen and (max-width : 1600px) {
+@media only screen
+and (min-device-width: 3200px)
+and (max-device-width: 3840px) {
+  .sb1 {
+    background-image: url(/images/slider/dapper-apps/dapper-background_3840.png);
+  }
+
+  .sb2 {
+    background-image: url(/images/slider/kamis-nightmare/kami-background_2107.png);
+  }
+
+  .sb3 {
+    background-image: url(/images/slider/at-franco/franco-background_3840.png);
+  }
 }
 
-@media screen and (max-width : 1440px) {
+@media only screen
+and (min-device-width: 3840px)
+and (max-device-width: 4096px) {
+  .sb1 {
+    background-image: url(/images/slider/dapper-apps/dapper-background_4096.png);
+  }
+
+  .sb2 {
+    background-image: url(/images/slider/kamis-nightmare/kami-background_2107.png);
+  }
+
+  .sb3 {
+    background-image: url(/images/slider/at-franco/franco-background_4096.png);
+  }
 }
 
-@media screen and (max-width : 1400px) {
-}
+@media only screen
+and (min-device-width: 4096px)
+and (max-device-width: 5120px) {
+  .sb1 {
+    background-image: url(/images/slider/dapper-apps/dapper-background_4489.png);
+  }
 
-@media screen and (max-width : 1360px) {
-}
+  .sb2 {
+    background-image: url(/images/slider/kamis-nightmare/kami-background_2107.png);
+  }
 
-@media screen and (max-width : 1280px) {
-}
-
-@media screen and (max-width : 1152px) {
-}
-
-@media screen and (max-width : 1024px) {
-}
-
-@media screen and (max-width : 800px) {
-}
-
-@media screen and (max-width : 720px) {
-  
-}
-
-@media screen and (max-width : 640px) {
-}
-
-@media screen and (max-width : 480px) {
-
+  .sb3 {
+    background-image: url(/images/slider/at-franco/franco-background_4489.png);
+  }
 }

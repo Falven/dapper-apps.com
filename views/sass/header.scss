@@ -19,7 +19,7 @@ $button-margin: 20px;
   margin: $header-margin;
   overflow: hidden;
   border-radius: 2px;
-  box-shadow: 1px 2px 10px 0px rgba(0,0,0,0.3);
+  box-shadow: 1px 2px 10px 0px rgba(0, 0, 0, 0.3);
 }
 
 #radio1,
@@ -118,22 +118,35 @@ $button-margin: 20px;
 .sb1 {
   left: 0;
   right: 200%;
-  background: #8e44ad url(/images/slider/dapper-apps/background.png) no-repeat bottom;
-  background-size: cover;
+  background-color: #8e44ad;
 }
 
 .sb2 {
   left: 100%;
   right: 100%;
-  background: #EA4C89 url(/images/slider/kamis-nightmare/background.png) no-repeat bottom;
-  background-size: cover;
+  background-color: #ea4c89;
 }
 
 .sb3 {
   left: 200%;
   right: 0;
-  background: #75C1E8 url(/images/slider/at-franco/background.png) no-repeat bottom;
+  background-color: #75c1e8;
+}
+
+.sb1 {
+  background-position: bottom;
+}
+
+.sb2,
+.sb3 {
+  background-position: center center;
+}
+
+.sb1,
+.sb2,
+.sb3 {
   background-size: cover;
+  background-repeat: no-repeat;
 }
 
 .slider-items {
