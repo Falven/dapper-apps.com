@@ -192,9 +192,7 @@ body {
   box-shadow: 1px 2px 10px 0px rgba(0, 0, 0, 0.3);
 }
 
-#radio1,
-#radio2,
-#radio3 {
+#slider > input[type="radio"] {
   display: none;
 }
 
@@ -253,41 +251,34 @@ body {
           transform: translateX(40px);
 }
 
-#radio1:checked ~ .slider-backgrounds,
-#radio1:checked ~ .slider-items {
+#radio1:checked ~ .slider-stack {
   -webkit-transform: translateX(0);
           transform: translateX(0);
 }
 
-#radio2:checked ~ .slider-backgrounds,
-#radio2:checked ~ .slider-items {
+#radio2:checked ~ .slider-stack {
   -webkit-transform: translateX(-33.3333333333%);
           transform: translateX(-33.3333333333%);
 }
 
-#radio3:checked ~ .slider-backgrounds,
-#radio3:checked ~ .slider-items {
+#radio3:checked ~ .slider-stack {
   -webkit-transform: translateX(-66.6666666667%);
           transform: translateX(-66.6666666667%);
 }
 
-.slider-backgrounds, .slider-items {
+.slider-stack {
+  position: relative;
+  width: 300%;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  width: 300%;
-  position: relative;
 }
 
-.sb1,
-.sb2,
-.sb3,
-.si1,
-.si2,
-.si3 {
+.slider-stack > * {
   width: 100%;
-  height: 600px;
+  height: 75vh;
+  max-height: 1658px;
 }
 
 .slider-backgrounds {
@@ -298,77 +289,42 @@ body {
   z-index: -1;
 }
 
+.slider-backgrounds > * {
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
 .sb1 {
   left: 0;
   right: 200%;
   background-color: #8e44ad;
+  background-position: bottom;
 }
 
 .sb2 {
   left: 100%;
   right: 100%;
   background-color: #ea4c89;
+  background-position: center;
 }
 
 .sb3 {
   left: 200%;
   right: 0;
   background-color: #75c1e8;
+  background-position: center;
 }
 
-.sb1 {
-  background-position: bottom;
-}
-
-.sb2,
-.sb3 {
-  background-position: center center;
-}
-
-.sb1,
-.sb2,
-.sb3 {
-  background-size: cover;
-  background-repeat: no-repeat;
-}
-
-.slider-items {
+.slider-foregrounds {
   -webkit-transition: -webkit-transform 700ms ease;
   transition: -webkit-transform 700ms ease;
   transition: transform 700ms ease;
   transition: transform 700ms ease, -webkit-transform 700ms ease;
   z-index: 0;
-  margin-top: -600px;
+  margin-top: -75vh;
 }
 
-.si1 > img {
-  width: 25%;
-  max-width: 4489px;
-  max-height: 3139px;
-  vertical-align: middle;
-}
-
-.si1 > figcaption {
-  font-family: Dapps-Pacifico, Open-Sans, Dapps-Lato, "Lucida Grande", "Lucida Sans Unicode", Tahoma, Sans-Serif;
-  font-size: 18pt;
-  color: #fff;
-}
-
-.si2 > img {
-  width: 40%;
-  max-width: 946px;
-  max-height: 457px;
-}
-
-.si3 > figcaption {
-  font-family: BonvenoCF, Open-Sans, Dapps-Lato, "Lucida Grande", "Lucida Sans Unicode", Tahoma, Sans-Serif;
-  font-size: 34pt;
-  color: #fff;
-}
-
-.si1,
-.si2,
-.si3 {
+.slider-foregrounds > * {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -387,6 +343,31 @@ body {
   -webkit-justify-content: center;
       -ms-flex-pack: center;
           justify-content: center;
+}
+
+.sf1 > img {
+  width: 25%;
+  max-width: 4489px;
+  max-height: 3139px;
+  vertical-align: middle;
+}
+
+.sf1 > figcaption {
+  font-family: Dapps-Pacifico, Open-Sans, Dapps-Lato, "Lucida Grande", "Lucida Sans Unicode", Tahoma, Sans-Serif;
+  font-size: 18pt;
+  color: #fff;
+}
+
+.sf2 > img {
+  width: 40%;
+  max-width: 946px;
+  max-height: 457px;
+}
+
+.sf3 > figcaption {
+  font-family: BonvenoCF, Open-Sans, Dapps-Lato, "Lucida Grande", "Lucida Sans Unicode", Tahoma, Sans-Serif;
+  font-size: 34pt;
+  color: #fff;
 }
 
 #contact {
@@ -526,7 +507,7 @@ footer > ul > li {
 
 /* Make sure media queries get linked last */
 /* 16:9 */
-@media only screen and (min-device-width: 0px) and (max-device-width: 480px) {
+@media only screen and (min-width: 0px) and (max-width: 480px) {
   .sb1 {
     background-image: url(/images/slider/dapper-apps/dapper-background_480.png);
   }
@@ -538,7 +519,7 @@ footer > ul > li {
   }
 }
 
-@media only screen and (min-device-width: 0px) and (max-device-width: 640px) {
+@media only screen and (min-width: 0px) and (max-width: 640px) {
   .sb1 {
     background-image: url(/images/slider/dapper-apps/dapper-background_640.png);
   }
@@ -550,7 +531,7 @@ footer > ul > li {
   }
 }
 
-@media only screen and (min-device-width: 640px) and (max-device-width: 720px) {
+@media only screen and (min-width: 640px) and (max-width: 720px) {
   .sb1 {
     background-image: url(/images/slider/dapper-apps/dapper-background_720.png);
   }
@@ -562,7 +543,7 @@ footer > ul > li {
   }
 }
 
-@media only screen and (min-device-width: 720px) and (max-device-width: 848px) {
+@media only screen and (min-width: 720px) and (max-width: 848px) {
   .sb1 {
     background-image: url(/images/slider/dapper-apps/dapper-background_848.png);
   }
@@ -574,7 +555,7 @@ footer > ul > li {
   }
 }
 
-@media only screen and (min-device-width: 848px) and (max-device-width: 960px) {
+@media only screen and (min-width: 848px) and (max-width: 960px) {
   .sb1 {
     background-image: url(/images/slider/dapper-apps/dapper-background_960.png);
   }
@@ -586,7 +567,7 @@ footer > ul > li {
   }
 }
 
-@media only screen and (min-device-width: 960px) and (max-device-width: 1024px) {
+@media only screen and (min-width: 960px) and (max-width: 1024px) {
   .sb1 {
     background-image: url(/images/slider/dapper-apps/dapper-background_1024.png);
   }
@@ -598,7 +579,7 @@ footer > ul > li {
   }
 }
 
-@media only screen and (min-device-width: 1024px) and (max-device-width: 1280px) {
+@media only screen and (min-width: 1024px) and (max-width: 1280px) {
   .sb1 {
     background-image: url(/images/slider/dapper-apps/dapper-background_1280.png);
   }
@@ -610,7 +591,7 @@ footer > ul > li {
   }
 }
 
-@media only screen and (min-device-width: 1280px) and (max-device-width: 1366px) {
+@media only screen and (min-width: 1280px) and (max-width: 1366px) {
   .sb1 {
     background-image: url(/images/slider/dapper-apps/dapper-background_1366.png);
   }
@@ -622,7 +603,7 @@ footer > ul > li {
   }
 }
 
-@media only screen and (min-device-width: 1366px) and (max-device-width: 1600px) {
+@media only screen and (min-width: 1366px) and (max-width: 1600px) {
   .sb1 {
     background-image: url(/images/slider/dapper-apps/dapper-background_1600.png);
   }
@@ -634,7 +615,7 @@ footer > ul > li {
   }
 }
 
-@media only screen and (min-device-width: 1600px) and (max-device-width: 1920px) {
+@media only screen and (min-width: 1600px) and (max-width: 1920px) {
   .sb1 {
     background-image: url(/images/slider/dapper-apps/dapper-background_1920.png);
   }
@@ -646,7 +627,7 @@ footer > ul > li {
   }
 }
 
-@media only screen and (min-device-width: 1920px) and (max-device-width: 2048px) {
+@media only screen and (min-width: 1920px) and (max-width: 2048px) {
   .sb1 {
     background-image: url(/images/slider/dapper-apps/dapper-background_2048.png);
   }
@@ -658,7 +639,7 @@ footer > ul > li {
   }
 }
 
-@media only screen and (min-device-width: 2048px) and (max-device-width: 2560px) {
+@media only screen and (min-width: 2048px) and (max-width: 2560px) {
   .sb1 {
     background-image: url(/images/slider/dapper-apps/dapper-background_2560.png);
   }
@@ -670,7 +651,7 @@ footer > ul > li {
   }
 }
 
-@media only screen and (min-device-width: 2048px) and (max-device-width: 2880px) {
+@media only screen and (min-width: 2048px) and (max-width: 2880px) {
   .sb1 {
     background-image: url(/images/slider/dapper-apps/dapper-background_2880.png);
   }
@@ -682,7 +663,7 @@ footer > ul > li {
   }
 }
 
-@media only screen and (min-device-width: 2880px) and (max-device-width: 3200px) {
+@media only screen and (min-width: 2880px) and (max-width: 3200px) {
   .sb1 {
     background-image: url(/images/slider/dapper-apps/dapper-background_3200.png);
   }
@@ -694,7 +675,7 @@ footer > ul > li {
   }
 }
 
-@media only screen and (min-device-width: 3200px) and (max-device-width: 3840px) {
+@media only screen and (min-width: 3200px) and (max-width: 3840px) {
   .sb1 {
     background-image: url(/images/slider/dapper-apps/dapper-background_3840.png);
   }
@@ -706,7 +687,7 @@ footer > ul > li {
   }
 }
 
-@media only screen and (min-device-width: 3840px) and (max-device-width: 4096px) {
+@media only screen and (min-width: 3840px) and (max-width: 4096px) {
   .sb1 {
     background-image: url(/images/slider/dapper-apps/dapper-background_4096.png);
   }
@@ -718,7 +699,7 @@ footer > ul > li {
   }
 }
 
-@media only screen and (min-device-width: 4096px) and (max-device-width: 5120px) {
+@media only screen and (min-width: 4096px) and (max-width: 5120px) {
   .sb1 {
     background-image: url(/images/slider/dapper-apps/dapper-background_4489.png);
   }

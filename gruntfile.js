@@ -15,7 +15,7 @@ module.exports = function (grunt) {
           outputStyle: 'expanded'
         },
         files: {
-          'public/stylesheets/index.css': 'views/sass/index.scss'
+          'public/stylesheets/index.min.css': 'views/sass/index.scss'
         }
       },
       dist: {
@@ -23,7 +23,7 @@ module.exports = function (grunt) {
           outputStyle: 'compressed'
         },
         files: {
-          'public/stylesheets/index.css': 'views/sass/index.scss'
+          'public/stylesheets/index.min.css': 'views/sass/index.scss'
         }
       }
     },

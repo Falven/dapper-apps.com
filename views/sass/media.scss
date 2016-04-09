@@ -1,7 +1,7 @@
 /* 16:9 */
 @media only screen
-and (min-device-width: 0px)
-and (max-device-width: 480px) {
+and (min-width: 0px)
+and (max-width: 480px) {
   .sb1 {
     background-image: url(/images/slider/dapper-apps/dapper-background_480.png);
   }
@@ -16,8 +16,8 @@ and (max-device-width: 480px) {
 }
 
 @media only screen
-and (min-device-width: 0px)
-and (max-device-width: 640px) {
+and (min-width: 0px)
+and (max-width: 640px) {
   .sb1 {
     background-image: url(/images/slider/dapper-apps/dapper-background_640.png);
   }
@@ -32,8 +32,8 @@ and (max-device-width: 640px) {
 }
 
 @media only screen
-and (min-device-width: 640px)
-and (max-device-width: 720px) {
+and (min-width: 640px)
+and (max-width: 720px) {
   .sb1 {
     background-image: url(/images/slider/dapper-apps/dapper-background_720.png);
   }
@@ -48,8 +48,8 @@ and (max-device-width: 720px) {
 }
 
 @media only screen
-and (min-device-width: 720px)
-and (max-device-width: 848px) {
+and (min-width: 720px)
+and (max-width: 848px) {
   .sb1 {
     background-image: url(/images/slider/dapper-apps/dapper-background_848.png);
   }
@@ -64,8 +64,8 @@ and (max-device-width: 848px) {
 }
 
 @media only screen
-and (min-device-width: 848px)
-and (max-device-width: 960px) {
+and (min-width: 848px)
+and (max-width: 960px) {
   .sb1 {
     background-image: url(/images/slider/dapper-apps/dapper-background_960.png);
   }
@@ -80,8 +80,8 @@ and (max-device-width: 960px) {
 }
 
 @media only screen
-and (min-device-width: 960px)
-and (max-device-width: 1024px) {
+and (min-width: 960px)
+and (max-width: 1024px) {
   .sb1 {
     background-image: url(/images/slider/dapper-apps/dapper-background_1024.png);
   }
@@ -96,8 +96,8 @@ and (max-device-width: 1024px) {
 }
 
 @media only screen
-and (min-device-width: 1024px)
-and (max-device-width: 1280px) {
+and (min-width: 1024px)
+and (max-width: 1280px) {
   .sb1 {
     background-image: url(/images/slider/dapper-apps/dapper-background_1280.png);
   }
@@ -112,8 +112,8 @@ and (max-device-width: 1280px) {
 }
 
 @media only screen
-and (min-device-width: 1280px)
-and (max-device-width: 1366px) {
+and (min-width: 1280px)
+and (max-width: 1366px) {
   .sb1 {
     background-image: url(/images/slider/dapper-apps/dapper-background_1366.png);
   }
@@ -128,8 +128,8 @@ and (max-device-width: 1366px) {
 }
 
 @media only screen
-and (min-device-width: 1366px)
-and (max-device-width: 1600px) {
+and (min-width: 1366px)
+and (max-width: 1600px) {
   .sb1 {
     background-image: url(/images/slider/dapper-apps/dapper-background_1600.png);
   }
@@ -144,8 +144,8 @@ and (max-device-width: 1600px) {
 }
 
 @media only screen
-and (min-device-width: 1600px)
-and (max-device-width: 1920px) {
+and (min-width: 1600px)
+and (max-width: 1920px) {
   .sb1 {
     background-image: url(/images/slider/dapper-apps/dapper-background_1920.png);
   }
@@ -160,8 +160,8 @@ and (max-device-width: 1920px) {
 }
 
 @media only screen
-and (min-device-width: 1920px)
-and (max-device-width: 2048px) {
+and (min-width: 1920px)
+and (max-width: 2048px) {
   .sb1 {
     background-image: url(/images/slider/dapper-apps/dapper-background_2048.png);
   }
@@ -176,8 +176,8 @@ and (max-device-width: 2048px) {
 }
 
 @media only screen
-and (min-device-width: 2048px)
-and (max-device-width: 2560px) {
+and (min-width: 2048px)
+and (max-width: 2560px) {
   .sb1 {
     background-image: url(/images/slider/dapper-apps/dapper-background_2560.png);
   }
@@ -192,8 +192,8 @@ and (max-device-width: 2560px) {
 }
 
 @media only screen
-and (min-device-width: 2048px)
-and (max-device-width: 2880px) {
+and (min-width: 2048px)
+and (max-width: 2880px) {
   .sb1 {
     background-image: url(/images/slider/dapper-apps/dapper-background_2880.png);
   }
@@ -208,8 +208,8 @@ and (max-device-width: 2880px) {
 }
 
 @media only screen
-and (min-device-width: 2880px)
-and (max-device-width: 3200px) {
+and (min-width: 2880px)
+and (max-width: 3200px) {
   .sb1 {
     background-image: url(/images/slider/dapper-apps/dapper-background_3200.png);
   }
@@ -224,8 +224,8 @@ and (max-device-width: 3200px) {
 }
 
 @media only screen
-and (min-device-width: 3200px)
-and (max-device-width: 3840px) {
+and (min-width: 3200px)
+and (max-width: 3840px) {
   .sb1 {
     background-image: url(/images/slider/dapper-apps/dapper-background_3840.png);
   }
@@ -240,8 +240,8 @@ and (max-device-width: 3840px) {
 }
 
 @media only screen
-and (min-device-width: 3840px)
-and (max-device-width: 4096px) {
+and (min-width: 3840px)
+and (max-width: 4096px) {
   .sb1 {
     background-image: url(/images/slider/dapper-apps/dapper-background_4096.png);
   }
@@ -256,8 +256,8 @@ and (max-device-width: 4096px) {
 }
 
 @media only screen
-and (min-device-width: 4096px)
-and (max-device-width: 5120px) {
+and (min-width: 4096px)
+and (max-width: 5120px) {
   .sb1 {
     background-image: url(/images/slider/dapper-apps/dapper-background_4489.png);
   }
