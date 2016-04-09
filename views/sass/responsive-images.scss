@@ -1,0 +1,71 @@
+$breakpoints: (
+  "wearable": 0px,
+  "mobile-s": 320px,
+  "mobile-m": 375px,
+  "mobile-l": 425px,
+  "tablet": 768px,
+  "laptop-s": 1024px,
+  "laptop-m": 1440px,
+  "laptop-l": 1920px,
+  "desktop-s": 2560px,
+  "desktop-m": 3200px,
+  "desktop-l": 4096px,
+  "theatre": 5120px
+);
+
+@mixin respond-min($key) {
+  @if map-has-key($breakpoints, $key) {
+    @media only screen
+    and (min-width: #{inspect(map-get($breakpoints, $key))}) {
+      @content;
+    }
+  }
+  @else {
+    @warn "Unfortunately, no value could be retrieved from `#{$breakpoint}`. "
+        + "Please make sure it is defined in `$breakpoints` map.";
+  }
+}
+
+@mixin respond-max($key) {
+  @if map-has-key($breakpoints, $key) {
+    @media only screen
+    and (max-width: #{inspect(map-get($breakpoints, $key))}) {
+      @content;
+    }
+  }
+  @else {
+    @warn "Unfortunately, no value could be retrieved from `#{$breakpoint}`. "
+        + "Please make sure it is defined in `$breakpoints` map.";
+  }
+}
+
+@mixin respond-to($key-min, $key-max) {
+  @if map-has-key($breakpoints, $key-min)
+  && map-has-key($breakpoints, $key-max) {
+    @media only screen
+    and (min-width: #{inspect(map-get($breakpoints, $key-min))})
+    and (max-width: #{inspect(map-get($breakpoints, $key-max))}) {
+      @content;
+    }
+  }
+  @else {
+    @warn "Unfortunately, no value could be retrieved from `#{$breakpoint}`. "
+        + "Please make sure it is defined in `$breakpoints` map.";
+  }
+}
+
+@each $name, $value in $breakpoints {
+  @include respond-min($name) {
+    .sb1 {
+      background-image: url(/images/slider/dapper-apps/dapper-background_#{$value}.png);
+    }
+
+    .sb2 {
+      background-image: url(/images/slider/kamis-nightmare/kami-background_#{$value}.png);
+    }
+
+    .sb3 {
+      background-image: url(/images/slider/at-franco/franco-background_#{$value}.png);
+    }
+  }
+}

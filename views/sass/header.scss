@@ -1,6 +1,4 @@
 $items: 3;
-$slide-height: 75vh;
-$max-slide-height: 1658px;
 $foreground-transition-speed: 700ms;
 $active-transition-speed: $foreground-transition-speed;
 $background-transition-speed: 900ms;
@@ -8,73 +6,129 @@ $active-z-index: 2;
 $button-z-index: 1;
 $foreground-z-index: 0;
 $background-z-index: -1;
-$button-color: #fff;
-$buttons-left: 49.3%;
-$buttons-bottom: 12px;
-$button-dimensions: 16px;
-$button-border-size: 2px;
-$button-margin: 20px;
+$primary-color: #fff;
 
-#slider {
-  position: relative;
-  margin: 25px 25px 15px 25px;
-  overflow: hidden;
-  border-radius: 2px;
-  box-shadow: 1px 2px 10px 0px rgba(0, 0, 0, 0.3);
-  > input[type="radio"] {
-    display: none;
+@mixin slider($margin, $border-radius, $box-shadow) {
+  #slider {
+    position: relative;
+    margin: $margin;
+    overflow: hidden;
+    border-radius: $border-radius;
+    box-shadow: $box-shadow;
+    > input[type="radio"] {
+      display: none;
+    }
   }
 }
 
-.button {
-  border: $button-border-size solid $button-color;
-  height: $button-dimensions;
-  width: $button-dimensions;
-  left: $buttons-left;
-  bottom: $buttons-bottom;
-  cursor: pointer;
-  z-index: $button-z-index;
-}
-
-.active {
-  width: $button-dimensions / 2;
-  height: $button-dimensions / 2;
-  background-color: $button-color;
-  left: calc(#{$buttons-left} - #{$button-margin} + #{$button-dimensions} / 4);
-  bottom: $buttons-bottom + $button-dimensions / 4;
-  z-index: $active-z-index;
-  transition: all $active-transition-speed ease;
+@mixin slider-height($height) {
+  .slider-stack > * {
+    height: $height;
+  }
+  .slider-foregrounds {
+    margin-top: -$height;
+  }
 }
 
 .button,
 .active {
-  box-sizing: border-box;
   position: absolute;
   border-radius: 50%;
 }
 
-.b1 {
-  margin-left: -$button-margin;
+.button {
+  cursor: pointer;
+  z-index: $button-z-index;
+  border-style: solid;
+  border-color: $primary-color;
 }
 
-.b2 {
-  margin-left: 0;
-}
-
-.b3 {
-  margin-left: $button-margin;
+.active {
+  z-index: $active-z-index;
+  transition: all $active-transition-speed ease;
+  background-color: $primary-color;
 }
 
 #radio1:checked ~ .active {
   transform: translateX(0);
 }
 
-#radio2:checked ~ .active {
-  transform: translateX($button-margin);
+.b2 {
+  margin-left: 0;
 }
 
-#radio3:checked ~ .active {
-  transform: translateX($button-margin * 2);
+@mixin slider-controls($dimensions, $margin, $border-size, $left, $bottom) {
+  .button {
+    height: $dimensions;
+    width: $dimensions;
+    left: calc(#{$left} - #{$dimensions / 2});
+    bottom: $bottom;
+    border-width: $border-size;
+  }
+  $active-dimensions: $dimensions / 2;
+  .active {
+    height: $active-dimensions;
+    width: $active-dimensions;
+    left: calc(#{$left} - #{$active-dimensions / 2} - #{$margin});
+    bottom: $bottom + $active-dimensions / 2;
+  }
+  #radio2:checked ~ .active {
+    transform: translateX($margin);
+  }
+  #radio3:checked ~ .active {
+    transform: translateX($margin * 2);
+  }
+  .b1 {
+    margin-left: -$margin;
+  }
+  .b3 {
+    margin-left: $margin;
+  }
+}
+
+.sf1 {
+  > img {
+    vertical-align: middle;
+  }
+  > figcaption {
+    font-family: Dapps-Pacifico, $fallback-fonts;
+    color: $primary-color;
+  }
+}
+
+@mixin sf1($img-width, $font-size, $separation) {
+  .sf1 {
+    > img {
+      width: $img-width;
+      margin-bottom: $separation;
+    }
+    > figcaption {
+      font-size: $font-size;
+    }
+  }
+}
+
+@mixin sf2($img-width) {
+  .sf2 {
+    > img {
+      width: $img-width;
+    }
+  }
+}
+
+.sf3 {
+  > figcaption {
+    font-family: BonvenoCF, $fallback-fonts;
+    color: $primary-color;
+  }
+}
+
+@mixin sf3($font-size) {
+  .sf3 {
+    > figcaption {
+      font-size: $font-size;
+    }
+  }
 }
 
 #radio1:checked ~ .slider-stack {
@@ -95,8 +149,6 @@ $button-margin: 20px;
   display: flex;
   > * {
     width: 100%;
-    height: $slide-height;
-    max-height: $max-slide-height;
   }
 }
 
@@ -120,7 +172,7 @@ $button-margin: 20px;
   left: 100%;
   right: 100%;
   background-color: #ea4c89;
-  background-position: center;
+  background-position: bottom;
 }
 
 .sb3 {
@@ -133,7 +185,6 @@ $button-margin: 20px;
 .slider-foregrounds {
   transition: transform $foreground-transition-speed ease;
   z-index: $foreground-z-index;
-  margin-top: -$slide-height;
   > * {
     display: flex;
     margin: 0;
@@ -143,32 +194,97 @@ $button-margin: 20px;
   }
 }
 
-.sf1 {
-  > img {
-    width: 25%;
-    max-width: 4489px;
-    max-height: 3139px;
-    vertical-align: middle;
-  }
-  > figcaption {
-    font-family: Dapps-Pacifico, $fallback-fonts;
-    font-size: 18pt;
-    color: #fff;
-  }
+// $margin, $border-radius
+@include slider(25px 25px 15px 25px, 2px, 1px 2px 10px 0px rgba(0, 0, 0, 0.3));
+// $height
+@include slider-height(224px);
+// $dimensions, $margin, $border-size, $left, $bottom
+@include slider-controls(12px, 20px, 2px, 50%, 12px);
+// $img-width, $font-size, $separation
+@include sf1(75px, 14px, 5px);
+// $img-width
+@include sf2(150px);
+// $font-size
+@include sf3(16px);
+@include respond-min("mobile-m") {
+  @include slider-height(262px);
+  @include sf1(85px, 15px, 10px);
+  @include sf2(175px);
+  @include sf3(18px);
+}
+@include respond-min("mobile-l") {
+  @include slider-height(297px);
+  @include sf1(95px, 16px, 15px);
+  @include sf2(200px);
+  @include sf3(20px);
+}
+@include respond-min("tablet") {
+  @include slider(25px 25px 15px 25px, 3px, 1px 2px 10px 0px rgba(0, 0, 0, 0.3));
+  @include slider-height(375px);
+  @include sf1(145px, 19px, 15px);
+  @include sf2(300px);
+  @include sf3(34px);
+  @include slider-controls(16px, 26px, 2px, 50%, 18px);
+}
+@include respond-min("laptop-s") {
+  @include slider(40px 40px 30px 40px, 4px, 1px 2px 10px 0px rgba(0, 0, 0, 0.3));
+  @include slider-height(675px);
+  @include sf1(250px, 28px, 25px);
+  @include sf2(500px);
+  @include sf3(46px);
+  @include slider-controls(16px, 26px, 2px, 50%, 18px);
+}
+@include respond-min("laptop-m") {
+  @include slider(60px 60px 50px 60px, 5px, 1px 2px 10px 0px rgba(0, 0, 0, 0.3));
+  @include slider-height(800px);
+  @include sf1(300px, 34px, 30px);
+  @include sf2(600px);
+  @include sf3(62px);
+  @include slider-controls(24px, 36px, 3px, 50%, 22px);
+}
+@include respond-min("laptop-l") {
+  @include slider(80px 80px 70px 80px, 6px, 1px 2px 10px 0px rgba(0, 0, 0, 0.3));
+  @include slider-height(1000px);
+  @include sf1(400px, 44px, 36px);
+  @include sf2(800px);
+  @include sf3(84px);
+  @include slider-controls(36px, 60px, 5px, 50%, 32px);
+}
+@include respond-min("desktop-s") {
+  @include slider(100px 100px 90px 100px, 7px, 1px 2px 10px 0px rgba(0, 0, 0, 0.3));
+  @include slider-height(1350px);
+  @include sf1(500px, 56px, 50px);
+  @include sf2(1100px);
+  @include sf3(114px);
+  @include slider-controls(48px, 74px, 6px, 50%, 42px);
+}
+@include respond-min("desktop-m") {
+  @include slider(120px 120px 110px 120px, 8px, 1px 2px 10px 0px rgba(0, 0, 0, 0.3));
+  @include slider-height(1700px);
+  @include sf1(500px, 56px, 50px);
+  @include sf2(1100px);
+  @include sf3(114px);
+  @include slider-controls(48px, 74px, 6px, 50%, 42px);
+}
+@include respond-min("desktop-l") {
+  @include slider(140px 140px 130px 140px, 9px, 1px 2px 10px 0px rgba(0, 0, 0, 0.3));
+  @include slider-height(1850px);
+  @include sf1(700px, 84px, 75px);
+  @include sf2(1400px);
+  @include sf3(175px);
+  @include slider-controls(72px, 122px, 8px, 50%, 60px);
 }
 
-.sf2 {
-  > img {
-    width: 40%;
-    max-width: 946px;
-    max-height: 457px;
-  }
-}
-
-.sf3 {
-  > figcaption {
-    font-family: BonvenoCF, $fallback-fonts;
-    font-size: 34pt;
-    color: #fff;
+@each $name, $value in $breakpoints {
+  @include respond-min($name) {
+    .sb1 {
+      background-image: url(/images/slider/dapper-apps/dapper-background_#{$value}.png);
+    }
+    .sb2 {
+      background-image: url(/images/slider/kamis-nightmare/kami-background_#{$value}.png);
+    }
+    .sb3 {
+      background-image: url(/images/slider/at-franco/franco-background_#{$value}.png);
+    }
   }
 }
