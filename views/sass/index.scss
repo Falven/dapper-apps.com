@@ -1,10 +1,8 @@
 @charset "utf-8";
 
-@import 'utility';
-
-@import 'fonts';
-
 @import 'reset';
+
+@import 'utility';
 
 $fallback-fonts: Open-Sans, Dapps-Lato, "Lucida Grande", "Lucida Sans Unicode", Tahoma, Sans-Serif;
 body {

@@ -1,0 +1,168 @@
+/* Fonts */
+@font-face {
+  font-family: 'Dapps-Lato';
+  src: url("/fonts/dapps-lato-web/dapps-lato-bla-webfont.eot");
+  src: url("/fonts/dapps-lato-web/dapps-lato-bla-webfont.eot?#iefix") format("embedded-opentype"), url("/fonts/dapps-lato-web/dapps-lato-bla-webfont.woff") format("woff"), url("/fonts/dapps-lato-web/dapps-lato-bla-webfont.ttf") format("truetype"), url("/fonts/dapps-lato-web/dapps-lato-bla-webfont.svg#latoblack") format("svg");
+  font-weight: 900;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Dapps-Lato';
+  src: url("/fonts/dapps-lato-web/dapps-lato-blaita-webfont.eot");
+  src: url("/fonts/dapps-lato-web/dapps-lato-blaita-webfont.eot?#iefix") format("embedded-opentype"), url("/fonts/dapps-lato-web/dapps-lato-blaita-webfont.woff") format("woff"), url("/fonts/dapps-lato-web/dapps-lato-blaita-webfont.ttf") format("truetype"), url("/fonts/dapps-lato-web/dapps-lato-blaita-webfont.svg#latoblack_italic") format("svg");
+  font-weight: 900;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Dapps-Lato';
+  src: url("/fonts/dapps-lato-web/dapps-lato-bol-webfont.eot");
+  src: url("/fonts/dapps-lato-web/dapps-lato-bol-webfont.eot?#iefix") format("embedded-opentype"), url("/fonts/dapps-lato-web/dapps-lato-bol-webfont.woff") format("woff"), url("/fonts/dapps-lato-web/dapps-lato-bol-webfont.ttf") format("truetype"), url("/fonts/dapps-lato-web/dapps-lato-bol-webfont.svg#latobold") format("svg");
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Dapps-Lato';
+  src: url("/fonts/dapps-lato-web/dapps-lato-bolita-webfont.eot");
+  src: url("/fonts/dapps-lato-web/dapps-lato-bolita-webfont.eot?#iefix") format("embedded-opentype"), url("/fonts/dapps-lato-web/dapps-lato-bolita-webfont.woff") format("woff"), url("/fonts/dapps-lato-web/dapps-lato-bolita-webfont.ttf") format("truetype"), url("/fonts/dapps-lato-web/dapps-lato-bolita-webfont.svg#latobold_italic") format("svg");
+  font-weight: bold;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Dapps-Lato';
+  src: url("/fonts/dapps-lato-web/dapps-lato-hai-webfont.eot");
+  src: url("/fonts/dapps-lato-web/dapps-lato-hai-webfont.eot?#iefix") format("embedded-opentype"), url("/fonts/dapps-lato-web/dapps-lato-hai-webfont.woff") format("woff"), url("/fonts/dapps-lato-web/dapps-lato-hai-webfont.ttf") format("truetype"), url("/fonts/dapps-lato-web/dapps-lato-hai-webfont.svg#latohairline") format("svg");
+  font-weight: 200;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Dapps-Lato';
+  src: url("/fonts/dapps-lato-web/dapps-lato-haiita-webfont.eot");
+  src: url("/fonts/dapps-lato-web/dapps-lato-haiita-webfont.eot?#iefix") format("embedded-opentype"), url("/fonts/dapps-lato-web/dapps-lato-haiita-webfont.woff") format("woff"), url("/fonts/dapps-lato-web/dapps-lato-haiita-webfont.ttf") format("truetype"), url("/fonts/dapps-lato-web/dapps-lato-haiita-webfont.svg#latohairline_italic") format("svg");
+  font-weight: 200;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Dapps-Lato';
+  src: url("/fonts/dapps-lato-web/dapps-lato-lig-webfont.eot");
+  src: url("/fonts/dapps-lato-web/dapps-lato-lig-webfont.eot?#iefix") format("embedded-opentype"), url("/fonts/dapps-lato-web/dapps-lato-lig-webfont.woff") format("woff"), url("/fonts/dapps-lato-web/dapps-lato-lig-webfont.ttf") format("truetype"), url("/fonts/dapps-lato-web/dapps-lato-lig-webfont.svg#latolight") format("svg");
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Dapps-Lato';
+  src: url("/fonts/dapps-lato-web/dapps-lato-ligita-webfont.eot");
+  src: url("/fonts/dapps-lato-web/dapps-lato-ligita-webfont.eot?#iefix") format("embedded-opentype"), url("/fonts/dapps-lato-web/dapps-lato-ligita-webfont.woff") format("woff"), url("/fonts/dapps-lato-web/dapps-lato-ligita-webfont.ttf") format("truetype"), url("/fonts/dapps-lato-web/dapps-lato-ligita-webfont.svg#latolight_italic") format("svg");
+  font-weight: normal;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Dapps-Lato';
+  src: url("/fonts/dapps-lato-web/dapps-lato-reg-webfont.eot");
+  src: url("/fonts/dapps-lato-web/dapps-lato-reg-webfont.eot?#iefix") format("embedded-opentype"), url("/fonts/dapps-lato-web/dapps-lato-reg-webfont.woff") format("woff"), url("/fonts/dapps-lato-web/dapps-lato-reg-webfont.ttf") format("truetype"), url("/fonts/dapps-lato-web/dapps-lato-reg-webfont.svg#latoregular") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Dapps-Lato';
+  src: url("/fonts/dapps-lato-web/dapps-lato-regita-webfont.eot");
+  src: url("/fonts/dapps-lato-web/dapps-lato-regita-webfont.eot?#iefix") format("embedded-opentype"), url("/fonts/dapps-lato-web/dapps-lato-regita-webfont.woff") format("woff"), url("/fonts/dapps-lato-web/dapps-lato-regita-webfont.ttf") format("truetype"), url("/fonts/dapps-lato-web/dapps-lato-regita-webfont.svg#latoitalic") format("svg");
+  font-weight: normal;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Open-Sans';
+  src: url("/fonts/opensans-web/opensans-bold-webfont.eot");
+  src: url("/fonts/opensans-web/opensans-bold-webfont.eot?#iefix") format("embedded-opentype"), url("/fonts/opensans-web/opensans-bold-webfont.woff2") format("woff2"), url("/fonts/opensans-web/opensans-bold-webfont.woff") format("woff"), url("/fonts/opensans-web/opensans-bold-webfont.ttf") format("truetype"), url("/fonts/opensans-web/opensans-bold-webfont.svg#open_sansbold") format("svg");
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Open-Sans';
+  src: url("/fonts/opensans-web/opensans-light-webfont.eot");
+  src: url("/fonts/opensans-web/opensans-light-webfont.eot?#iefix") format("embedded-opentype"), url("/fonts/opensans-web/opensans-light-webfont.woff2") format("woff2"), url("/fonts/opensans-web/opensans-light-webfont.woff") format("woff"), url("/fonts/opensans-web/opensans-light-webfont.ttf") format("truetype"), url("/fonts/opensans-web/opensans-light-webfont.svg#open_sanslight") format("svg");
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Open-Sans';
+  src: url("/fonts/opensans-web/opensans-regular-webfont.eot");
+  src: url("/fonts/opensans-web/opensans-regular-webfont.eot?#iefix") format("embedded-opentype"), url("/fonts/opensans-web/opensans-regular-webfont.woff2") format("woff2"), url("/fonts/opensans-web/opensans-regular-webfont.woff") format("woff"), url("/fonts/opensans-web/opensans-regular-webfont.ttf") format("truetype"), url("/fonts/opensans-web/opensans-regular-webfont.svg#open_sansregular") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Open-Sans';
+  src: url("/fonts/opensans-web/opensans-semibold-webfont.eot");
+  src: url("/fonts/opensans-web/opensans-semibold-webfont.eot?#iefix") format("embedded-opentype"), url("/fonts/opensans-web/opensans-semibold-webfont.woff2") format("woff2"), url("/fonts/opensans-web/opensans-semibold-webfont.woff") format("woff"), url("/fonts/opensans-web/opensans-semibold-webfont.ttf") format("truetype"), url("/fonts/opensans-web/opensans-semibold-webfont.svg#open_sanssemibold") format("svg");
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Dapps-Raleway';
+  src: url("/fonts/dapps-raleway-web/dapps-raleway/raleway-bold-webfont.eot");
+  src: url("/fonts/dapps-raleway-web/dapps-raleway-bold-webfont.eot?#iefix") format("embedded-opentype"), url("/fonts/dapps-raleway-web/dapps-raleway-bold-webfont.woff2") format("woff2"), url("/fonts/dapps-raleway-web/dapps-raleway-bold-webfont.woff") format("woff"), url("/fonts/dapps-raleway-web/dapps-raleway-bold-webfont.ttf") format("truetype"), url("/fonts/dapps-raleway-web/dapps-raleway-bold-webfont.svg#ralewaybold") format("svg");
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Dapps-Raleway';
+  src: url("/fonts/dapps-raleway-web/dapps-raleway-italic-webfont.eot");
+  src: url("/fonts/dapps-raleway-web/dapps-raleway-italic-webfont.eot?#iefix") format("embedded-opentype"), url("/fonts/dapps-raleway-web/dapps-raleway-italic-webfont.woff2") format("woff2"), url("/fonts/dapps-raleway-web/dapps-raleway-italic-webfont.woff") format("woff"), url("/fonts/dapps-raleway-web/dapps-raleway-italic-webfont.ttf") format("truetype"), url("/fonts/dapps-raleway-web/dapps-raleway-italic-webfont.svg#ralewayitalic") format("svg");
+  font-weight: normal;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Dapps-Raleway';
+  src: url("/fonts/dapps-raleway-web/dapps-raleway-regular-webfont.eot");
+  src: url("/fonts/dapps-raleway-web/dapps-raleway-regular-webfont.eot?#iefix") format("embedded-opentype"), url("/fonts/dapps-raleway-web/dapps-raleway-regular-webfont.woff2") format("woff2"), url("/fonts/dapps-raleway-web/dapps-raleway-regular-webfont.woff") format("woff"), url("/fonts/dapps-raleway-web/dapps-raleway-regular-webfont.ttf") format("truetype"), url("/fonts/dapps-raleway-web/dapps-raleway-regular-webfont.svg#ralewayregular") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'BonvenoCF';
+  src: url("/fonts/bonvenocf-web/BonvenoCF-Light-webfont.eot");
+  src: url("/fonts/bonvenocf-web/BonvenoCF-Light-webfont.eot?#iefix") format("embedded-opentype"), url("/fonts/bonvenocf-web/BonvenoCF-Light-webfont.woff") format("woff"), url("/fonts/bonvenocf-web/BonvenoCF-Light-webfont.ttf") format("truetype"), url("/fonts/bonvenocf-web/BonvenoCF-Light-webfont.svg#bonvenocflight") format("svg");
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Dapps-GrandHotel';
+  src: url("/fonts/dapps-grandhotel-web/dapps-grandhotel-regular-webfont.eot");
+  src: url("/fonts/dapps-grandhotel-web/dapps-grandhotel-regular-webfont.eot?#iefix") format("embedded-opentype"), url("/fonts/dapps-grandhotel-web/dapps-grandhotel-regular-webfont.woff2") format("woff2"), url("/fonts/dapps-grandhotel-web/dapps-grandhotel-regular-webfont.woff") format("woff"), url("/fonts/dapps-grandhotel-web/dapps-grandhotel-regular-webfont.ttf") format("truetype"), url("/fonts/dapps-grandhotel-web/dapps-grandhotel-regular-webfont.svg#grand_hotelregular") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Dapps-DancingScript';
+  src: url("/fonts/dapps-dancingscript-web/dapps-dancingscript-regular-webfont.eot");
+  src: url("/fonts/dapps-dancingscript-web/dapps-dancingscript-regular-webfont.eot?#iefix") format("embedded-opentype"), url("/fonts/dapps-dancingscript-web/dapps-dancingscript-regular-webfont.woff2") format("woff2"), url("/fonts/dapps-dancingscript-web/dapps-dancingscript-regular-webfont.woff") format("woff"), url("/fonts/dapps-dancingscript-web/dapps-dancingscript-regular-webfont.ttf") format("truetype"), url("/fonts/dapps-dancingscript-web/dapps-dancingscript-regular-webfont.svg#dancing_script_otregular") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Dapps-Pacifico';
+  src: url("/fonts/dapps-pacifico-web/dapps-pacifico-webfont.eot");
+  src: url("/fonts/dapps-pacifico-web/dapps-pacifico-webfont.eot?#iefix") format("embedded-opentype"), url("/fonts/dapps-pacifico-web/dapps-pacifico-webfont.woff2") format("woff2"), url("/fonts/dapps-pacifico-web/dapps-pacifico-webfont.woff") format("woff"), url("/fonts/dapps-pacifico-web/dapps-pacifico-webfont.ttf") format("truetype"), url("/fonts/dapps-pacifico-web/dapps-pacifico-webfont.svg#pacificoregular") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
