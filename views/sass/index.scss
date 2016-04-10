@@ -4,7 +4,7 @@
 
 @import 'utility';
 
-$fallback-fonts: Open-Sans, Dapps-Lato, "Lucida Grande", "Lucida Sans Unicode", Tahoma, Sans-Serif;
+$fallback-fonts: OpenSans, Lato, "Lucida Grande", "Lucida Sans Unicode", Tahoma, Sans-Serif;
 body {
   font-family: $fallback-fonts;
   font-size: 16px;
@@ -30,3 +30,5 @@ $footer-padding: $section-padding;
 @import 'contact';
 
 @import 'footer';
+
+@import 'media';

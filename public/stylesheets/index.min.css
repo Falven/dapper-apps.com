@@ -4,8 +4,10 @@
   box-sizing: border-box;
 }
 
+/* Responsive Design Utilities */
+/* Responsive Design Utilities */
 body {
-  font-family: Open-Sans, Dapps-Lato, "Lucida Grande", "Lucida Sans Unicode", Tahoma, Sans-Serif;
+  font-family: OpenSans, Lato, "Lucida Grande", "Lucida Sans Unicode", Tahoma, Sans-Serif;
   font-size: 16px;
   background-color: #f2f2f2;
   font-synthesis: none;
@@ -14,6 +16,15 @@ body {
   -moz-osx-font-smoothing: grayscale;
   line-height: 1.66667;
   letter-spacing: 0em;
+}
+
+#slider {
+  position: relative;
+  overflow: hidden;
+}
+
+#slider > input[type="radio"] {
+  display: none;
 }
 
 .button,
@@ -50,12 +61,12 @@ body {
 }
 
 .sf1 > figcaption {
-  font-family: Dapps-Pacifico, Open-Sans, Dapps-Lato, "Lucida Grande", "Lucida Sans Unicode", Tahoma, Sans-Serif;
+  font-family: Pacifico, OpenSans, Lato, "Lucida Grande", "Lucida Sans Unicode", Tahoma, Sans-Serif;
   color: #fff;
 }
 
 .sf3 > figcaption {
-  font-family: BonvenoCF, Open-Sans, Dapps-Lato, "Lucida Grande", "Lucida Sans Unicode", Tahoma, Sans-Serif;
+  font-family: BonvenoCF, OpenSans, Lato, "Lucida Grande", "Lucida Sans Unicode", Tahoma, Sans-Serif;
   color: #fff;
 }
 
@@ -151,15 +162,9 @@ body {
 }
 
 #slider {
-  position: relative;
   margin: 25px 25px 15px 25px;
-  overflow: hidden;
   border-radius: 2px;
   box-shadow: 1px 2px 10px 0px rgba(0, 0, 0, 0.3);
-}
-
-#slider > input[type="radio"] {
-  display: none;
 }
 
 .slider-stack > * {
@@ -220,609 +225,20 @@ body {
   font-size: 16px;
 }
 
-@media only screen and (min-width: 375px) {
-  .slider-stack > * {
-    height: 262px;
-  }
-  .slider-foregrounds {
-    margin-top: -262px;
-  }
-  .sf1 > img {
-    width: 85px;
-    margin-bottom: 10px;
-  }
-  .sf1 > figcaption {
-    font-size: 15px;
-  }
-  .sf2 > img {
-    width: 175px;
-  }
-  .sf3 > figcaption {
-    font-size: 18px;
-  }
+.sb1 {
+  background-image: url(/images/slider/dapper-apps/dapper-background_320px.png);
 }
 
-@media only screen and (min-width: 425px) {
-  .slider-stack > * {
-    height: 297px;
-  }
-  .slider-foregrounds {
-    margin-top: -297px;
-  }
-  .sf1 > img {
-    width: 95px;
-    margin-bottom: 15px;
-  }
-  .sf1 > figcaption {
-    font-size: 16px;
-  }
-  .sf2 > img {
-    width: 200px;
-  }
-  .sf3 > figcaption {
-    font-size: 20px;
-  }
+.sb2 {
+  background-image: url(/images/slider/kamis-nightmare/kami-background_320px.png);
 }
 
-@media only screen and (min-width: 768px) {
-  #slider {
-    position: relative;
-    margin: 25px 25px 15px 25px;
-    overflow: hidden;
-    border-radius: 3px;
-    box-shadow: 1px 2px 10px 0px rgba(0, 0, 0, 0.3);
-  }
-  #slider > input[type="radio"] {
-    display: none;
-  }
-  .slider-stack > * {
-    height: 375px;
-  }
-  .slider-foregrounds {
-    margin-top: -375px;
-  }
-  .sf1 > img {
-    width: 145px;
-    margin-bottom: 15px;
-  }
-  .sf1 > figcaption {
-    font-size: 19px;
-  }
-  .sf2 > img {
-    width: 300px;
-  }
-  .sf3 > figcaption {
-    font-size: 34px;
-  }
-  .button {
-    height: 16px;
-    width: 16px;
-    left: calc(50% - 8px);
-    bottom: 18px;
-    border-width: 2px;
-  }
-  .active {
-    height: 8px;
-    width: 8px;
-    left: calc(50% - 4px - 26px);
-    bottom: 22px;
-  }
-  #radio2:checked ~ .active {
-    -webkit-transform: translateX(26px);
-            transform: translateX(26px);
-  }
-  #radio3:checked ~ .active {
-    -webkit-transform: translateX(52px);
-            transform: translateX(52px);
-  }
-  .b1 {
-    margin-left: -26px;
-  }
-  .b3 {
-    margin-left: 26px;
-  }
-}
-
-@media only screen and (min-width: 1024px) {
-  #slider {
-    position: relative;
-    margin: 40px 40px 30px 40px;
-    overflow: hidden;
-    border-radius: 4px;
-    box-shadow: 1px 2px 10px 0px rgba(0, 0, 0, 0.3);
-  }
-  #slider > input[type="radio"] {
-    display: none;
-  }
-  .slider-stack > * {
-    height: 675px;
-  }
-  .slider-foregrounds {
-    margin-top: -675px;
-  }
-  .sf1 > img {
-    width: 250px;
-    margin-bottom: 25px;
-  }
-  .sf1 > figcaption {
-    font-size: 28px;
-  }
-  .sf2 > img {
-    width: 500px;
-  }
-  .sf3 > figcaption {
-    font-size: 46px;
-  }
-  .button {
-    height: 16px;
-    width: 16px;
-    left: calc(50% - 8px);
-    bottom: 18px;
-    border-width: 2px;
-  }
-  .active {
-    height: 8px;
-    width: 8px;
-    left: calc(50% - 4px - 26px);
-    bottom: 22px;
-  }
-  #radio2:checked ~ .active {
-    -webkit-transform: translateX(26px);
-            transform: translateX(26px);
-  }
-  #radio3:checked ~ .active {
-    -webkit-transform: translateX(52px);
-            transform: translateX(52px);
-  }
-  .b1 {
-    margin-left: -26px;
-  }
-  .b3 {
-    margin-left: 26px;
-  }
-}
-
-@media only screen and (min-width: 1440px) {
-  #slider {
-    position: relative;
-    margin: 60px 60px 50px 60px;
-    overflow: hidden;
-    border-radius: 5px;
-    box-shadow: 1px 2px 10px 0px rgba(0, 0, 0, 0.3);
-  }
-  #slider > input[type="radio"] {
-    display: none;
-  }
-  .slider-stack > * {
-    height: 800px;
-  }
-  .slider-foregrounds {
-    margin-top: -800px;
-  }
-  .sf1 > img {
-    width: 300px;
-    margin-bottom: 30px;
-  }
-  .sf1 > figcaption {
-    font-size: 34px;
-  }
-  .sf2 > img {
-    width: 600px;
-  }
-  .sf3 > figcaption {
-    font-size: 62px;
-  }
-  .button {
-    height: 24px;
-    width: 24px;
-    left: calc(50% - 12px);
-    bottom: 22px;
-    border-width: 3px;
-  }
-  .active {
-    height: 12px;
-    width: 12px;
-    left: calc(50% - 6px - 36px);
-    bottom: 28px;
-  }
-  #radio2:checked ~ .active {
-    -webkit-transform: translateX(36px);
-            transform: translateX(36px);
-  }
-  #radio3:checked ~ .active {
-    -webkit-transform: translateX(72px);
-            transform: translateX(72px);
-  }
-  .b1 {
-    margin-left: -36px;
-  }
-  .b3 {
-    margin-left: 36px;
-  }
-}
-
-@media only screen and (min-width: 1920px) {
-  #slider {
-    position: relative;
-    margin: 80px 80px 70px 80px;
-    overflow: hidden;
-    border-radius: 6px;
-    box-shadow: 1px 2px 10px 0px rgba(0, 0, 0, 0.3);
-  }
-  #slider > input[type="radio"] {
-    display: none;
-  }
-  .slider-stack > * {
-    height: 1000px;
-  }
-  .slider-foregrounds {
-    margin-top: -1000px;
-  }
-  .sf1 > img {
-    width: 400px;
-    margin-bottom: 36px;
-  }
-  .sf1 > figcaption {
-    font-size: 44px;
-  }
-  .sf2 > img {
-    width: 800px;
-  }
-  .sf3 > figcaption {
-    font-size: 84px;
-  }
-  .button {
-    height: 36px;
-    width: 36px;
-    left: calc(50% - 18px);
-    bottom: 32px;
-    border-width: 5px;
-  }
-  .active {
-    height: 18px;
-    width: 18px;
-    left: calc(50% - 9px - 60px);
-    bottom: 41px;
-  }
-  #radio2:checked ~ .active {
-    -webkit-transform: translateX(60px);
-            transform: translateX(60px);
-  }
-  #radio3:checked ~ .active {
-    -webkit-transform: translateX(120px);
-            transform: translateX(120px);
-  }
-  .b1 {
-    margin-left: -60px;
-  }
-  .b3 {
-    margin-left: 60px;
-  }
-}
-
-@media only screen and (min-width: 2560px) {
-  #slider {
-    position: relative;
-    margin: 100px 100px 90px 100px;
-    overflow: hidden;
-    border-radius: 7px;
-    box-shadow: 1px 2px 10px 0px rgba(0, 0, 0, 0.3);
-  }
-  #slider > input[type="radio"] {
-    display: none;
-  }
-  .slider-stack > * {
-    height: 1350px;
-  }
-  .slider-foregrounds {
-    margin-top: -1350px;
-  }
-  .sf1 > img {
-    width: 500px;
-    margin-bottom: 50px;
-  }
-  .sf1 > figcaption {
-    font-size: 56px;
-  }
-  .sf2 > img {
-    width: 1100px;
-  }
-  .sf3 > figcaption {
-    font-size: 114px;
-  }
-  .button {
-    height: 48px;
-    width: 48px;
-    left: calc(50% - 24px);
-    bottom: 42px;
-    border-width: 6px;
-  }
-  .active {
-    height: 24px;
-    width: 24px;
-    left: calc(50% - 12px - 74px);
-    bottom: 54px;
-  }
-  #radio2:checked ~ .active {
-    -webkit-transform: translateX(74px);
-            transform: translateX(74px);
-  }
-  #radio3:checked ~ .active {
-    -webkit-transform: translateX(148px);
-            transform: translateX(148px);
-  }
-  .b1 {
-    margin-left: -74px;
-  }
-  .b3 {
-    margin-left: 74px;
-  }
-}
-
-@media only screen and (min-width: 3200px) {
-  #slider {
-    position: relative;
-    margin: 120px 120px 110px 120px;
-    overflow: hidden;
-    border-radius: 8px;
-    box-shadow: 1px 2px 10px 0px rgba(0, 0, 0, 0.3);
-  }
-  #slider > input[type="radio"] {
-    display: none;
-  }
-  .slider-stack > * {
-    height: 1700px;
-  }
-  .slider-foregrounds {
-    margin-top: -1700px;
-  }
-  .sf1 > img {
-    width: 500px;
-    margin-bottom: 50px;
-  }
-  .sf1 > figcaption {
-    font-size: 56px;
-  }
-  .sf2 > img {
-    width: 1100px;
-  }
-  .sf3 > figcaption {
-    font-size: 114px;
-  }
-  .button {
-    height: 48px;
-    width: 48px;
-    left: calc(50% - 24px);
-    bottom: 42px;
-    border-width: 6px;
-  }
-  .active {
-    height: 24px;
-    width: 24px;
-    left: calc(50% - 12px - 74px);
-    bottom: 54px;
-  }
-  #radio2:checked ~ .active {
-    -webkit-transform: translateX(74px);
-            transform: translateX(74px);
-  }
-  #radio3:checked ~ .active {
-    -webkit-transform: translateX(148px);
-            transform: translateX(148px);
-  }
-  .b1 {
-    margin-left: -74px;
-  }
-  .b3 {
-    margin-left: 74px;
-  }
-}
-
-@media only screen and (min-width: 4096px) {
-  #slider {
-    position: relative;
-    margin: 140px 140px 130px 140px;
-    overflow: hidden;
-    border-radius: 9px;
-    box-shadow: 1px 2px 10px 0px rgba(0, 0, 0, 0.3);
-  }
-  #slider > input[type="radio"] {
-    display: none;
-  }
-  .slider-stack > * {
-    height: 1850px;
-  }
-  .slider-foregrounds {
-    margin-top: -1850px;
-  }
-  .sf1 > img {
-    width: 700px;
-    margin-bottom: 75px;
-  }
-  .sf1 > figcaption {
-    font-size: 84px;
-  }
-  .sf2 > img {
-    width: 1400px;
-  }
-  .sf3 > figcaption {
-    font-size: 175px;
-  }
-  .button {
-    height: 72px;
-    width: 72px;
-    left: calc(50% - 36px);
-    bottom: 60px;
-    border-width: 8px;
-  }
-  .active {
-    height: 36px;
-    width: 36px;
-    left: calc(50% - 18px - 122px);
-    bottom: 78px;
-  }
-  #radio2:checked ~ .active {
-    -webkit-transform: translateX(122px);
-            transform: translateX(122px);
-  }
-  #radio3:checked ~ .active {
-    -webkit-transform: translateX(244px);
-            transform: translateX(244px);
-  }
-  .b1 {
-    margin-left: -122px;
-  }
-  .b3 {
-    margin-left: 122px;
-  }
-}
-
-@media only screen and (min-width: 0) {
-  .sb1 {
-    background-image: url(/images/slider/dapper-apps/dapper-background_0.png);
-  }
-  .sb2 {
-    background-image: url(/images/slider/kamis-nightmare/kami-background_0.png);
-  }
-  .sb3 {
-    background-image: url(/images/slider/at-franco/franco-background_0.png);
-  }
-}
-
-@media only screen and (min-width: 320px) {
-  .sb1 {
-    background-image: url(/images/slider/dapper-apps/dapper-background_320px.png);
-  }
-  .sb2 {
-    background-image: url(/images/slider/kamis-nightmare/kami-background_320px.png);
-  }
-  .sb3 {
-    background-image: url(/images/slider/at-franco/franco-background_320px.png);
-  }
-}
-
-@media only screen and (min-width: 375px) {
-  .sb1 {
-    background-image: url(/images/slider/dapper-apps/dapper-background_375px.png);
-  }
-  .sb2 {
-    background-image: url(/images/slider/kamis-nightmare/kami-background_375px.png);
-  }
-  .sb3 {
-    background-image: url(/images/slider/at-franco/franco-background_375px.png);
-  }
-}
-
-@media only screen and (min-width: 425px) {
-  .sb1 {
-    background-image: url(/images/slider/dapper-apps/dapper-background_425px.png);
-  }
-  .sb2 {
-    background-image: url(/images/slider/kamis-nightmare/kami-background_425px.png);
-  }
-  .sb3 {
-    background-image: url(/images/slider/at-franco/franco-background_425px.png);
-  }
-}
-
-@media only screen and (min-width: 768px) {
-  .sb1 {
-    background-image: url(/images/slider/dapper-apps/dapper-background_768px.png);
-  }
-  .sb2 {
-    background-image: url(/images/slider/kamis-nightmare/kami-background_768px.png);
-  }
-  .sb3 {
-    background-image: url(/images/slider/at-franco/franco-background_768px.png);
-  }
-}
-
-@media only screen and (min-width: 1024px) {
-  .sb1 {
-    background-image: url(/images/slider/dapper-apps/dapper-background_1024px.png);
-  }
-  .sb2 {
-    background-image: url(/images/slider/kamis-nightmare/kami-background_1024px.png);
-  }
-  .sb3 {
-    background-image: url(/images/slider/at-franco/franco-background_1024px.png);
-  }
-}
-
-@media only screen and (min-width: 1440px) {
-  .sb1 {
-    background-image: url(/images/slider/dapper-apps/dapper-background_1440px.png);
-  }
-  .sb2 {
-    background-image: url(/images/slider/kamis-nightmare/kami-background_1440px.png);
-  }
-  .sb3 {
-    background-image: url(/images/slider/at-franco/franco-background_1440px.png);
-  }
-}
-
-@media only screen and (min-width: 1920px) {
-  .sb1 {
-    background-image: url(/images/slider/dapper-apps/dapper-background_1920px.png);
-  }
-  .sb2 {
-    background-image: url(/images/slider/kamis-nightmare/kami-background_1920px.png);
-  }
-  .sb3 {
-    background-image: url(/images/slider/at-franco/franco-background_1920px.png);
-  }
-}
-
-@media only screen and (min-width: 2560px) {
-  .sb1 {
-    background-image: url(/images/slider/dapper-apps/dapper-background_2560px.png);
-  }
-  .sb2 {
-    background-image: url(/images/slider/kamis-nightmare/kami-background_2560px.png);
-  }
-  .sb3 {
-    background-image: url(/images/slider/at-franco/franco-background_2560px.png);
-  }
-}
-
-@media only screen and (min-width: 3200px) {
-  .sb1 {
-    background-image: url(/images/slider/dapper-apps/dapper-background_3200px.png);
-  }
-  .sb2 {
-    background-image: url(/images/slider/kamis-nightmare/kami-background_3200px.png);
-  }
-  .sb3 {
-    background-image: url(/images/slider/at-franco/franco-background_3200px.png);
-  }
-}
-
-@media only screen and (min-width: 4096px) {
-  .sb1 {
-    background-image: url(/images/slider/dapper-apps/dapper-background_4096px.png);
-  }
-  .sb2 {
-    background-image: url(/images/slider/kamis-nightmare/kami-background_4096px.png);
-  }
-  .sb3 {
-    background-image: url(/images/slider/at-franco/franco-background_4096px.png);
-  }
-}
-
-@media only screen and (min-width: 5120px) {
-  .sb1 {
-    background-image: url(/images/slider/dapper-apps/dapper-background_5120px.png);
-  }
-  .sb2 {
-    background-image: url(/images/slider/kamis-nightmare/kami-background_5120px.png);
-  }
-  .sb3 {
-    background-image: url(/images/slider/at-franco/franco-background_5120px.png);
-  }
+.sb3 {
+  background-image: url(/images/slider/at-franco/franco-background_320px.png);
 }
 
 #contact {
-  font-family: Dapps-Raleway, Open-Sans, Dapps-Lato, "Lucida Grande", "Lucida Sans Unicode", Tahoma, Sans-Serif;
+  font-family: Dapps-Raleway, OpenSans, Lato, "Lucida Grande", "Lucida Sans Unicode", Tahoma, Sans-Serif;
   text-align: center;
   background-color: #fff;
   margin: 15px 25px 15px 25px;
@@ -954,4 +370,431 @@ footer > ul > li {
 .social-link > img {
   width: 100%;
   height: auto;
+}
+
+/* Responsive Design */
+@media only screen and (min-width: 375px) {
+  .slider-stack > * {
+    height: 262px;
+  }
+  .slider-foregrounds {
+    margin-top: -262px;
+  }
+  .sf1 > img {
+    width: 85px;
+    margin-bottom: 10px;
+  }
+  .sf1 > figcaption {
+    font-size: 15px;
+  }
+  .sf2 > img {
+    width: 175px;
+  }
+  .sf3 > figcaption {
+    font-size: 18px;
+  }
+  .sb1 {
+    background-image: url(/images/slider/dapper-apps/dapper-background_375px.png);
+  }
+  .sb2 {
+    background-image: url(/images/slider/kamis-nightmare/kami-background_375px.png);
+  }
+  .sb3 {
+    background-image: url(/images/slider/at-franco/franco-background_375px.png);
+  }
+}
+
+@media only screen and (min-width: 425px) {
+  .slider-stack > * {
+    height: 297px;
+  }
+  .slider-foregrounds {
+    margin-top: -297px;
+  }
+  .sf1 > img {
+    width: 95px;
+    margin-bottom: 15px;
+  }
+  .sf1 > figcaption {
+    font-size: 16px;
+  }
+  .sf2 > img {
+    width: 200px;
+  }
+  .sf3 > figcaption {
+    font-size: 20px;
+  }
+  .sb1 {
+    background-image: url(/images/slider/dapper-apps/dapper-background_425px.png);
+  }
+  .sb2 {
+    background-image: url(/images/slider/kamis-nightmare/kami-background_425px.png);
+  }
+  .sb3 {
+    background-image: url(/images/slider/at-franco/franco-background_425px.png);
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  #slider {
+    border-radius: 3px;
+  }
+  .slider-stack > * {
+    height: 375px;
+  }
+  .slider-foregrounds {
+    margin-top: -375px;
+  }
+  .sf1 > img {
+    width: 145px;
+  }
+  .sf1 > figcaption {
+    font-size: 19px;
+  }
+  .sf2 > img {
+    width: 300px;
+  }
+  .sf3 > figcaption {
+    font-size: 34px;
+  }
+  .button {
+    height: 16px;
+    width: 16px;
+    left: calc( - 8px);
+    bottom: 18px;
+  }
+  .active {
+    height: 8px;
+    width: 8px;
+    left: calc( - 4px - 26px);
+    bottom: 22px;
+  }
+  #radio2:checked ~ .active {
+    -webkit-transform: translateX(26px);
+            transform: translateX(26px);
+  }
+  #radio3:checked ~ .active {
+    -webkit-transform: translateX(52px);
+            transform: translateX(52px);
+  }
+  .b1 {
+    margin-left: -26px;
+  }
+  .b3 {
+    margin-left: 26px;
+  }
+  .sb1 {
+    background-image: url(/images/slider/dapper-apps/dapper-background_768px.png);
+  }
+  .sb2 {
+    background-image: url(/images/slider/kamis-nightmare/kami-background_768px.png);
+  }
+  .sb3 {
+    background-image: url(/images/slider/at-franco/franco-background_768px.png);
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  #slider {
+    margin: 40px 40px 30px 40px;
+    border-radius: 4px;
+  }
+  .slider-stack > * {
+    height: 675px;
+  }
+  .slider-foregrounds {
+    margin-top: -675px;
+  }
+  .sf1 > img {
+    width: 250px;
+    margin-bottom: 25px;
+  }
+  .sf1 > figcaption {
+    font-size: 28px;
+  }
+  .sf2 > img {
+    width: 500px;
+  }
+  .sf3 > figcaption {
+    font-size: 46px;
+  }
+  .sb1 {
+    background-image: url(/images/slider/dapper-apps/dapper-background_1024px.png);
+  }
+  .sb2 {
+    background-image: url(/images/slider/kamis-nightmare/kami-background_1024px.png);
+  }
+  .sb3 {
+    background-image: url(/images/slider/at-franco/franco-background_1024px.png);
+  }
+}
+
+@media only screen and (min-width: 1440px) {
+  #slider {
+    margin: 60px 60px 50px 60px;
+    border-radius: 5px;
+  }
+  .slider-stack > * {
+    height: 800px;
+  }
+  .slider-foregrounds {
+    margin-top: -800px;
+  }
+  .sf1 > img {
+    width: 300px;
+    margin-bottom: 30px;
+  }
+  .sf1 > figcaption {
+    font-size: 34px;
+  }
+  .sf2 > img {
+    width: 600px;
+  }
+  .sf3 > figcaption {
+    font-size: 62px;
+  }
+  .button {
+    height: 24px;
+    width: 24px;
+    left: calc( - 12px);
+    bottom: 22px;
+    border-width: 3px;
+  }
+  .active {
+    height: 12px;
+    width: 12px;
+    left: calc( - 6px - 36px);
+    bottom: 28px;
+  }
+  #radio2:checked ~ .active {
+    -webkit-transform: translateX(36px);
+            transform: translateX(36px);
+  }
+  #radio3:checked ~ .active {
+    -webkit-transform: translateX(72px);
+            transform: translateX(72px);
+  }
+  .b1 {
+    margin-left: -36px;
+  }
+  .b3 {
+    margin-left: 36px;
+  }
+  .sb1 {
+    background-image: url(/images/slider/dapper-apps/dapper-background_1440px.png);
+  }
+  .sb2 {
+    background-image: url(/images/slider/kamis-nightmare/kami-background_1440px.png);
+  }
+  .sb3 {
+    background-image: url(/images/slider/at-franco/franco-background_1440px.png);
+  }
+}
+
+@media only screen and (min-width: 1920px) {
+  #slider {
+    margin: 80px 80px 70px 80px;
+    border-radius: 6px;
+  }
+  .slider-stack > * {
+    height: 1000px;
+  }
+  .slider-foregrounds {
+    margin-top: -1000px;
+  }
+  .sf1 > img {
+    width: 400px;
+    margin-bottom: 36px;
+  }
+  .sf1 > figcaption {
+    font-size: 44px;
+  }
+  .sf2 > img {
+    width: 800px;
+  }
+  .sf3 > figcaption {
+    font-size: 84px;
+  }
+  .button {
+    height: 36px;
+    width: 36px;
+    left: calc( - 18px);
+    bottom: 32px;
+    border-width: 5px;
+  }
+  .active {
+    height: 18px;
+    width: 18px;
+    left: calc( - 9px - 60px);
+    bottom: 41px;
+  }
+  #radio2:checked ~ .active {
+    -webkit-transform: translateX(60px);
+            transform: translateX(60px);
+  }
+  #radio3:checked ~ .active {
+    -webkit-transform: translateX(120px);
+            transform: translateX(120px);
+  }
+  .b1 {
+    margin-left: -60px;
+  }
+  .b3 {
+    margin-left: 60px;
+  }
+  .sb1 {
+    background-image: url(/images/slider/dapper-apps/dapper-background_1920px.png);
+  }
+  .sb2 {
+    background-image: url(/images/slider/kamis-nightmare/kami-background_1920px.png);
+  }
+  .sb3 {
+    background-image: url(/images/slider/at-franco/franco-background_1920px.png);
+  }
+}
+
+@media only screen and (min-width: 2560px) {
+  #slider {
+    margin: 100px 100px 90px 100px;
+    border-radius: 7px;
+  }
+  .slider-stack > * {
+    height: 1350px;
+  }
+  .slider-foregrounds {
+    margin-top: -1350px;
+  }
+  .sf1 > img {
+    width: 500px;
+    margin-bottom: 50px;
+  }
+  .sf1 > figcaption {
+    font-size: 56px;
+  }
+  .sf2 > img {
+    width: 1100px;
+  }
+  .sf3 > figcaption {
+    font-size: 114px;
+  }
+  .button {
+    height: 48px;
+    width: 48px;
+    left: calc( - 24px);
+    bottom: 42px;
+    border-width: 6px;
+  }
+  .active {
+    height: 24px;
+    width: 24px;
+    left: calc( - 12px - 74px);
+    bottom: 54px;
+  }
+  #radio2:checked ~ .active {
+    -webkit-transform: translateX(74px);
+            transform: translateX(74px);
+  }
+  #radio3:checked ~ .active {
+    -webkit-transform: translateX(148px);
+            transform: translateX(148px);
+  }
+  .b1 {
+    margin-left: -74px;
+  }
+  .b3 {
+    margin-left: 74px;
+  }
+  .sb1 {
+    background-image: url(/images/slider/dapper-apps/dapper-background_2560px.png);
+  }
+  .sb2 {
+    background-image: url(/images/slider/kamis-nightmare/kami-background_2560px.png);
+  }
+  .sb3 {
+    background-image: url(/images/slider/at-franco/franco-background_2560px.png);
+  }
+}
+
+@media only screen and (min-width: 3200px) {
+  #slider {
+    margin: 120px 120px 110px 120px;
+    border-radius: 8px;
+  }
+  .slider-stack > * {
+    height: 1700px;
+  }
+  .slider-foregrounds {
+    margin-top: -1700px;
+  }
+  .sb1 {
+    background-image: url(/images/slider/dapper-apps/dapper-background_3200px.png);
+  }
+  .sb2 {
+    background-image: url(/images/slider/kamis-nightmare/kami-background_3200px.png);
+  }
+  .sb3 {
+    background-image: url(/images/slider/at-franco/franco-background_3200px.png);
+  }
+}
+
+@media only screen and (min-width: 4096px) {
+  #slider {
+    margin: 140px 140px 130px 140px;
+    border-radius: 9px;
+  }
+  .slider-stack > * {
+    height: 1850px;
+  }
+  .slider-foregrounds {
+    margin-top: -1850px;
+  }
+  .sf1 > img {
+    width: 700px;
+    margin-bottom: 75px;
+  }
+  .sf1 > figcaption {
+    font-size: 84px;
+  }
+  .sf2 > img {
+    width: 1400px;
+  }
+  .sf3 > figcaption {
+    font-size: 175px;
+  }
+  .button {
+    height: 72px;
+    width: 72px;
+    left: calc( - 36px);
+    bottom: 60px;
+    border-width: 8px;
+  }
+  .active {
+    height: 36px;
+    width: 36px;
+    left: calc( - 18px - 122px);
+    bottom: 78px;
+  }
+  #radio2:checked ~ .active {
+    -webkit-transform: translateX(122px);
+            transform: translateX(122px);
+  }
+  #radio3:checked ~ .active {
+    -webkit-transform: translateX(244px);
+            transform: translateX(244px);
+  }
+  .b1 {
+    margin-left: -122px;
+  }
+  .b3 {
+    margin-left: 122px;
+  }
+  .sb1 {
+    background-image: url(/images/slider/dapper-apps/dapper-background_4096px.png);
+  }
+  .sb2 {
+    background-image: url(/images/slider/kamis-nightmare/kami-background_4096px.png);
+  }
+  .sb3 {
+    background-image: url(/images/slider/at-franco/franco-background_4096px.png);
+  }
 }
