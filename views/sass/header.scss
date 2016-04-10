@@ -67,7 +67,7 @@ $primary-color: #fff;
   $dimensions: null,
   $margin: null,
   $border-size: null,
-  $left: null,
+  $left: 50%,
   $bottom: null) {
   .button {
     height: $dimensions;

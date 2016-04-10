@@ -57,11 +57,6 @@
   @include sf3(
     $font-size: 34px
   );
-  // $dimensions: 12px,
-  // $margin: 20px,
-  // $border-size: 2px,
-  // $left: 50%,
-  // $bottom: 12px
   @include slider-controls(
     $dimensions: 16px,
     $margin: 26px,

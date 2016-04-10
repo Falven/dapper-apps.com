@@ -460,13 +460,13 @@ footer > ul > li {
   .button {
     height: 16px;
     width: 16px;
-    left: calc( - 8px);
+    left: calc(50% - 8px);
     bottom: 18px;
   }
   .active {
     height: 8px;
     width: 8px;
-    left: calc( - 4px - 26px);
+    left: calc(50% - 4px - 26px);
     bottom: 22px;
   }
   #radio2:checked ~ .active {
@@ -556,14 +556,14 @@ footer > ul > li {
   .button {
     height: 24px;
     width: 24px;
-    left: calc( - 12px);
+    left: calc(50% - 12px);
     bottom: 22px;
     border-width: 3px;
   }
   .active {
     height: 12px;
     width: 12px;
-    left: calc( - 6px - 36px);
+    left: calc(50% - 6px - 36px);
     bottom: 28px;
   }
   #radio2:checked ~ .active {
@@ -618,14 +618,14 @@ footer > ul > li {
   .button {
     height: 36px;
     width: 36px;
-    left: calc( - 18px);
+    left: calc(50% - 18px);
     bottom: 32px;
     border-width: 5px;
   }
   .active {
     height: 18px;
     width: 18px;
-    left: calc( - 9px - 60px);
+    left: calc(50% - 9px - 60px);
     bottom: 41px;
   }
   #radio2:checked ~ .active {
@@ -680,14 +680,14 @@ footer > ul > li {
   .button {
     height: 48px;
     width: 48px;
-    left: calc( - 24px);
+    left: calc(50% - 24px);
     bottom: 42px;
     border-width: 6px;
   }
   .active {
     height: 24px;
     width: 24px;
-    left: calc( - 12px - 74px);
+    left: calc(50% - 12px - 74px);
     bottom: 54px;
   }
   #radio2:checked ~ .active {
@@ -764,14 +764,14 @@ footer > ul > li {
   .button {
     height: 72px;
     width: 72px;
-    left: calc( - 36px);
+    left: calc(50% - 36px);
     bottom: 60px;
     border-width: 8px;
   }
   .active {
     height: 36px;
     width: 36px;
-    left: calc( - 18px - 122px);
+    left: calc(50% - 18px - 122px);
     bottom: 78px;
   }
   #radio2:checked ~ .active {
