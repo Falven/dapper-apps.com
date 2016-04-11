@@ -5,6 +5,7 @@
     $slider-controls-bottom: 12px,
     $slider-controls-margin: 20px,
     $slider-controls-dimensions: 12px,
+    $slider-height: 262px,
     $sf1-img-width: 85px,
     $sf1-font-size: 15px,
     $sf1-separation: 10px,
@@ -14,13 +15,12 @@
   );
   @include contact(
     $title-font-size: 20px,
-    $portrait-width: 60px,
-    $portrait-border-width: 1px,
-    $portrait-box-shadow: 0px 0px 15px 0px black inset,
+    $portrait-width: 70px,
+    $portrait-box-shadow: 0px 0px 17px 0px black inset,
     $name-font-size: 12px,
     $name-margin: 10px 0,
     $description-font-size: 11px,
-    $description-text-indent: 25px
+    $description-text-indent: 22px
   );
   @include footer(
     30px,
@@ -41,6 +41,16 @@
     $sf2-img-width: 200px,
     $sf3-font-size: 20px,
     $sb-key: "mobile-l"
+  );
+  @include contact(
+    $title-font-size: 25px,
+    $portrait-width: 80px,
+    $portrait-border-width: 1px,
+    $portrait-box-shadow: 0px 0px 19px 0px black inset,
+    $name-font-size: 12px,
+    $name-margin: 10px 0,
+    $description-font-size: 11px,
+    $description-text-indent: 43px
   );
   @include footer(
     30px,

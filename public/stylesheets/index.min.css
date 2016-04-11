@@ -25,7 +25,7 @@ html {
 }
 
 body {
-  font-family: 'Raleway', sans-serif;
+  font-family: "Raleway", sans-serif;
   font-size: 16px;
   background-color: #f2f2f2;
   line-height: 1.66667;
@@ -197,7 +197,7 @@ section, footer {
           justify-content: center;
 }
 
-.slider-stack > * {
+#slider, .slider-stack > * {
   height: 224px;
 }
 
@@ -370,7 +370,7 @@ section, footer {
 
 .member > p {
   font-size: 9px;
-  text-indent: 25px;
+  text-indent: 19px;
 }
 
 .member:not(:last-child) {
@@ -420,8 +420,11 @@ footer > ul > li {
 
 /* Responsive Design */
 @media only screen and (min-width: 375px) {
+  #slider, .slider-stack > * {
+    height: 262px;
+  }
   .slider-foregrounds {
-    margin-top: -;
+    margin-top: -262px;
   }
   .button {
     height: 12px;
@@ -484,14 +487,13 @@ footer > ul > li {
   }
   .member > p {
     font-size: 11px;
-    text-indent: 25px;
+    text-indent: 22px;
   }
   .portrait {
-    width: 60px;
+    width: 70px;
   }
   .portrait::before {
-    border-width: 1px;
-    box-shadow: 0px 0px 15px 0px black inset;
+    box-shadow: 0px 0px 17px 0px black inset;
   }
   .social-link > img {
     width: 30px;
@@ -502,11 +504,11 @@ footer > ul > li {
 }
 
 @media only screen and (min-width: 425px) {
-  .slider-stack > * {
+  #slider, .slider-stack > * {
     height: 297px;
   }
   .slider-foregrounds {
-    margin-top: -;
+    margin-top: -297px;
   }
   .button {
     height: 12px;
@@ -556,6 +558,28 @@ footer > ul > li {
   .sb3 {
     background-image: url(/images/slider/at-franco/franco-background_425px.png);
   }
+  .member > p,
+  #contact > p {
+    font-size: 11px;
+  }
+  #contact > h2 {
+    font-size: 25px;
+  }
+  .member > h3 {
+    font-size: 12px;
+    margin: 10px 0;
+  }
+  .member > p {
+    font-size: 11px;
+    text-indent: 43px;
+  }
+  .portrait {
+    width: 80px;
+  }
+  .portrait::before {
+    border-width: 1px;
+    box-shadow: 0px 0px 19px 0px black inset;
+  }
   .social-link > img {
     width: 30px;
   }
@@ -565,11 +589,11 @@ footer > ul > li {
 }
 
 @media only screen and (min-width: 768px) {
-  .slider-stack > * {
+  #slider, .slider-stack > * {
     height: 375px;
   }
   .slider-foregrounds {
-    margin-top: -;
+    margin-top: -375px;
   }
   .button {
     height: 16px;
@@ -627,11 +651,11 @@ footer > ul > li {
 }
 
 @media only screen and (min-width: 1024px) {
-  .slider-stack > * {
+  #slider, .slider-stack > * {
     height: 550px;
   }
   .slider-foregrounds {
-    margin-top: -;
+    margin-top: -550px;
   }
   .button {
     height: 16px;
@@ -690,11 +714,11 @@ footer > ul > li {
 }
 
 @media only screen and (min-width: 1440px) {
-  .slider-stack > * {
+  #slider, .slider-stack > * {
     height: 800px;
   }
   .slider-foregrounds {
-    margin-top: -;
+    margin-top: -800px;
   }
   .button {
     height: 24px;
@@ -754,11 +778,11 @@ footer > ul > li {
 }
 
 @media only screen and (min-width: 1920px) {
-  .slider-stack > * {
+  #slider, .slider-stack > * {
     height: 1000px;
   }
   .slider-foregrounds {
-    margin-top: -;
+    margin-top: -1000px;
   }
   .button {
     height: 36px;
@@ -818,11 +842,11 @@ footer > ul > li {
 }
 
 @media only screen and (min-width: 2560px) {
-  .slider-stack > * {
+  #slider, .slider-stack > * {
     height: 1350px;
   }
   .slider-foregrounds {
-    margin-top: -;
+    margin-top: -1350px;
   }
   .button {
     height: 48px;
@@ -882,11 +906,11 @@ footer > ul > li {
 }
 
 @media only screen and (min-width: 3200px) {
-  .slider-stack > * {
+  #slider, .slider-stack > * {
     height: 1700px;
   }
   .slider-foregrounds {
-    margin-top: -;
+    margin-top: -1700px;
   }
   .button {
     height: 48px;
@@ -932,11 +956,11 @@ footer > ul > li {
 }
 
 @media only screen and (min-width: 4096px) {
-  .slider-stack > * {
+  #slider, .slider-stack > * {
     height: 1850px;
   }
   .slider-foregrounds {
-    margin-top: -;
+    margin-top: -1850px;
   }
   .button {
     height: 72px;

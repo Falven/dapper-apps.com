@@ -1,10 +1,10 @@
 @charset "utf-8";
 
-@import 'fonts';
+@import "fonts";
 
-@import 'reset';
+@import "reset";
 
-@import 'utility';
+@import "utility";
 
 html {
   font-synthesis: none !important;
@@ -16,7 +16,7 @@ html {
 
 body {
   // Roboto, Open Sans, Lato
-  font-family: 'Raleway', sans-serif;
+  font-family: "Raleway", sans-serif;
   font-size: 16px;
   background-color: #f2f2f2;
   line-height: 1.66667;
@@ -38,10 +38,10 @@ footer {
   $padding: 20px 10px
 );
 
-@import 'header';
+@import "header";
 
-@import 'contact';
+@import "contact";
 
-@import 'footer';
+@import "footer";
 
-@import 'media';
+@import "media";

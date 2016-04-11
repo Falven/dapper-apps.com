@@ -139,7 +139,7 @@ $foreground-color: #fff;
   $sf2-img-width: null,
   $sf3-font-size: null,
   $sb-key: null) {
-  .slider-stack > * {
+  #slider, .slider-stack > * {
     height: $slider-height;
   }
   .slider-foregrounds {
