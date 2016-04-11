@@ -1,21 +1,53 @@
+/* Font Utilities */
+/* Fonts */
+@import url(https://fonts.googleapis.com/css?family=Raleway:400,300|Pacifico);
+@font-face {
+  font-family: "BonvenoCF";
+  src: url("/fonts/bonvenocf-web/bonvenocf-light-webfont.eot");
+  src: url("/fonts/bonvenocf-web/bonvenocf-light-webfont.eot?#iefix") format("embedded-opentype"), url("/fonts/bonvenocf-web/bonvenocf-light-webfont.woff2") format("woff2"), url("/fonts/bonvenocf-web/bonvenocf-light-webfont.woff") format("woff"), url("/fonts/bonvenocf-web/bonvenocf-light-webfont.ttf") format("truetype"), url("/fonts/bonvenocf-web/bonvenocf-light-webfont.svg#bonvenocflight") format("svg");
+  font-weight: 300;
+  font-style: normal;
+}
+
+/* Fonts */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* Responsive Design Utilities */
-/* Responsive Design Utilities */
+html {
+  font-synthesis: none !important;
+  text-rendering: optimizeLegibility !important;
+  -webkit-font-smoothing: antialiased !important;
+  -moz-osx-font-smoothing: grayscale !important;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.004) !important;
+}
+
 body {
-  font-family: OpenSans, Lato, "Lucida Grande", "Lucida Sans Unicode", Tahoma, Sans-Serif;
+  font-family: 'Raleway', sans-serif;
   font-size: 16px;
   background-color: #f2f2f2;
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
   line-height: 1.66667;
   letter-spacing: 0em;
+}
+
+section {
+  background-color: #fff;
+}
+
+footer {
+  background-color: #222;
+}
+
+header, section, footer {
+  margin: 5px 10px 5px 10px;
+  border-radius: 2px;
+  box-shadow: 1px 2px 10px 0px rgba(0, 0, 0, 0.3);
+}
+
+section, footer {
+  padding: 20px 10px;
 }
 
 #slider {
@@ -56,17 +88,21 @@ body {
   margin-left: 0;
 }
 
-.sf1 > img {
+.sf1 img {
   vertical-align: middle;
 }
 
-.sf1 > figcaption {
-  font-family: Pacifico, OpenSans, Lato, "Lucida Grande", "Lucida Sans Unicode", Tahoma, Sans-Serif;
+.sf1 > figure {
+  text-align: center;
+}
+
+.sf1 figcaption {
+  font-family: 'Pacifico', cursive;
   color: #fff;
 }
 
 .sf3 > figcaption {
-  font-family: BonvenoCF, OpenSans, Lato, "Lucida Grande", "Lucida Sans Unicode", Tahoma, Sans-Serif;
+  font-family: 'BonvenoCF', sans-serif;
   color: #fff;
 }
 
@@ -161,12 +197,6 @@ body {
           justify-content: center;
 }
 
-#slider {
-  margin: 25px 25px 15px 25px;
-  border-radius: 2px;
-  box-shadow: 1px 2px 10px 0px rgba(0, 0, 0, 0.3);
-}
-
 .slider-stack > * {
   height: 224px;
 }
@@ -208,12 +238,12 @@ body {
   margin-left: 20px;
 }
 
-.sf1 > img {
+.sf1 > figure > img {
   width: 75px;
   margin-bottom: 5px;
 }
 
-.sf1 > figcaption {
+.sf1 > figure > figcaption {
   font-size: 14px;
 }
 
@@ -237,30 +267,33 @@ body {
   background-image: url(/images/slider/at-franco/franco-background_320px.png);
 }
 
-#contact {
-  font-family: Dapps-Raleway, OpenSans, Lato, "Lucida Grande", "Lucida Sans Unicode", Tahoma, Sans-Serif;
+#contact > h2,
+#contact > p,
+.member > h3 {
   text-align: center;
-  background-color: #fff;
-  margin: 15px 25px 15px 25px;
-  overflow: hidden;
-  border-radius: 2px;
-  box-shadow: 1px 2px 10px 0px rgba(0, 0, 0, 0.3);
-  padding: 50px 0;
 }
 
-#contact > h1 {
+.member, #contact > p {
+  width: 85%;
+  margin: auto;
+}
+
+.portrait > img, .portrait::before {
+  border-radius: 50%;
+  box-sizing: border-box;
+  height: 100%;
+  width: 100%;
+}
+
+#contact > h2 {
   font-weight: 400;
-  font-size: 26pt;
   color: #b9874c;
   text-transform: uppercase;
   text-shadow: 0 1px 1px rgba(0, 0, 0, 0.3);
-  margin-bottom: 50px;
 }
 
-#contact > h4 {
-  font-size: 13px;
-  font-weight: lighter;
-  margin-top: 50px;
+#contact > p {
+  font-weight: 300;
 }
 
 .team {
@@ -277,26 +310,12 @@ body {
           align-items: top;
 }
 
-.member {
-  width: 28%;
-}
-
-.member > h2 {
-  font-size: 16px;
-  font-weight: 500;
-  margin: 16px 0 0 0;
-}
-
 .member > h3 {
-  font-size: 14px;
-  font-weight: 400;
-  margin: 0 0 16px 0;
+  font-weight: 500;
 }
 
 .member > p {
-  font-size: 12px;
-  font-weight: lighter;
-  margin: 0;
+  font-weight: 300;
 }
 
 .portrait {
@@ -313,34 +332,62 @@ body {
   left: 0;
   right: 0;
   box-shadow: 0px 0px 35px 0px black inset;
-  border: #b9874c solid 2px;
+  border-style: solid;
+  border-color: #b9874c;
 }
 
 .portrait > img {
   vertical-align: middle;
 }
 
-.portrait > img, .portrait::before {
-  border-radius: 50%;
-  box-sizing: border-box;
-  height: 100%;
-  width: 100%;
-}
-
 .portrait-image {
   width: 50%;
   height: 50%;
-  max-width: 570px;
-  max-height: 570px;
+}
+
+.member > p,
+#contact > p {
+  font-size: 9px;
+}
+
+#contact > h2 {
+  font-size: 16px;
+}
+
+.team {
+  margin: 20px 0;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.member > h3 {
+  font-size: 10px;
+  margin: 10px 0;
+}
+
+.member > p {
+  font-size: 9px;
+  text-indent: 25px;
+}
+
+.member:not(:last-child) {
+  margin-bottom: 15px;
+}
+
+.portrait {
+  width: 60px;
+}
+
+.portrait::before {
+  border-width: 1px;
+  box-shadow: 0px 0px 15px 0px black inset;
 }
 
 footer {
-  margin: 15px 25px 25px 25px;
   text-align: center;
-  background-color: #222;
-  border-radius: 2px;
-  box-shadow: 1px 2px 10px 0px rgba(0, 0, 0, 0.3);
-  padding: 50px 0;
 }
 
 footer > ul {
@@ -357,34 +404,56 @@ footer > ul {
       -ms-flex-pack: center;
           justify-content: center;
   list-style-type: none;
-  margin: 0;
-  padding: 0;
 }
 
-footer > ul > li {
-  width: 5%;
-  height: auto;
-  margin: 0 5px 0 5px;
+footer > ul > li, .social-link, .social-link > img {
+  display: block;
 }
 
 .social-link > img {
-  width: 100%;
-  height: auto;
+  width: 25px;
+}
+
+footer > ul > li {
+  margin: 0 3px;
 }
 
 /* Responsive Design */
 @media only screen and (min-width: 375px) {
-  .slider-stack > * {
-    height: 262px;
-  }
   .slider-foregrounds {
-    margin-top: -262px;
+    margin-top: -;
   }
-  .sf1 > img {
+  .button {
+    height: 12px;
+    width: 12px;
+    left: calc(50% - 6px);
+    bottom: 12px;
+  }
+  .active {
+    height: 6px;
+    width: 6px;
+    left: calc(50% - 3px - 20px);
+    bottom: 15px;
+  }
+  #radio2:checked ~ .active {
+    -webkit-transform: translateX(20px);
+            transform: translateX(20px);
+  }
+  #radio3:checked ~ .active {
+    -webkit-transform: translateX(40px);
+            transform: translateX(40px);
+  }
+  .b1 {
+    margin-left: -20px;
+  }
+  .b3 {
+    margin-left: 20px;
+  }
+  .sf1 > figure > img {
     width: 85px;
     margin-bottom: 10px;
   }
-  .sf1 > figcaption {
+  .sf1 > figure > figcaption {
     font-size: 15px;
   }
   .sf2 > img {
@@ -402,6 +471,34 @@ footer > ul > li {
   .sb3 {
     background-image: url(/images/slider/at-franco/franco-background_375px.png);
   }
+  .member > p,
+  #contact > p {
+    font-size: 11px;
+  }
+  #contact > h2 {
+    font-size: 20px;
+  }
+  .member > h3 {
+    font-size: 12px;
+    margin: 10px 0;
+  }
+  .member > p {
+    font-size: 11px;
+    text-indent: 25px;
+  }
+  .portrait {
+    width: 60px;
+  }
+  .portrait::before {
+    border-width: 1px;
+    box-shadow: 0px 0px 15px 0px black inset;
+  }
+  .social-link > img {
+    width: 30px;
+  }
+  footer > ul > li {
+    margin: 0 3px;
+  }
 }
 
 @media only screen and (min-width: 425px) {
@@ -409,13 +506,39 @@ footer > ul > li {
     height: 297px;
   }
   .slider-foregrounds {
-    margin-top: -297px;
+    margin-top: -;
   }
-  .sf1 > img {
+  .button {
+    height: 12px;
+    width: 12px;
+    left: calc(50% - 6px);
+    bottom: 12px;
+  }
+  .active {
+    height: 6px;
+    width: 6px;
+    left: calc(50% - 3px - 20px);
+    bottom: 15px;
+  }
+  #radio2:checked ~ .active {
+    -webkit-transform: translateX(20px);
+            transform: translateX(20px);
+  }
+  #radio3:checked ~ .active {
+    -webkit-transform: translateX(40px);
+            transform: translateX(40px);
+  }
+  .b1 {
+    margin-left: -20px;
+  }
+  .b3 {
+    margin-left: 20px;
+  }
+  .sf1 > figure > img {
     width: 95px;
     margin-bottom: 15px;
   }
-  .sf1 > figcaption {
+  .sf1 > figure > figcaption {
     font-size: 16px;
   }
   .sf2 > img {
@@ -433,29 +556,20 @@ footer > ul > li {
   .sb3 {
     background-image: url(/images/slider/at-franco/franco-background_425px.png);
   }
+  .social-link > img {
+    width: 30px;
+  }
+  footer > ul > li {
+    margin: 0 3px;
+  }
 }
 
 @media only screen and (min-width: 768px) {
-  #slider {
-    border-radius: 3px;
-  }
   .slider-stack > * {
     height: 375px;
   }
   .slider-foregrounds {
-    margin-top: -375px;
-  }
-  .sf1 > img {
-    width: 145px;
-  }
-  .sf1 > figcaption {
-    font-size: 19px;
-  }
-  .sf2 > img {
-    width: 300px;
-  }
-  .sf3 > figcaption {
-    font-size: 34px;
+    margin-top: -;
   }
   .button {
     height: 16px;
@@ -483,6 +597,18 @@ footer > ul > li {
   .b3 {
     margin-left: 26px;
   }
+  .sf1 > figure > img {
+    width: 145px;
+  }
+  .sf1 > figure > figcaption {
+    font-size: 19px;
+  }
+  .sf2 > img {
+    width: 300px;
+  }
+  .sf3 > figcaption {
+    font-size: 34px;
+  }
   .sb1 {
     background-image: url(/images/slider/dapper-apps/dapper-background_768px.png);
   }
@@ -492,24 +618,52 @@ footer > ul > li {
   .sb3 {
     background-image: url(/images/slider/at-franco/franco-background_768px.png);
   }
+  .social-link > img {
+    width: 35px;
+  }
+  footer > ul > li {
+    margin: 0 5px;
+  }
 }
 
 @media only screen and (min-width: 1024px) {
-  #slider {
-    margin: 40px 40px 30px 40px;
-    border-radius: 4px;
-  }
   .slider-stack > * {
-    height: 675px;
+    height: 550px;
   }
   .slider-foregrounds {
-    margin-top: -675px;
+    margin-top: -;
   }
-  .sf1 > img {
+  .button {
+    height: 16px;
+    width: 16px;
+    left: calc(50% - 8px);
+    bottom: 18px;
+  }
+  .active {
+    height: 8px;
+    width: 8px;
+    left: calc(50% - 4px - 26px);
+    bottom: 22px;
+  }
+  #radio2:checked ~ .active {
+    -webkit-transform: translateX(26px);
+            transform: translateX(26px);
+  }
+  #radio3:checked ~ .active {
+    -webkit-transform: translateX(52px);
+            transform: translateX(52px);
+  }
+  .b1 {
+    margin-left: -26px;
+  }
+  .b3 {
+    margin-left: 26px;
+  }
+  .sf1 > figure > img {
     width: 250px;
     margin-bottom: 25px;
   }
-  .sf1 > figcaption {
+  .sf1 > figure > figcaption {
     font-size: 28px;
   }
   .sf2 > img {
@@ -527,31 +681,20 @@ footer > ul > li {
   .sb3 {
     background-image: url(/images/slider/at-franco/franco-background_1024px.png);
   }
+  .social-link > img {
+    width: 45px;
+  }
+  footer > ul > li {
+    margin: 0 5px;
+  }
 }
 
 @media only screen and (min-width: 1440px) {
-  #slider {
-    margin: 60px 60px 50px 60px;
-    border-radius: 5px;
-  }
   .slider-stack > * {
     height: 800px;
   }
   .slider-foregrounds {
-    margin-top: -800px;
-  }
-  .sf1 > img {
-    width: 300px;
-    margin-bottom: 30px;
-  }
-  .sf1 > figcaption {
-    font-size: 34px;
-  }
-  .sf2 > img {
-    width: 600px;
-  }
-  .sf3 > figcaption {
-    font-size: 62px;
+    margin-top: -;
   }
   .button {
     height: 24px;
@@ -580,6 +723,19 @@ footer > ul > li {
   .b3 {
     margin-left: 36px;
   }
+  .sf1 > figure > img {
+    width: 300px;
+    margin-bottom: 30px;
+  }
+  .sf1 > figure > figcaption {
+    font-size: 34px;
+  }
+  .sf2 > img {
+    width: 600px;
+  }
+  .sf3 > figcaption {
+    font-size: 62px;
+  }
   .sb1 {
     background-image: url(/images/slider/dapper-apps/dapper-background_1440px.png);
   }
@@ -589,31 +745,20 @@ footer > ul > li {
   .sb3 {
     background-image: url(/images/slider/at-franco/franco-background_1440px.png);
   }
+  .social-link > img {
+    width: 55px;
+  }
+  footer > ul > li {
+    margin: 0 7px;
+  }
 }
 
 @media only screen and (min-width: 1920px) {
-  #slider {
-    margin: 80px 80px 70px 80px;
-    border-radius: 6px;
-  }
   .slider-stack > * {
     height: 1000px;
   }
   .slider-foregrounds {
-    margin-top: -1000px;
-  }
-  .sf1 > img {
-    width: 400px;
-    margin-bottom: 36px;
-  }
-  .sf1 > figcaption {
-    font-size: 44px;
-  }
-  .sf2 > img {
-    width: 800px;
-  }
-  .sf3 > figcaption {
-    font-size: 84px;
+    margin-top: -;
   }
   .button {
     height: 36px;
@@ -642,6 +787,19 @@ footer > ul > li {
   .b3 {
     margin-left: 60px;
   }
+  .sf1 > figure > img {
+    width: 400px;
+    margin-bottom: 36px;
+  }
+  .sf1 > figure > figcaption {
+    font-size: 44px;
+  }
+  .sf2 > img {
+    width: 800px;
+  }
+  .sf3 > figcaption {
+    font-size: 84px;
+  }
   .sb1 {
     background-image: url(/images/slider/dapper-apps/dapper-background_1920px.png);
   }
@@ -651,31 +809,20 @@ footer > ul > li {
   .sb3 {
     background-image: url(/images/slider/at-franco/franco-background_1920px.png);
   }
+  .social-link > img {
+    width: 55px;
+  }
+  footer > ul > li {
+    margin: 0 7px;
+  }
 }
 
 @media only screen and (min-width: 2560px) {
-  #slider {
-    margin: 100px 100px 90px 100px;
-    border-radius: 7px;
-  }
   .slider-stack > * {
     height: 1350px;
   }
   .slider-foregrounds {
-    margin-top: -1350px;
-  }
-  .sf1 > img {
-    width: 500px;
-    margin-bottom: 50px;
-  }
-  .sf1 > figcaption {
-    font-size: 56px;
-  }
-  .sf2 > img {
-    width: 1100px;
-  }
-  .sf3 > figcaption {
-    font-size: 114px;
+    margin-top: -;
   }
   .button {
     height: 48px;
@@ -704,6 +851,19 @@ footer > ul > li {
   .b3 {
     margin-left: 74px;
   }
+  .sf1 > figure > img {
+    width: 500px;
+    margin-bottom: 50px;
+  }
+  .sf1 > figure > figcaption {
+    font-size: 56px;
+  }
+  .sf2 > img {
+    width: 1100px;
+  }
+  .sf3 > figcaption {
+    font-size: 114px;
+  }
   .sb1 {
     background-image: url(/images/slider/dapper-apps/dapper-background_2560px.png);
   }
@@ -713,18 +873,46 @@ footer > ul > li {
   .sb3 {
     background-image: url(/images/slider/at-franco/franco-background_2560px.png);
   }
+  .social-link > img {
+    width: 25px;
+  }
+  footer > ul > li {
+    margin: 0 3px;
+  }
 }
 
 @media only screen and (min-width: 3200px) {
-  #slider {
-    margin: 120px 120px 110px 120px;
-    border-radius: 8px;
-  }
   .slider-stack > * {
     height: 1700px;
   }
   .slider-foregrounds {
-    margin-top: -1700px;
+    margin-top: -;
+  }
+  .button {
+    height: 48px;
+    width: 48px;
+    left: calc(50% - 24px);
+    bottom: 42px;
+  }
+  .active {
+    height: 24px;
+    width: 24px;
+    left: calc(50% - 12px - 74px);
+    bottom: 54px;
+  }
+  #radio2:checked ~ .active {
+    -webkit-transform: translateX(74px);
+            transform: translateX(74px);
+  }
+  #radio3:checked ~ .active {
+    -webkit-transform: translateX(148px);
+            transform: translateX(148px);
+  }
+  .b1 {
+    margin-left: -74px;
+  }
+  .b3 {
+    margin-left: 74px;
   }
   .sb1 {
     background-image: url(/images/slider/dapper-apps/dapper-background_3200px.png);
@@ -735,31 +923,20 @@ footer > ul > li {
   .sb3 {
     background-image: url(/images/slider/at-franco/franco-background_3200px.png);
   }
+  .social-link > img {
+    width: 25px;
+  }
+  footer > ul > li {
+    margin: 0 3px;
+  }
 }
 
 @media only screen and (min-width: 4096px) {
-  #slider {
-    margin: 140px 140px 130px 140px;
-    border-radius: 9px;
-  }
   .slider-stack > * {
     height: 1850px;
   }
   .slider-foregrounds {
-    margin-top: -1850px;
-  }
-  .sf1 > img {
-    width: 700px;
-    margin-bottom: 75px;
-  }
-  .sf1 > figcaption {
-    font-size: 84px;
-  }
-  .sf2 > img {
-    width: 1400px;
-  }
-  .sf3 > figcaption {
-    font-size: 175px;
+    margin-top: -;
   }
   .button {
     height: 72px;
@@ -788,6 +965,19 @@ footer > ul > li {
   .b3 {
     margin-left: 122px;
   }
+  .sf1 > figure > img {
+    width: 700px;
+    margin-bottom: 75px;
+  }
+  .sf1 > figure > figcaption {
+    font-size: 84px;
+  }
+  .sf2 > img {
+    width: 1400px;
+  }
+  .sf3 > figcaption {
+    font-size: 175px;
+  }
   .sb1 {
     background-image: url(/images/slider/dapper-apps/dapper-background_4096px.png);
   }
@@ -797,4 +987,12 @@ footer > ul > li {
   .sb3 {
     background-image: url(/images/slider/at-franco/franco-background_4096px.png);
   }
+  .social-link > img {
+    width: 25px;
+  }
+  footer > ul > li {
+    margin: 0 3px;
+  }
 }
+
+/* Responsive Design */

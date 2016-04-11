@@ -1,26 +1,29 @@
 footer {
-  margin: $footer-margin;
   text-align: center;
-  background-color: $footer-background-color;
-  border-radius: 2px;
-  box-shadow: 1px 2px 10px 0px rgba(0,0,0,0.3);
-  padding: $footer-padding;
   > ul {
     display: flex;
     align-items: center;
     justify-content: center;
     list-style-type: none;
-    margin: 0;
-    padding: 0;
-    > li {
-      width: 5%;
-      height: auto;
-      margin: 0 5px 0 5px;
-    }
   }
 }
 
-.social-link > img {
-  width: 100%;
-  height: auto;
+footer > ul > li, .social-link, .social-link > img {
+  display: block;
 }
+
+@mixin footer(
+  $link-width,
+  $link-margin) {
+  .social-link > img {
+    width: $link-width;
+  }
+  footer > ul > li {
+    margin: $link-margin;
+  }
+}
+
+@include footer(
+  25px,
+  0 3px
+);

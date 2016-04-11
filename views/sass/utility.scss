@@ -1,4 +1,3 @@
-/* Responsive Design Utilities */
 $breakpoints: (
   "wearable": 0,
   "mobile-s": 320px,
@@ -54,4 +53,18 @@ $breakpoints: (
         + "Please make sure it is defined in `$breakpoints` map.";
   }
 }
-/* Responsive Design Utilities */
+
+@mixin semantic-properties(
+$margin: null,
+$border-radius: null,
+$box-shadow: null,
+$padding: null) {
+  header, section, footer {
+    margin: $margin;
+    border-radius: $border-radius;
+    box-shadow: $box-shadow;
+  }
+  section, footer {
+    padding: $padding;
+  }
+}

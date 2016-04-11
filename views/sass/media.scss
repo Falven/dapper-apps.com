@@ -1,225 +1,188 @@
 /* Responsive Design */
-
 @include respond-min("mobile-m") {
-  @include slider-height(
-    $height: 262px
+  @include header(
+    $slider-controls-left: 50%,
+    $slider-controls-bottom: 12px,
+    $slider-controls-margin: 20px,
+    $slider-controls-dimensions: 12px,
+    $sf1-img-width: 85px,
+    $sf1-font-size: 15px,
+    $sf1-separation: 10px,
+    $sf2-img-width: 175px,
+    $sf3-font-size: 18px,
+    $sb-key: "mobile-m"
   );
-  @include sf1(
-    $img-width: 85px,
-    $font-size: 15px,
-    $separation: 10px
+  @include contact(
+    $title-font-size: 20px,
+    $portrait-width: 60px,
+    $portrait-border-width: 1px,
+    $portrait-box-shadow: 0px 0px 15px 0px black inset,
+    $name-font-size: 12px,
+    $name-margin: 10px 0,
+    $description-font-size: 11px,
+    $description-text-indent: 25px
   );
-  @include sf2(
-    $img-width: 175px
-  );
-  @include sf3(
-    $font-size: 18px
-  );
-  @include sb(
-    $key: "mobile-m"
+  @include footer(
+    30px,
+    0 3px
   );
 }
 
 @include respond-min("mobile-l") {
-  @include slider-height(
-    $height: 297px
+  @include header(
+    $slider-controls-left: 50%,
+    $slider-controls-bottom: 12px,
+    $slider-controls-margin: 20px,
+    $slider-controls-dimensions: 12px,
+    $slider-height: 297px,
+    $sf1-img-width: 95px,
+    $sf1-font-size: 16px,
+    $sf1-separation: 15px,
+    $sf2-img-width: 200px,
+    $sf3-font-size: 20px,
+    $sb-key: "mobile-l"
   );
-  @include sf1(
-    $img-width: 95px,
-    $font-size: 16px,
-    $separation: 15px
-  );
-  @include sf2(
-    $img-width: 200px
-  );
-  @include sf3(
-    $font-size: 20px
-  );
-  @include sb(
-    $key: "mobile-l"
+  @include footer(
+    30px,
+    0 3px
   );
 }
 
 @include respond-min("tablet") {
-  @include slider(
-    $border-radius: 3px
+  @include header(
+    $slider-controls-left: 50%,
+    $slider-controls-bottom: 18px,
+    $slider-controls-margin: 26px,
+    $slider-controls-dimensions: 16px,
+    $slider-height: 375px,
+    $sf1-img-width: 145px,
+    $sf1-font-size: 19px,
+    $sf2-img-width: 300px,
+    $sf3-font-size: 34px,
+    $sb-key: "tablet"
   );
-  @include slider-height(
-    $height: 375px
-  );
-  @include sf1(
-    $img-width: 145px,
-    $font-size: 19px
-  );
-  @include sf2(
-    $img-width: 300px
-  );
-  @include sf3(
-    $font-size: 34px
-  );
-  @include slider-controls(
-    $dimensions: 16px,
-    $margin: 26px,
-    $bottom: 18px
-  );
-  @include sb(
-    $key: "tablet"
+  @include footer(
+    35px,
+    0 5px
   );
 }
 
 @include respond-min("laptop-s") {
-  @include slider(
-    $margin: 40px 40px 30px 40px,
-    $border-radius: 4px
+  @include header(
+    $slider-controls-left: 50%,
+    $slider-controls-bottom: 18px,
+    $slider-controls-margin: 26px,
+    $slider-controls-dimensions: 16px,
+    $slider-height: 550px,
+    $sf1-img-width: 250px,
+    $sf1-font-size: 28px,
+    $sf1-separation: 25px,
+    $sf2-img-width: 500px,
+    $sf3-font-size: 46px,
+    $sb-key: "laptop-s"
   );
-  @include slider-height(
-    $height: 675px
-  );
-  @include sf1(
-    $img-width: 250px,
-    $font-size: 28px,
-    $separation: 25px
-  );
-  @include sf2(
-    $img-width: 500px
-  );
-  @include sf3(
-    $font-size: 46px
-  );
-  @include sb(
-    $key: "laptop-s"
+  @include footer(
+    45px,
+    0 5px
   );
 }
 
 @include respond-min("laptop-m") {
-  @include slider(
-    $margin: 60px 60px 50px 60px,
-    $border-radius: 5px
+  @include header(
+    $slider-controls-left: 50%,
+    $slider-controls-bottom: 22px,
+    $slider-controls-margin: 36px,
+    $slider-controls-dimensions: 24px,
+    $slider-height: 800px,
+    $slider-controls-border-size: 3px,
+    $sf1-img-width: 300px,
+    $sf1-font-size: 34px,
+    $sf1-separation: 30px,
+    $sf2-img-width: 600px,
+    $sf3-font-size: 62px,
+    $sb-key: "laptop-m"
   );
-  @include slider-height(
-    $height: 800px
-  );
-  @include sf1(
-    $img-width: 300px,
-    $font-size: 34px,
-    $separation: 30px
-  );
-  @include sf2(
-    $img-width: 600px
-  );
-  @include sf3(
-    $font-size: 62px
-  );
-  @include slider-controls(
-    $dimensions: 24px,
-    $margin: 36px,
-    $border-size: 3px,
-    $bottom: 22px
-  );
-  @include sb(
-    $key: "laptop-m"
+  @include footer(
+    55px,
+    0 7px
   );
 }
 
 @include respond-min("laptop-l") {
-  @include slider(
-    $margin: 80px 80px 70px 80px,
-    $border-radius: 6px
+  @include header(
+    $slider-controls-left: 50%,
+    $slider-controls-bottom: 32px,
+    $slider-controls-margin: 60px,
+    $slider-controls-dimensions: 36px,
+    $slider-height: 1000px,
+    $slider-controls-border-size: 5px,
+    $sf1-img-width: 400px,
+    $sf1-font-size: 44px,
+    $sf1-separation: 36px,
+    $sf2-img-width: 800px,
+    $sf3-font-size: 84px,
+    $sb-key: "laptop-l"
   );
-  @include slider-height(
-    $height: 1000px
-  );
-  @include sf1(
-    $img-width: 400px,
-    $font-size: 44px,
-    $separation: 36px
-  );
-  @include sf2(
-    $img-width: 800px
-  );
-  @include sf3(
-    $font-size: 84px
-  );
-  @include slider-controls(
-    $dimensions: 36px,
-    $margin: 60px,
-    $border-size: 5px,
-    $bottom: 32px
-  );
-  @include sb(
-    $key: "laptop-l"
+  @include footer(
+    55px,
+    0 7px
   );
 }
 
 @include respond-min("desktop-s") {
-  @include slider(
-    $margin: 100px 100px 90px 100px,
-    $border-radius: 7px
+  @include header(
+    $slider-controls-left: 50%,
+    $slider-controls-bottom: 42px,
+    $slider-controls-margin: 74px,
+    $slider-controls-dimensions: 48px,
+    $slider-height: 1350px,
+    $slider-controls-border-size: 6px,
+    $sf1-img-width: 500px,
+    $sf1-font-size: 56px,
+    $sf1-separation: 50px,
+    $sf2-img-width: 1100px,
+    $sf3-font-size: 114px,
+    $sb-key: "desktop-s"
   );
-  @include slider-height(
-    $height: 1350px
-  );
-  @include sf1(
-    $img-width: 500px,
-    $font-size: 56px,
-    $separation: 50px
-  );
-  @include sf2(
-    $img-width: 1100px
-  );
-  @include sf3(
-    $font-size: 114px
-  );
-  @include slider-controls(
-    $dimensions: 48px,
-    $margin: 74px,
-    $border-size: 6px,
-    $bottom: 42px
-  );
-  @include sb(
-    $key: "desktop-s"
+  @include footer(
+    25px,
+    0 3px
   );
 }
 
 @include respond-min("desktop-m") {
-  @include slider(
-    $margin: 120px 120px 110px 120px,
-    $border-radius: 8px
+  @include header(
+    $slider-controls-left: 50%,
+    $slider-controls-bottom: 42px,
+    $slider-controls-margin: 74px,
+    $slider-controls-dimensions: 48px,
+    $slider-height: 1700px,
+    $sb-key: "desktop-m"
   );
-  @include slider-height(
-    $height: 1700px
-  );
-  @include sb(
-    $key: "desktop-m"
+  @include footer(
+    25px,
+    0 3px
   );
 }
 
 @include respond-min("desktop-l") {
-  @include slider(
-    $margin: 140px 140px 130px 140px,
-    $border-radius: 9px
+  @include header(
+    $slider-controls-left: 50%,
+    $slider-controls-bottom: 60px,
+    $slider-controls-margin: 122px,
+    $slider-controls-dimensions: 72px,
+    $slider-height: 1850px,
+    $slider-controls-border-size: 8px,
+    $sf1-img-width: 700px,
+    $sf1-font-size: 84px,
+    $sf1-separation: 75px,
+    $sf2-img-width: 1400px,
+    $sf3-font-size: 175px,
+    $sb-key: "desktop-l"
   );
-  @include slider-height(
-    $height: 1850px
-  );
-  @include sf1(
-    $img-width: 700px,
-    $font-size: 84px,
-    $separation: 75px
-  );
-  @include sf2(
-    $img-width: 1400px
-  );
-  @include sf3(
-    $font-size: 175px
-  );
-  @include slider-controls(
-    $dimensions: 72px,
-    $margin: 122px,
-    $border-size: 8px,
-    $bottom: 60px
-  );
-  @include sb(
-    $key: "desktop-l"
+  @include footer(
+    25px,
+    0 3px
   );
 }
+/* Responsive Design */

@@ -1,29 +1,42 @@
 @charset "utf-8";
 
+@import 'fonts';
+
 @import 'reset';
 
 @import 'utility';
 
-$fallback-fonts: OpenSans, Lato, "Lucida Grande", "Lucida Sans Unicode", Tahoma, Sans-Serif;
+html {
+  font-synthesis: none !important;
+  text-rendering: optimizeLegibility !important;
+  -webkit-font-smoothing: antialiased !important;
+  -moz-osx-font-smoothing: grayscale !important;
+  text-shadow: 1px 1px 1px rgba(0,0,0,0.004) !important;
+}
+
 body {
-  font-family: $fallback-fonts;
+  // Roboto, Open Sans, Lato
+  font-family: 'Raleway', sans-serif;
   font-size: 16px;
   background-color: #f2f2f2;
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
   line-height: 1.66667;
   letter-spacing: 0em;
 }
-$header-background-color: #222;
-$footer-background-color: $header-background-color;
-$section-background-color: #fff;
-$header-margin: 25px 25px 15px 25px;
-$section-margin: 15px 25px 15px 25px;
-$section-padding: 50px 0;
-$footer-margin: 15px 25px 25px 25px;
-$footer-padding: $section-padding;
+
+section {
+  background-color: #fff;
+}
+
+footer {
+  background-color: #222;
+}
+
+@include semantic-properties(
+  $margin: 5px 10px 5px 10px,
+  $border-radius: 2px,
+  $box-shadow: 1px 2px 10px 0px rgba(0, 0, 0, 0.3),
+  $padding: 20px 10px
+);
 
 @import 'header';
 

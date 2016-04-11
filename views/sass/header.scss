@@ -6,33 +6,13 @@ $active-z-index: 2;
 $button-z-index: 1;
 $foreground-z-index: 0;
 $background-z-index: -1;
-$primary-color: #fff;
-
-@mixin slider(
-  $margin: null,
-  $border-radius: null,
-  $box-shadow: null) {
-  #slider {
-    margin: $margin;
-    border-radius: $border-radius;
-    box-shadow: $box-shadow;
-  }
-}
+$foreground-color: #fff;
 
 #slider {
   position: relative;
   overflow: hidden;
   > input[type="radio"] {
     display: none;
-  }
-}
-
-@mixin slider-height($height: null) {
-  .slider-stack > * {
-    height: $height;
-  }
-  .slider-foregrounds {
-    margin-top: -$height;
   }
 }
 
@@ -46,13 +26,13 @@ $primary-color: #fff;
   cursor: pointer;
   z-index: $button-z-index;
   border-style: solid;
-  border-color: $primary-color;
+  border-color: $foreground-color;
 }
 
 .active {
   z-index: $active-z-index;
   transition: all $active-transition-speed ease;
-  background-color: $primary-color;
+  background-color: $foreground-color;
 }
 
 #radio1:checked ~ .active {
@@ -63,85 +43,23 @@ $primary-color: #fff;
   margin-left: 0;
 }
 
-@mixin slider-controls(
-  $dimensions: null,
-  $margin: null,
-  $border-size: null,
-  $left: 50%,
-  $bottom: null) {
-  .button {
-    height: $dimensions;
-    width: $dimensions;
-    left: calc(#{$left} - #{$dimensions / 2});
-    bottom: $bottom;
-    border-width: $border-size;
-  }
-  $active-dimensions: $dimensions / 2;
-  .active {
-    height: $active-dimensions;
-    width: $active-dimensions;
-    left: calc(#{$left} - #{$active-dimensions / 2} - #{$margin});
-    bottom: $bottom + $active-dimensions / 2;
-  }
-  #radio2:checked ~ .active {
-    transform: translateX($margin);
-  }
-  #radio3:checked ~ .active {
-    transform: translateX($margin * 2);
-  }
-  .b1 {
-    margin-left: -$margin;
-  }
-  .b3 {
-    margin-left: $margin;
-  }
-}
-
 .sf1 {
-  > img {
+  img {
     vertical-align: middle;
   }
-  > figcaption {
-    font-family: Pacifico, $fallback-fonts;
-    color: $primary-color;
+  > figure {
+    text-align: center;
   }
-}
-
-@mixin sf1(
-  $img-width: null,
-  $font-size: null,
-  $separation: null) {
-  .sf1 {
-    > img {
-      width: $img-width;
-      margin-bottom: $separation;
-    }
-    > figcaption {
-      font-size: $font-size;
-    }
-  }
-}
-
-@mixin sf2($img-width: null) {
-  .sf2 {
-    > img {
-      width: $img-width;
-    }
+  figcaption {
+    font-family: 'Pacifico', cursive;
+    color: $foreground-color;
   }
 }
 
 .sf3 {
   > figcaption {
-    font-family: BonvenoCF, $fallback-fonts;
-    color: $primary-color;
-  }
-}
-
-@mixin sf3($font-size: null) {
-  .sf3 {
-    > figcaption {
-      font-size: $font-size;
-    }
+    font-family: 'BonvenoCF', sans-serif;
+    color: $foreground-color;
   }
 }
 
@@ -182,20 +100,6 @@ $primary-color: #fff;
   background-position: bottom;
 }
 
-@mixin sb($key: null) {
-  @if map-has-key($breakpoints, $key) {
-    .sb1 {
-      background-image: url(/images/slider/dapper-apps/dapper-background_#{inspect(map-get($breakpoints, $key))}.png);
-    }
-    .sb2 {
-      background-image: url(/images/slider/kamis-nightmare/kami-background_#{inspect(map-get($breakpoints, $key))}.png);
-    }
-    .sb3 {
-      background-image: url(/images/slider/at-franco/franco-background_#{inspect(map-get($breakpoints, $key))}.png);
-    }
-  }
-}
-
 .sb2 {
   left: 100%;
   right: 100%;
@@ -222,32 +126,90 @@ $primary-color: #fff;
   }
 }
 
-@include slider(
-  $margin: 25px 25px 15px 25px,
-  $border-radius: 2px,
-  $box-shadow: 1px 2px 10px 0px rgba(0, 0, 0, 0.3)
-);
-@include slider-height(
-  $height: 224px
-);
-@include slider-controls(
-  $dimensions: 12px,
-  $margin: 20px,
-  $border-size: 2px,
-  $left: 50%,
-  $bottom: 12px
-);
-@include sf1(
-  $img-width: 75px,
-  $font-size: 14px,
-  $separation: 5px
-);
-@include sf2(
-  $img-width: 150px
-);
-@include sf3(
-  $font-size: 16px
-);
-@include sb(
-  $key: "mobile-s"
+@mixin header(
+  $slider-controls-left,
+  $slider-controls-bottom,
+  $slider-controls-margin,
+  $slider-controls-dimensions,
+  $slider-height: null,
+  $slider-controls-border-size: null,
+  $sf1-img-width: null,
+  $sf1-font-size: null,
+  $sf1-separation: null,
+  $sf2-img-width: null,
+  $sf3-font-size: null,
+  $sb-key: null) {
+  .slider-stack > * {
+    height: $slider-height;
+  }
+  .slider-foregrounds {
+    margin-top: -$slider-height;
+  }
+  .button {
+    height: $slider-controls-dimensions;
+    width: $slider-controls-dimensions;
+    left: calc(#{$slider-controls-left} - #{$slider-controls-dimensions / 2});
+    bottom: $slider-controls-bottom;
+    border-width: $slider-controls-border-size;
+  }
+  $slider-controls-active-dimensions: $slider-controls-dimensions / 2;
+  .active {
+    height: $slider-controls-active-dimensions;
+    width: $slider-controls-active-dimensions;
+    left: calc(#{$slider-controls-left} - #{$slider-controls-active-dimensions / 2} - #{$slider-controls-margin});
+    bottom: $slider-controls-bottom + $slider-controls-active-dimensions / 2;
+  }
+  #radio2:checked ~ .active {
+    transform: translateX($slider-controls-margin);
+  }
+  #radio3:checked ~ .active {
+    transform: translateX($slider-controls-margin * 2);
+  }
+  .b1 {
+    margin-left: -$slider-controls-margin;
+  }
+  .b3 {
+    margin-left: $slider-controls-margin;
+  }
+  .sf1 > figure {
+    > img {
+      width: $sf1-img-width;
+      margin-bottom: $sf1-separation;
+    }
+    > figcaption {
+      font-size: $sf1-font-size;
+    }
+  }
+  .sf2 > img {
+    width: $sf2-img-width;
+  }
+  .sf3 > figcaption {
+    font-size: $sf3-font-size;
+  }
+  @if map-has-key($breakpoints, $sb-key) {
+    .sb1 {
+      background-image: url(/images/slider/dapper-apps/dapper-background_#{inspect(map-get($breakpoints, $sb-key))}.png);
+    }
+    .sb2 {
+      background-image: url(/images/slider/kamis-nightmare/kami-background_#{inspect(map-get($breakpoints, $sb-key))}.png);
+    }
+    .sb3 {
+      background-image: url(/images/slider/at-franco/franco-background_#{inspect(map-get($breakpoints, $sb-key))}.png);
+    }
+  }
+}
+
+@include header(
+  $slider-controls-left: 50%,
+  $slider-controls-bottom: 12px,
+  $slider-controls-margin: 20px,
+  $slider-controls-dimensions: 12px,
+  $slider-height: 224px,
+  $slider-controls-border-size: 2px,
+  $sf1-img-width: 75px,
+  $sf1-font-size: 14px,
+  $sf1-separation: 5px,
+  $sf2-img-width: 150px,
+  $sf3-font-size: 16px,
+  $sb-key: "mobile-s"
 );

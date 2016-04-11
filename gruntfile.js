@@ -15,8 +15,7 @@ module.exports = function (grunt) {
           outputStyle: 'expanded'
         },
         files: {
-          'public/stylesheets/index.min.css': 'views/sass/index.scss',
-          'public/stylesheets/fonts.min.css': 'views/sass/fonts.scss'
+          'public/stylesheets/index.min.css': 'views/sass/index.scss'
         }
       },
       dist: {
@@ -24,8 +23,7 @@ module.exports = function (grunt) {
           outputStyle: 'compressed'
         },
         files: {
-          'public/stylesheets/index.min.css': 'views/sass/index.scss',
-          'public/stylesheets/fonts.min.css': 'views/sass/fonts.scss'
+          'public/stylesheets/index.min.css': 'views/sass/index.scss'
         }
       }
     },
