@@ -11,7 +11,7 @@
   $sf1-separation: 5px,
   $sf2-img-width: 200px,
   $sf3-font-size: 20px,
-  $img-class: "mobile"
+  $img-class: "small_2x"
 );
 
 @include respond-small("mobile") {
@@ -32,8 +32,4 @@
     0 10px
   );
 }
-
-// @include respond-small-2x("tablet") {
-//   @include header-images("small_2x");
-// }
 /* Responsive Design */
