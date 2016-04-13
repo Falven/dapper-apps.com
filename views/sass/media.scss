@@ -1,198 +1,39 @@
 /* Responsive Design */
-@include respond-min("mobile-m") {
-  @include header(
-    $slider-controls-left: 50%,
-    $slider-controls-bottom: 12px,
-    $slider-controls-margin: 20px,
-    $slider-controls-dimensions: 12px,
-    $slider-height: 262px,
-    $sf1-img-width: 85px,
-    $sf1-font-size: 15px,
-    $sf1-separation: 10px,
-    $sf2-img-width: 175px,
-    $sf3-font-size: 18px,
-    $sb-key: "mobile-m"
-  );
-  @include contact(
-    $title-font-size: 20px,
-    $portrait-width: 70px,
-    $portrait-box-shadow: 0px 0px 17px 0px black inset,
-    $name-font-size: 12px,
-    $name-margin: 10px 0,
-    $description-font-size: 11px,
-    $description-text-indent: 22px
-  );
-  @include footer(
-    30px,
-    0 3px
-  );
-}
+@include header(
+  $slider-controls-left: 50%,
+  $slider-controls-bottom: 12px,
+  $slider-controls-margin: 30px,
+  $slider-controls-dimensions: 16px,
+  $slider-height: 224px,
+  $slider-controls-border-width: 2px,
+  $sf1-img-width: 100px,
+  $sf1-font-size: 18px,
+  $sf1-separation: 5px,
+  $sf2-img-width: 200px,
+  $sf3-font-size: 20px,
+  $img-class: "mobile"
+);
 
-@include respond-min("mobile-l") {
-  @include header(
-    $slider-controls-left: 50%,
-    $slider-controls-bottom: 12px,
-    $slider-controls-margin: 20px,
-    $slider-controls-dimensions: 12px,
-    $slider-height: 297px,
-    $sf1-img-width: 95px,
-    $sf1-font-size: 16px,
-    $sf1-separation: 15px,
-    $sf2-img-width: 200px,
-    $sf3-font-size: 20px,
-    $sb-key: "mobile-l"
-  );
+@include respond-small("mobile") {
   @include contact(
-    $title-font-size: 25px,
-    $portrait-width: 80px,
+    $title-font-size: 32px,
+    $team-flex-direction: column,
+    $team-padding: 20px 10px,
+    $member-margin: 0 0 30px 0,
+    $portrait-width: 100px,
     $portrait-border-width: 1px,
-    $portrait-box-shadow: 0px 0px 19px 0px black inset,
-    $name-font-size: 12px,
+    $portrait-box-shadow: 0px 0px 15px 0px black inset,
+    $name-font-size: 18px,
     $name-margin: 10px 0,
-    $description-font-size: 11px,
-    $description-text-indent: 43px
+    $description-font-size: 16px
   );
   @include footer(
-    30px,
-    0 3px
+    50px,
+    0 10px
   );
 }
 
-@include respond-min("tablet") {
-  @include header(
-    $slider-controls-left: 50%,
-    $slider-controls-bottom: 18px,
-    $slider-controls-margin: 26px,
-    $slider-controls-dimensions: 16px,
-    $slider-height: 375px,
-    $sf1-img-width: 145px,
-    $sf1-font-size: 19px,
-    $sf2-img-width: 300px,
-    $sf3-font-size: 34px,
-    $sb-key: "tablet"
-  );
-  @include footer(
-    35px,
-    0 5px
-  );
-}
-
-@include respond-min("laptop-s") {
-  @include header(
-    $slider-controls-left: 50%,
-    $slider-controls-bottom: 18px,
-    $slider-controls-margin: 26px,
-    $slider-controls-dimensions: 16px,
-    $slider-height: 550px,
-    $sf1-img-width: 250px,
-    $sf1-font-size: 28px,
-    $sf1-separation: 25px,
-    $sf2-img-width: 500px,
-    $sf3-font-size: 46px,
-    $sb-key: "laptop-s"
-  );
-  @include footer(
-    45px,
-    0 5px
-  );
-}
-
-@include respond-min("laptop-m") {
-  @include header(
-    $slider-controls-left: 50%,
-    $slider-controls-bottom: 22px,
-    $slider-controls-margin: 36px,
-    $slider-controls-dimensions: 24px,
-    $slider-height: 800px,
-    $slider-controls-border-size: 3px,
-    $sf1-img-width: 300px,
-    $sf1-font-size: 34px,
-    $sf1-separation: 30px,
-    $sf2-img-width: 600px,
-    $sf3-font-size: 62px,
-    $sb-key: "laptop-m"
-  );
-  @include footer(
-    55px,
-    0 7px
-  );
-}
-
-@include respond-min("laptop-l") {
-  @include header(
-    $slider-controls-left: 50%,
-    $slider-controls-bottom: 32px,
-    $slider-controls-margin: 60px,
-    $slider-controls-dimensions: 36px,
-    $slider-height: 1000px,
-    $slider-controls-border-size: 5px,
-    $sf1-img-width: 400px,
-    $sf1-font-size: 44px,
-    $sf1-separation: 36px,
-    $sf2-img-width: 800px,
-    $sf3-font-size: 84px,
-    $sb-key: "laptop-l"
-  );
-  @include footer(
-    55px,
-    0 7px
-  );
-}
-
-@include respond-min("desktop-s") {
-  @include header(
-    $slider-controls-left: 50%,
-    $slider-controls-bottom: 42px,
-    $slider-controls-margin: 74px,
-    $slider-controls-dimensions: 48px,
-    $slider-height: 1350px,
-    $slider-controls-border-size: 6px,
-    $sf1-img-width: 500px,
-    $sf1-font-size: 56px,
-    $sf1-separation: 50px,
-    $sf2-img-width: 1100px,
-    $sf3-font-size: 114px,
-    $sb-key: "desktop-s"
-  );
-  @include footer(
-    25px,
-    0 3px
-  );
-}
-
-@include respond-min("desktop-m") {
-  @include header(
-    $slider-controls-left: 50%,
-    $slider-controls-bottom: 42px,
-    $slider-controls-margin: 74px,
-    $slider-controls-dimensions: 48px,
-    $slider-height: 1700px,
-    $sb-key: "desktop-m"
-  );
-  @include footer(
-    25px,
-    0 3px
-  );
-}
-
-@include respond-min("desktop-l") {
-  @include header(
-    $slider-controls-left: 50%,
-    $slider-controls-bottom: 60px,
-    $slider-controls-margin: 122px,
-    $slider-controls-dimensions: 72px,
-    $slider-height: 1850px,
-    $slider-controls-border-size: 8px,
-    $sf1-img-width: 700px,
-    $sf1-font-size: 84px,
-    $sf1-separation: 75px,
-    $sf2-img-width: 1400px,
-    $sf3-font-size: 175px,
-    $sb-key: "desktop-l"
-  );
-  @include footer(
-    25px,
-    0 3px
-  );
-}
+// @include respond-small-2x("tablet") {
+//   @include header-images("small_2x");
+// }
 /* Responsive Design */

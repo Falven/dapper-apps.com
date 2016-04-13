@@ -16,20 +16,18 @@
   box-sizing: border-box;
 }
 
-html {
+body {
   font-synthesis: none !important;
   text-rendering: optimizeLegibility !important;
   -webkit-font-smoothing: antialiased !important;
   -moz-osx-font-smoothing: grayscale !important;
   text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.004) !important;
-}
-
-body {
   font-family: "Raleway", sans-serif;
   font-size: 16px;
-  background-color: #f2f2f2;
+  color: #333;
   line-height: 1.66667;
   letter-spacing: 0em;
+  background-color: #f2f2f2;
 }
 
 section {
@@ -47,7 +45,107 @@ header, section, footer {
 }
 
 section, footer {
-  padding: 20px 10px;
+  padding: 20px 0;
+}
+
+#contact > h2,
+#contact > p {
+  text-align: center;
+}
+
+.portrait > img, .portrait::before {
+  border-radius: 50%;
+  box-sizing: border-box;
+  height: 100%;
+  width: 100%;
+}
+
+#contact > h2 {
+  font-weight: 400;
+  color: #b9874c;
+  text-transform: uppercase;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.3);
+}
+
+#contact > p {
+  font-weight: 300;
+}
+
+.team {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-justify-content: space-around;
+      -ms-flex-pack: distribute;
+          justify-content: space-around;
+  -webkit-box-align: top;
+  -webkit-align-items: top;
+      -ms-flex-align: top;
+          align-items: top;
+}
+
+.member > h3 {
+  font-weight: 400;
+}
+
+.member > p {
+  font-weight: 300;
+}
+
+.portrait {
+  position: relative;
+  margin: auto;
+}
+
+.portrait::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  box-shadow: 0px 0px 35px 0px black inset;
+  border-style: solid;
+  border-color: #b9874c;
+}
+
+.portrait > img {
+  vertical-align: middle;
+}
+
+.portrait-image {
+  width: 50%;
+  height: 50%;
+}
+
+footer {
+  text-align: center;
+}
+
+footer > ul {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  list-style-type: none;
+}
+
+footer > ul > li, .social-link, .social-link > img {
+  display: block;
+}
+
+/* Responsive Design */
+#slider, .slider-stack > * {
+  height: 224px;
 }
 
 #slider {
@@ -57,6 +155,36 @@ section, footer {
 
 #slider > input[type="radio"] {
   display: none;
+}
+
+.slider-foregrounds {
+  -webkit-transition: -webkit-transform 700ms ease;
+  transition: -webkit-transform 700ms ease;
+  transition: transform 700ms ease;
+  transition: transform 700ms ease, -webkit-transform 700ms ease;
+  z-index: 0;
+  margin-top: -224px;
+}
+
+.slider-foregrounds > * {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 0;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .button,
@@ -70,6 +198,11 @@ section, footer {
   z-index: 1;
   border-style: solid;
   border-color: #fff;
+  height: 16px;
+  width: 16px;
+  bottom: 12px;
+  border-width: 2px;
+  left: calc(50% - 8px);
 }
 
 .active {
@@ -77,6 +210,10 @@ section, footer {
   -webkit-transition: all 700ms ease;
   transition: all 700ms ease;
   background-color: #fff;
+  height: 8px;
+  width: 8px;
+  left: calc(50% - 4px - 30px);
+  bottom: 16px;
 }
 
 #radio1:checked ~ .active {
@@ -84,26 +221,26 @@ section, footer {
           transform: translateX(0);
 }
 
+#radio2:checked ~ .active {
+  -webkit-transform: translateX(30px);
+          transform: translateX(30px);
+}
+
+#radio3:checked ~ .active {
+  -webkit-transform: translateX(60px);
+          transform: translateX(60px);
+}
+
+.b1 {
+  margin-left: -30px;
+}
+
 .b2 {
   margin-left: 0;
 }
 
-.sf1 img {
-  vertical-align: middle;
-}
-
-.sf1 > figure {
-  text-align: center;
-}
-
-.sf1 figcaption {
-  font-family: 'Pacifico', cursive;
-  color: #fff;
-}
-
-.sf3 > figcaption {
-  font-family: 'BonvenoCF', sans-serif;
-  color: #fff;
+.b3 {
+  margin-left: 30px;
 }
 
 #radio1:checked ~ .slider-stack {
@@ -152,6 +289,7 @@ section, footer {
   right: 200%;
   background-color: #8e44ad;
   background-position: bottom;
+  background-image: url(/images/slider/dapper-apps/dapper-background_mobile.png);
 }
 
 .sb2 {
@@ -159,6 +297,7 @@ section, footer {
   right: 100%;
   background-color: #ea4c89;
   background-position: bottom;
+  background-image: url(/images/slider/kamis-nightmare/kami-background_mobile.png);
 }
 
 .sb3 {
@@ -166,856 +305,79 @@ section, footer {
   right: 0;
   background-color: #75c1e8;
   background-position: center;
+  background-image: url(/images/slider/at-franco/franco-background_mobile.png);
 }
 
-.slider-foregrounds {
-  -webkit-transition: -webkit-transform 700ms ease;
-  transition: -webkit-transform 700ms ease;
-  transition: transform 700ms ease;
-  transition: transform 700ms ease, -webkit-transform 700ms ease;
-  z-index: 0;
+.sf1 img {
+  vertical-align: middle;
 }
 
-.slider-foregrounds > * {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  margin: 0;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -webkit-flex-direction: column;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-  -webkit-align-items: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-}
-
-#slider, .slider-stack > * {
-  height: 224px;
-}
-
-.slider-foregrounds {
-  margin-top: -224px;
-}
-
-.button {
-  height: 12px;
-  width: 12px;
-  left: calc(50% - 6px);
-  bottom: 12px;
-  border-width: 2px;
-}
-
-.active {
-  height: 6px;
-  width: 6px;
-  left: calc(50% - 3px - 20px);
-  bottom: 15px;
-}
-
-#radio2:checked ~ .active {
-  -webkit-transform: translateX(20px);
-          transform: translateX(20px);
-}
-
-#radio3:checked ~ .active {
-  -webkit-transform: translateX(40px);
-          transform: translateX(40px);
-}
-
-.b1 {
-  margin-left: -20px;
-}
-
-.b3 {
-  margin-left: 20px;
+.sf1 > figure {
+  text-align: center;
 }
 
 .sf1 > figure > img {
-  width: 75px;
+  width: 100px;
   margin-bottom: 5px;
 }
 
 .sf1 > figure > figcaption {
-  font-size: 14px;
-}
-
-.sf2 > img {
-  width: 150px;
+  font-family: 'Pacifico', cursive;
+  color: #fff;
+  font-size: 18px;
 }
 
 .sf3 > figcaption {
-  font-size: 16px;
+  font-family: 'BonvenoCF', sans-serif;
+  color: #fff;
+  font-size: 20px;
 }
 
-.sb1 {
-  background-image: url(/images/slider/dapper-apps/dapper-background_320px.png);
+.sf2 > img {
+  width: 200px;
 }
 
-.sb2 {
-  background-image: url(/images/slider/kamis-nightmare/kami-background_320px.png);
-}
-
-.sb3 {
-  background-image: url(/images/slider/at-franco/franco-background_320px.png);
-}
-
-#contact > h2,
-#contact > p,
-.member > h3 {
-  text-align: center;
-}
-
-.member, #contact > p {
-  width: 85%;
-  margin: auto;
-}
-
-.portrait > img, .portrait::before {
-  border-radius: 50%;
-  box-sizing: border-box;
-  height: 100%;
-  width: 100%;
-}
-
-#contact > h2 {
-  font-weight: 400;
-  color: #b9874c;
-  text-transform: uppercase;
-  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.3);
-}
-
-#contact > p {
-  font-weight: 300;
-}
-
-.team {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-justify-content: space-around;
-      -ms-flex-pack: distribute;
-          justify-content: space-around;
-  -webkit-box-align: top;
-  -webkit-align-items: top;
-      -ms-flex-align: top;
-          align-items: top;
-}
-
-.member > h3 {
-  font-weight: 500;
-}
-
-.member > p {
-  font-weight: 300;
-}
-
-.portrait {
-  position: relative;
-  margin: auto;
-  width: 45%;
-}
-
-.portrait::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  box-shadow: 0px 0px 35px 0px black inset;
-  border-style: solid;
-  border-color: #b9874c;
-}
-
-.portrait > img {
-  vertical-align: middle;
-}
-
-.portrait-image {
-  width: 50%;
-  height: 50%;
-}
-
-.member > p,
-#contact > p {
-  font-size: 9px;
-}
-
-#contact > h2 {
-  font-size: 16px;
-}
-
-.team {
-  margin: 20px 0;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -webkit-flex-direction: column;
-      -ms-flex-direction: column;
-          flex-direction: column;
-}
-
-.member > h3 {
-  font-size: 10px;
-  margin: 10px 0;
-}
-
-.member > p {
-  font-size: 9px;
-  text-indent: 19px;
-}
-
-.member:not(:last-child) {
-  margin-bottom: 15px;
-}
-
-.portrait {
-  width: 60px;
-}
-
-.portrait::before {
-  border-width: 1px;
-  box-shadow: 0px 0px 15px 0px black inset;
-}
-
-footer {
-  text-align: center;
-}
-
-footer > ul {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-  -webkit-align-items: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  list-style-type: none;
-}
-
-footer > ul > li, .social-link, .social-link > img {
-  display: block;
-}
-
-.social-link > img {
-  width: 25px;
-}
-
-footer > ul > li {
-  margin: 0 3px;
-}
-
-/* Responsive Design */
-@media only screen and (min-width: 375px) {
-  #slider, .slider-stack > * {
-    height: 262px;
-  }
-  .slider-foregrounds {
-    margin-top: -262px;
-  }
-  .button {
-    height: 12px;
-    width: 12px;
-    left: calc(50% - 6px);
-    bottom: 12px;
-  }
-  .active {
-    height: 6px;
-    width: 6px;
-    left: calc(50% - 3px - 20px);
-    bottom: 15px;
-  }
-  #radio2:checked ~ .active {
-    -webkit-transform: translateX(20px);
-            transform: translateX(20px);
-  }
-  #radio3:checked ~ .active {
-    -webkit-transform: translateX(40px);
-            transform: translateX(40px);
-  }
-  .b1 {
-    margin-left: -20px;
-  }
-  .b3 {
-    margin-left: 20px;
-  }
-  .sf1 > figure > img {
-    width: 85px;
-    margin-bottom: 10px;
-  }
-  .sf1 > figure > figcaption {
-    font-size: 15px;
-  }
-  .sf2 > img {
-    width: 175px;
-  }
-  .sf3 > figcaption {
-    font-size: 18px;
-  }
-  .sb1 {
-    background-image: url(/images/slider/dapper-apps/dapper-background_375px.png);
-  }
-  .sb2 {
-    background-image: url(/images/slider/kamis-nightmare/kami-background_375px.png);
-  }
-  .sb3 {
-    background-image: url(/images/slider/at-franco/franco-background_375px.png);
-  }
+@media only screen and (min-width: 320px) {
   .member > p,
   #contact > p {
-    font-size: 11px;
-  }
-  #contact > h2 {
-    font-size: 20px;
-  }
-  .member > h3 {
-    font-size: 12px;
-    margin: 10px 0;
-  }
-  .member > p {
-    font-size: 11px;
-    text-indent: 22px;
-  }
-  .portrait {
-    width: 70px;
-  }
-  .portrait::before {
-    box-shadow: 0px 0px 17px 0px black inset;
-  }
-  .social-link > img {
-    width: 30px;
-  }
-  footer > ul > li {
-    margin: 0 3px;
-  }
-}
-
-@media only screen and (min-width: 425px) {
-  #slider, .slider-stack > * {
-    height: 297px;
-  }
-  .slider-foregrounds {
-    margin-top: -297px;
-  }
-  .button {
-    height: 12px;
-    width: 12px;
-    left: calc(50% - 6px);
-    bottom: 12px;
-  }
-  .active {
-    height: 6px;
-    width: 6px;
-    left: calc(50% - 3px - 20px);
-    bottom: 15px;
-  }
-  #radio2:checked ~ .active {
-    -webkit-transform: translateX(20px);
-            transform: translateX(20px);
-  }
-  #radio3:checked ~ .active {
-    -webkit-transform: translateX(40px);
-            transform: translateX(40px);
-  }
-  .b1 {
-    margin-left: -20px;
-  }
-  .b3 {
-    margin-left: 20px;
-  }
-  .sf1 > figure > img {
-    width: 95px;
-    margin-bottom: 15px;
-  }
-  .sf1 > figure > figcaption {
     font-size: 16px;
   }
-  .sf2 > img {
-    width: 200px;
-  }
-  .sf3 > figcaption {
-    font-size: 20px;
-  }
-  .sb1 {
-    background-image: url(/images/slider/dapper-apps/dapper-background_425px.png);
-  }
-  .sb2 {
-    background-image: url(/images/slider/kamis-nightmare/kami-background_425px.png);
-  }
-  .sb3 {
-    background-image: url(/images/slider/at-franco/franco-background_425px.png);
-  }
-  .member > p,
-  #contact > p {
-    font-size: 11px;
-  }
   #contact > h2 {
-    font-size: 25px;
+    font-size: 32px;
+  }
+  .team {
+    padding: 20px 10px;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .member {
+    margin: 0 0 30px 0;
   }
   .member > h3 {
-    font-size: 12px;
+    font-size: 18px;
     margin: 10px 0;
   }
   .member > p {
-    font-size: 11px;
-    text-indent: 43px;
+    font-size: 16px;
+  }
+  .member:last-child {
+    margin-bottom: 0;
   }
   .portrait {
-    width: 80px;
+    width: 100px;
   }
   .portrait::before {
     border-width: 1px;
-    box-shadow: 0px 0px 19px 0px black inset;
+    box-shadow: 0px 0px 15px 0px black inset;
   }
   .social-link > img {
-    width: 30px;
+    width: 50px;
   }
   footer > ul > li {
-    margin: 0 3px;
-  }
-}
-
-@media only screen and (min-width: 768px) {
-  #slider, .slider-stack > * {
-    height: 375px;
-  }
-  .slider-foregrounds {
-    margin-top: -375px;
-  }
-  .button {
-    height: 16px;
-    width: 16px;
-    left: calc(50% - 8px);
-    bottom: 18px;
-  }
-  .active {
-    height: 8px;
-    width: 8px;
-    left: calc(50% - 4px - 26px);
-    bottom: 22px;
-  }
-  #radio2:checked ~ .active {
-    -webkit-transform: translateX(26px);
-            transform: translateX(26px);
-  }
-  #radio3:checked ~ .active {
-    -webkit-transform: translateX(52px);
-            transform: translateX(52px);
-  }
-  .b1 {
-    margin-left: -26px;
-  }
-  .b3 {
-    margin-left: 26px;
-  }
-  .sf1 > figure > img {
-    width: 145px;
-  }
-  .sf1 > figure > figcaption {
-    font-size: 19px;
-  }
-  .sf2 > img {
-    width: 300px;
-  }
-  .sf3 > figcaption {
-    font-size: 34px;
-  }
-  .sb1 {
-    background-image: url(/images/slider/dapper-apps/dapper-background_768px.png);
-  }
-  .sb2 {
-    background-image: url(/images/slider/kamis-nightmare/kami-background_768px.png);
-  }
-  .sb3 {
-    background-image: url(/images/slider/at-franco/franco-background_768px.png);
-  }
-  .social-link > img {
-    width: 35px;
-  }
-  footer > ul > li {
-    margin: 0 5px;
-  }
-}
-
-@media only screen and (min-width: 1024px) {
-  #slider, .slider-stack > * {
-    height: 550px;
-  }
-  .slider-foregrounds {
-    margin-top: -550px;
-  }
-  .button {
-    height: 16px;
-    width: 16px;
-    left: calc(50% - 8px);
-    bottom: 18px;
-  }
-  .active {
-    height: 8px;
-    width: 8px;
-    left: calc(50% - 4px - 26px);
-    bottom: 22px;
-  }
-  #radio2:checked ~ .active {
-    -webkit-transform: translateX(26px);
-            transform: translateX(26px);
-  }
-  #radio3:checked ~ .active {
-    -webkit-transform: translateX(52px);
-            transform: translateX(52px);
-  }
-  .b1 {
-    margin-left: -26px;
-  }
-  .b3 {
-    margin-left: 26px;
-  }
-  .sf1 > figure > img {
-    width: 250px;
-    margin-bottom: 25px;
-  }
-  .sf1 > figure > figcaption {
-    font-size: 28px;
-  }
-  .sf2 > img {
-    width: 500px;
-  }
-  .sf3 > figcaption {
-    font-size: 46px;
-  }
-  .sb1 {
-    background-image: url(/images/slider/dapper-apps/dapper-background_1024px.png);
-  }
-  .sb2 {
-    background-image: url(/images/slider/kamis-nightmare/kami-background_1024px.png);
-  }
-  .sb3 {
-    background-image: url(/images/slider/at-franco/franco-background_1024px.png);
-  }
-  .social-link > img {
-    width: 45px;
-  }
-  footer > ul > li {
-    margin: 0 5px;
-  }
-}
-
-@media only screen and (min-width: 1440px) {
-  #slider, .slider-stack > * {
-    height: 800px;
-  }
-  .slider-foregrounds {
-    margin-top: -800px;
-  }
-  .button {
-    height: 24px;
-    width: 24px;
-    left: calc(50% - 12px);
-    bottom: 22px;
-    border-width: 3px;
-  }
-  .active {
-    height: 12px;
-    width: 12px;
-    left: calc(50% - 6px - 36px);
-    bottom: 28px;
-  }
-  #radio2:checked ~ .active {
-    -webkit-transform: translateX(36px);
-            transform: translateX(36px);
-  }
-  #radio3:checked ~ .active {
-    -webkit-transform: translateX(72px);
-            transform: translateX(72px);
-  }
-  .b1 {
-    margin-left: -36px;
-  }
-  .b3 {
-    margin-left: 36px;
-  }
-  .sf1 > figure > img {
-    width: 300px;
-    margin-bottom: 30px;
-  }
-  .sf1 > figure > figcaption {
-    font-size: 34px;
-  }
-  .sf2 > img {
-    width: 600px;
-  }
-  .sf3 > figcaption {
-    font-size: 62px;
-  }
-  .sb1 {
-    background-image: url(/images/slider/dapper-apps/dapper-background_1440px.png);
-  }
-  .sb2 {
-    background-image: url(/images/slider/kamis-nightmare/kami-background_1440px.png);
-  }
-  .sb3 {
-    background-image: url(/images/slider/at-franco/franco-background_1440px.png);
-  }
-  .social-link > img {
-    width: 55px;
-  }
-  footer > ul > li {
-    margin: 0 7px;
-  }
-}
-
-@media only screen and (min-width: 1920px) {
-  #slider, .slider-stack > * {
-    height: 1000px;
-  }
-  .slider-foregrounds {
-    margin-top: -1000px;
-  }
-  .button {
-    height: 36px;
-    width: 36px;
-    left: calc(50% - 18px);
-    bottom: 32px;
-    border-width: 5px;
-  }
-  .active {
-    height: 18px;
-    width: 18px;
-    left: calc(50% - 9px - 60px);
-    bottom: 41px;
-  }
-  #radio2:checked ~ .active {
-    -webkit-transform: translateX(60px);
-            transform: translateX(60px);
-  }
-  #radio3:checked ~ .active {
-    -webkit-transform: translateX(120px);
-            transform: translateX(120px);
-  }
-  .b1 {
-    margin-left: -60px;
-  }
-  .b3 {
-    margin-left: 60px;
-  }
-  .sf1 > figure > img {
-    width: 400px;
-    margin-bottom: 36px;
-  }
-  .sf1 > figure > figcaption {
-    font-size: 44px;
-  }
-  .sf2 > img {
-    width: 800px;
-  }
-  .sf3 > figcaption {
-    font-size: 84px;
-  }
-  .sb1 {
-    background-image: url(/images/slider/dapper-apps/dapper-background_1920px.png);
-  }
-  .sb2 {
-    background-image: url(/images/slider/kamis-nightmare/kami-background_1920px.png);
-  }
-  .sb3 {
-    background-image: url(/images/slider/at-franco/franco-background_1920px.png);
-  }
-  .social-link > img {
-    width: 55px;
-  }
-  footer > ul > li {
-    margin: 0 7px;
-  }
-}
-
-@media only screen and (min-width: 2560px) {
-  #slider, .slider-stack > * {
-    height: 1350px;
-  }
-  .slider-foregrounds {
-    margin-top: -1350px;
-  }
-  .button {
-    height: 48px;
-    width: 48px;
-    left: calc(50% - 24px);
-    bottom: 42px;
-    border-width: 6px;
-  }
-  .active {
-    height: 24px;
-    width: 24px;
-    left: calc(50% - 12px - 74px);
-    bottom: 54px;
-  }
-  #radio2:checked ~ .active {
-    -webkit-transform: translateX(74px);
-            transform: translateX(74px);
-  }
-  #radio3:checked ~ .active {
-    -webkit-transform: translateX(148px);
-            transform: translateX(148px);
-  }
-  .b1 {
-    margin-left: -74px;
-  }
-  .b3 {
-    margin-left: 74px;
-  }
-  .sf1 > figure > img {
-    width: 500px;
-    margin-bottom: 50px;
-  }
-  .sf1 > figure > figcaption {
-    font-size: 56px;
-  }
-  .sf2 > img {
-    width: 1100px;
-  }
-  .sf3 > figcaption {
-    font-size: 114px;
-  }
-  .sb1 {
-    background-image: url(/images/slider/dapper-apps/dapper-background_2560px.png);
-  }
-  .sb2 {
-    background-image: url(/images/slider/kamis-nightmare/kami-background_2560px.png);
-  }
-  .sb3 {
-    background-image: url(/images/slider/at-franco/franco-background_2560px.png);
-  }
-  .social-link > img {
-    width: 25px;
-  }
-  footer > ul > li {
-    margin: 0 3px;
-  }
-}
-
-@media only screen and (min-width: 3200px) {
-  #slider, .slider-stack > * {
-    height: 1700px;
-  }
-  .slider-foregrounds {
-    margin-top: -1700px;
-  }
-  .button {
-    height: 48px;
-    width: 48px;
-    left: calc(50% - 24px);
-    bottom: 42px;
-  }
-  .active {
-    height: 24px;
-    width: 24px;
-    left: calc(50% - 12px - 74px);
-    bottom: 54px;
-  }
-  #radio2:checked ~ .active {
-    -webkit-transform: translateX(74px);
-            transform: translateX(74px);
-  }
-  #radio3:checked ~ .active {
-    -webkit-transform: translateX(148px);
-            transform: translateX(148px);
-  }
-  .b1 {
-    margin-left: -74px;
-  }
-  .b3 {
-    margin-left: 74px;
-  }
-  .sb1 {
-    background-image: url(/images/slider/dapper-apps/dapper-background_3200px.png);
-  }
-  .sb2 {
-    background-image: url(/images/slider/kamis-nightmare/kami-background_3200px.png);
-  }
-  .sb3 {
-    background-image: url(/images/slider/at-franco/franco-background_3200px.png);
-  }
-  .social-link > img {
-    width: 25px;
-  }
-  footer > ul > li {
-    margin: 0 3px;
-  }
-}
-
-@media only screen and (min-width: 4096px) {
-  #slider, .slider-stack > * {
-    height: 1850px;
-  }
-  .slider-foregrounds {
-    margin-top: -1850px;
-  }
-  .button {
-    height: 72px;
-    width: 72px;
-    left: calc(50% - 36px);
-    bottom: 60px;
-    border-width: 8px;
-  }
-  .active {
-    height: 36px;
-    width: 36px;
-    left: calc(50% - 18px - 122px);
-    bottom: 78px;
-  }
-  #radio2:checked ~ .active {
-    -webkit-transform: translateX(122px);
-            transform: translateX(122px);
-  }
-  #radio3:checked ~ .active {
-    -webkit-transform: translateX(244px);
-            transform: translateX(244px);
-  }
-  .b1 {
-    margin-left: -122px;
-  }
-  .b3 {
-    margin-left: 122px;
-  }
-  .sf1 > figure > img {
-    width: 700px;
-    margin-bottom: 75px;
-  }
-  .sf1 > figure > figcaption {
-    font-size: 84px;
-  }
-  .sf2 > img {
-    width: 1400px;
-  }
-  .sf3 > figcaption {
-    font-size: 175px;
-  }
-  .sb1 {
-    background-image: url(/images/slider/dapper-apps/dapper-background_4096px.png);
-  }
-  .sb2 {
-    background-image: url(/images/slider/kamis-nightmare/kami-background_4096px.png);
-  }
-  .sb3 {
-    background-image: url(/images/slider/at-franco/franco-background_4096px.png);
-  }
-  .social-link > img {
-    width: 25px;
-  }
-  footer > ul > li {
-    margin: 0 3px;
+    margin: 0 10px;
   }
 }
 

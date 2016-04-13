@@ -1,12 +1,6 @@
 #contact > h2,
-#contact > p,
-.member > h3 {
+#contact > p {
   text-align: center;
-}
-
-.member, #contact > p {
-  width: 85%;
-  margin: auto;
 }
 
 .portrait > img, .portrait::before {
@@ -36,7 +30,7 @@
 
 .member {
   > h3 {
-    font-weight: 500;
+    font-weight: 400;
   }
   > p {
     font-weight: 300;
@@ -46,7 +40,6 @@
 .portrait {
   position: relative;
   margin: auto;
-  width: 45%;
 }
     
 .portrait::before {
@@ -73,17 +66,14 @@
 @mixin contact(
   $title-font-size: null,
   $team-flex-direction: null,
-  $team-margin: null,
-  $member-width: null,
+  $team-padding: null,
   $member-margin: null,
-  $member-separation: null,
   $portrait-width: null,
   $portrait-border-width: null,
   $portrait-box-shadow: null,
   $name-font-size: null,
   $name-margin: null,
-  $description-font-size: null,
-  $description-text-indent: null) {
+  $description-font-size: null) {
   .member > p,
   #contact > p {
     font-size: $description-font-size;
@@ -94,21 +84,21 @@
     }
   }
   .team {
-    margin: $team-margin;
+    padding: $team-padding;
     flex-direction: $team-flex-direction;
   }
   .member {
+    margin: $member-margin;
     > h3 {
       font-size: $name-font-size;
       margin: $name-margin;
     }
     > p {
       font-size: $description-font-size;
-      text-indent: $description-text-indent;
     }
   }
-  .member:not(:last-child) {
-    margin-bottom: $member-separation;
+  .member:last-child {
+    margin-bottom: 0;
   }
   .portrait {
     width: $portrait-width;
@@ -118,17 +108,3 @@
     box-shadow: $portrait-box-shadow;
   }
 }
-
-@include contact(
-  $title-font-size: 16px,
-  $team-flex-direction: column,
-  $team-margin: 20px 0,
-  $member-separation: 15px,
-  $portrait-width: 60px,
-  $portrait-border-width: 1px,
-  $portrait-box-shadow: 0px 0px 15px 0px black inset,
-  $name-font-size: 10px,
-  $name-margin: 10px 0,
-  $description-font-size: 9px,
-  $description-text-indent: 19px
-);

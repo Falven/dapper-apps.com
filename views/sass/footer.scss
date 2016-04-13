@@ -22,8 +22,3 @@ footer > ul > li, .social-link, .social-link > img {
     margin: $link-margin;
   }
 }
-
-@include footer(
-  25px,
-  0 3px
-);

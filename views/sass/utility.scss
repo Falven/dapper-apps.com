@@ -1,19 +1,15 @@
 $breakpoints: (
-  "wearable": 0,
-  "mobile-s": 320px,
-  "mobile-m": 375px,
-  "mobile-l": 425px,
+  "mobile": 320px,
   "tablet": 768px,
   "laptop-s": 1024px,
   "laptop-m": 1440px,
   "laptop-l": 1920px,
   "desktop-s": 2560px,
   "desktop-m": 3200px,
-  "desktop-l": 4096px,
-  "theatre": 5120px
+  "desktop-l": 4096px
 );
 
-@mixin respond-min($key) {
+@mixin respond-small($key) {
   @if map-has-key($breakpoints, $key) {
     @media only screen
     and (min-width: #{inspect(map-get($breakpoints, $key))}) {
@@ -26,25 +22,24 @@ $breakpoints: (
   }
 }
 
-@mixin respond-max($key) {
+@mixin respond-small-2x($key) {
   @if map-has-key($breakpoints, $key) {
-    @media only screen
-    and (max-width: #{inspect(map-get($breakpoints, $key))}) {
-      @content;
-    }
-  }
-  @else {
-    @warn "Unfortunately, no value could be retrieved from `#{$breakpoint}`. "
-        + "Please make sure it is defined in `$breakpoints` map.";
-  }
-}
-
-@mixin respond-to($key-min, $key-max) {
-  @if map-has-key($breakpoints, $key-min)
-  && map-has-key($breakpoints, $key-max) {
-    @media only screen
-    and (min-width: #{inspect(map-get($breakpoints, $key-min))})
-    and (max-width: #{inspect(map-get($breakpoints, $key-max))}) {
+    /*
+    @media
+    only screen and (-webkit-min-device-pixel-ratio: 1.5) and (max-width: 735px),
+    only screen and (max-width: 735px) and (min-resolution: 1.5dppx),
+    only screen and (max-width: 735px) and (min-resolution: 144dpi)
+    small
+    small_2x
+    medium
+    medium_2x
+    large
+    large_2x
+     */
+    $br: inspect(map-get($breakpoints, $key));
+    @media
+    only screen and (max-width: #{$br}) and (min-resolution: 1.5dppx),
+    only screen and (max-width: #{$br}) and (min-resolution: 144dpi) {
       @content;
     }
   }
