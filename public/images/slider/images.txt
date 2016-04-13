@@ -1,0 +1,73 @@
+ipad
+Small     440x182
+Small_2x  880x364
+Medium    1310x541
+Medium_2x 2620x1082
+Large     1940x802
+Large_2x  3880x1604
+scale factors
+1.48091603053435
+2.97727272727273
+
+iphone
+Small     200x178
+Small_2x  400x356
+Medium    580x517
+Medium_2x 1160x1034
+Large     822x733
+Large_2x  1644x1466
+scale factors
+1.41724137931034
+2.9
+
+watch
+Small     263x134
+Small_2x  526x268
+Medium    671x341
+Medium_2x 1342x682
+Large     1061x539
+Large_2x  2122x1078
+scale factors
+1.58122205663189
+2.55133079847909
+
+event
+Small     958x535
+Small_2x  1916x1070
+Medium    1834x1024
+Medium_2x 3668x2048
+Large     2500x1395
+Large_2x  5000x2790
+
+Dapper    4489x3139
+Small     498x348
+Small_2x  997x697
+Medium    1496x1046
+Medium_2x 2992x2092
+Large     22441569
+Large_2x  4489x3139
+scale factors
+1.5
+3.0
+
+Kami      4727x2392
+Small     525x266
+Small_2x  1050x531
+Medium    1575x797
+Medium_2x 3151x1594
+Large     2363x1196
+Large_2x  4727x2392
+scale factors
+1.5
+3.0
+
+Franco    2107x1658
+Small     234x184
+Small_2x  468x368
+Medium    702x552
+Medium_2x 1404x1105
+Large     1053x829
+Large_2x  2107x1658
+scale factors
+1.5
+3.0

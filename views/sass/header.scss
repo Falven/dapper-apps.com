@@ -139,8 +139,7 @@ $foreground-color: #fff;
   $sf1-font-size: null,
   $sf1-separation: null,
   $sf2-img-width: null,
-  $sf3-font-size: null,
-  $img-class: null) {
+  $sf3-font-size: null) {
   #slider, .slider-stack > * {
     height: $slider-height;
   }
@@ -206,12 +205,12 @@ $foreground-color: #fff;
 
 @mixin header-images($img-class) {
   .sb1 {
-    background-image: url(/images/slider/dapper-apps/dapper-background_#{$img-class}.png);
+    background-image: url(/images/slider/dapper-apps/dapper-background_#{$img-class}.jpg);
   }
   .sb2 {
-    background-image: url(/images/slider/kamis-nightmare/kami-background_#{$img-class}.png);
+    background-image: url(/images/slider/kamis-nightmare/kami-background_#{$img-class}.jpg);
   }
   .sb3 {
-    background-image: url(/images/slider/at-franco/franco-background_#{$img-class}.png);
+    background-image: url(/images/slider/at-franco/franco-background_#{$img-class}.jpg);
   }
 }

@@ -1,15 +1,10 @@
 $breakpoints: (
-  "mobile": 320px,
-  "tablet": 768px,
-  "laptop-s": 1024px,
-  "laptop-m": 1440px,
-  "laptop-l": 1920px,
-  "desktop-s": 2560px,
-  "desktop-m": 3200px,
-  "desktop-l": 4096px
+  "small": 0,
+  "medium": 736px,
+  "large": 1440px
 );
 
-@mixin respond-small($key) {
+@mixin respond-min($key) {
   @if map-has-key($breakpoints, $key) {
     @media only screen
     and (min-width: #{inspect(map-get($breakpoints, $key))}) {
@@ -22,24 +17,12 @@ $breakpoints: (
   }
 }
 
-@mixin respond-small-2x($key) {
+@mixin respond-min-2x($key) {
   @if map-has-key($breakpoints, $key) {
-    /*
-    @media
-    only screen and (-webkit-min-device-pixel-ratio: 1.5) and (max-width: 735px),
-    only screen and (max-width: 735px) and (min-resolution: 1.5dppx),
-    only screen and (max-width: 735px) and (min-resolution: 144dpi)
-    small
-    small_2x
-    medium
-    medium_2x
-    large
-    large_2x
-     */
     $br: inspect(map-get($breakpoints, $key));
     @media
-    only screen and (max-width: #{$br}) and (min-resolution: 1.5dppx),
-    only screen and (max-width: #{$br}) and (min-resolution: 144dpi) {
+    only screen and (min-width: #{$br}) and (min-resolution: 1.5dppx),
+    only screen and (min-width: #{$br}) and (min-resolution: 144dpi) {
       @content;
     }
   }

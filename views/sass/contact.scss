@@ -1,3 +1,8 @@
+// #b9874c
+// #D4AF8A
+// #D4AF60
+$accent-color: #D4AF82;
+
 #contact > h2,
 #contact > p {
   text-align: center;
@@ -11,9 +16,10 @@
 }
 
 #contact {
+  text-align: center;
   > h2 {
     font-weight: 400;
-    color: #b9874c;
+    color: $accent-color;
     text-transform: uppercase;
     text-shadow: 0 1px 1px rgba(0, 0, 0, 0.3);
   }
@@ -25,12 +31,15 @@
 .team {
   display: flex;
   justify-content: space-around;
+  flex-wrap: wrap;
+  flex-direction: row;
   align-items: top;
 }
 
 .member {
-  > h3 {
+  > h3, > h4 {
     font-weight: 400;
+    line-height: 1.16667;
   }
   > p {
     font-weight: 300;
@@ -51,7 +60,7 @@
   right: 0;
   box-shadow: 0px 0px 35px 0px black inset;
   border-style: solid;
-  border-color: #b9874c;
+  border-color: $accent-color;
 }
 
 .portrait > img {
@@ -64,18 +73,22 @@
 }
 
 @mixin contact(
+  $vertical-inner-margin: null,
   $title-font-size: null,
   $team-flex-direction: null,
-  $team-padding: null,
-  $member-margin: null,
-  $portrait-width: null,
+  $member-width: null,
+  $portrait-dimensions: null,
   $portrait-border-width: null,
   $portrait-box-shadow: null,
   $name-font-size: null,
   $name-margin: null,
   $description-font-size: null) {
-  .member > p,
-  #contact > p {
+  #contact > h2,
+  .member {
+    margin-bottom: $vertical-inner-margin;
+  }
+  #contact > p,
+  .member > p {
     font-size: $description-font-size;
   }
   #contact {
@@ -83,25 +96,24 @@
       font-size: $title-font-size;
     }
   }
-  .team {
-    padding: $team-padding;
-    flex-direction: $team-flex-direction;
-  }
   .member {
-    margin: $member-margin;
-    > h3 {
+    width: $member-width;
+    > h3, > h4 {
       font-size: $name-font-size;
-      margin: $name-margin;
+    }
+    > h3 {
+      margin-top: $name-margin;
+    }
+    > h4 {
+      margin-bottom: $name-margin;
     }
     > p {
       font-size: $description-font-size;
     }
   }
-  .member:last-child {
-    margin-bottom: 0;
-  }
   .portrait {
-    width: $portrait-width;
+    width: $portrait-dimensions;
+    height: $portrait-dimensions;
   }
   .portrait::before {
     border-width: $portrait-border-width;

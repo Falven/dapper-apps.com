@@ -1,35 +1,122 @@
 /* Responsive Design */
+@include semantic-properties(
+  $margin: 5px 10px 5px 10px,
+  $border-radius: 2px,
+  $box-shadow: 1px 2px 10px 0px rgba(0, 0, 0, 0.3),
+  $padding: 30px 18px
+);
 @include header(
   $slider-controls-left: 50%,
   $slider-controls-bottom: 12px,
   $slider-controls-margin: 30px,
   $slider-controls-dimensions: 16px,
-  $slider-height: 224px,
+  $slider-height: 348px,
   $slider-controls-border-width: 2px,
   $sf1-img-width: 100px,
   $sf1-font-size: 18px,
   $sf1-separation: 5px,
   $sf2-img-width: 200px,
-  $sf3-font-size: 20px,
-  $img-class: "small_2x"
+  $sf3-font-size: 20px
+);
+@include header-images("small");
+@include respond-min-2x("small") {
+  @include header-images("small_2x");
+}
+@include contact(
+  $vertical-inner-margin: 30px,
+  $title-font-size: 32px,
+  $team-flex-direction: column,
+  $portrait-dimensions: 100px,
+  $portrait-border-width: 2px,
+  $portrait-box-shadow: 0px 0px 15px 0px black inset,
+  $name-font-size: 18px,
+  $name-margin: 10px,
+  $description-font-size: 16px
+);
+@include footer(
+  50px,
+  0 10px
 );
 
-@include respond-small("mobile") {
+@include respond-min("medium") {
+  @include semantic-properties(
+    $margin: 10px 15px 10px 15px,
+    $border-radius: 4px,
+    $box-shadow: 2px 3px 10px 1px rgba(0, 0, 0, 0.3),
+    $padding: 60px 35px
+  );
+  @include header(
+    $slider-controls-left: 50%,
+    $slider-controls-bottom: 12px,
+    $slider-controls-margin: 30px,
+    $slider-controls-dimensions: 16px,
+    $slider-height: 650px,
+    $slider-controls-border-width: 2px,
+    $sf1-img-width: 200px,
+    $sf1-font-size: 28px,
+    $sf1-separation: 5px,
+    $sf2-img-width: 400px,
+    $sf3-font-size: 40px
+  );
+  @include header-images("medium");
   @include contact(
-    $title-font-size: 32px,
-    $team-flex-direction: column,
-    $team-padding: 20px 10px,
-    $member-margin: 0 0 30px 0,
-    $portrait-width: 100px,
-    $portrait-border-width: 1px,
+    $vertical-inner-margin: 30px,
+    $title-font-size: 40px,
+    $member-width: 45%,
+    $portrait-dimensions: 125px,
+    $portrait-border-width: 2px,
     $portrait-box-shadow: 0px 0px 15px 0px black inset,
     $name-font-size: 18px,
-    $name-margin: 10px 0,
+    $name-margin: 10px,
     $description-font-size: 16px
   );
   @include footer(
     50px,
     0 10px
   );
+}
+@include respond-min-2x("medium") {
+  @include header-images("medium_2x");
+}
+
+@include respond-min("large") {
+  @include semantic-properties(
+    $margin: 10px 15px 10px 15px,
+    $border-radius: 4px,
+    $box-shadow: 2px 3px 10px 1px rgba(0, 0, 0, 0.3),
+    $padding: 60px 35px
+  );
+  @include header(
+    $slider-controls-left: 50%,
+    $slider-controls-bottom: 12px,
+    $slider-controls-margin: 30px,
+    $slider-controls-dimensions: 16px,
+    $slider-height: 650px,
+    $slider-controls-border-width: 2px,
+    $sf1-img-width: 200px,
+    $sf1-font-size: 28px,
+    $sf1-separation: 5px,
+    $sf2-img-width: 400px,
+    $sf3-font-size: 40px
+  );
+  @include header-images("large");
+  @include contact(
+    $vertical-inner-margin: 30px,
+    $title-font-size: 40px,
+    $member-width: 30%,
+    $portrait-dimensions: 125px,
+    $portrait-border-width: 2px,
+    $portrait-box-shadow: 0px 0px 15px 0px black inset,
+    $name-font-size: 18px,
+    $name-margin: 10px,
+    $description-font-size: 16px
+  );
+  @include footer(
+    50px,
+    0 10px
+  );
+}
+@include respond-min-2x("large") {
+  @include header-images("large_2x");
 }
 /* Responsive Design */
