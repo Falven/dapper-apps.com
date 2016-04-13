@@ -86,7 +86,7 @@ footer {
 }
 
 .sf1 figcaption {
-  font-family: 'Pacifico', cursive;
+  font-family: 'Petit Formal Script', cursive;
   color: #fff;
 }
 
@@ -349,11 +349,11 @@ section, footer {
 
 .sf1 > figure > img {
   width: 100px;
-  margin-bottom: 5px;
+  margin-bottom: 25px;
 }
 
 .sf1 > figure > figcaption {
-  font-size: 18px;
+  font-size: 12px;
 }
 
 .sf2 > img {
