@@ -38,6 +38,14 @@ body {
   background-color: #f2f2f2;
 }
 
+a {
+  color: #D4AF82;
+  pointer-events: all;
+  display: inline-block;
+  white-space: nowrap;
+  text-decoration: none;
+}
+
 section {
   background-color: #fff;
 }

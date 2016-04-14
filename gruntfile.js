@@ -90,7 +90,7 @@ module.exports = function (grunt) {
           sourceMap: false
         },
         files: {
-          'public/javascripts/index.js': 'public/javascripts/index.js'
+          'public/javascripts/index.min.js': 'public/javascripts/index.js'
         }
       },
       dist: {
@@ -113,7 +113,7 @@ module.exports = function (grunt) {
     },
 
     clean: {
-      dev: null,
+      dev: 'public/javascripts/index.js',
       dist: 'public/javascripts/index.js'
     },
 
@@ -150,7 +150,7 @@ module.exports = function (grunt) {
       },
       js: {
         files: [ 'gruntfile.js', 'views/js/*.js' ],
-        tasks: [ 'concat:dev', 'jshint:dev', 'uglify:dev' ]
+        tasks: [ 'concat:dev', 'jshint:dev', 'uglify:dev', 'clean:dev' ]
       },
       livereload: {
         options: {
@@ -171,7 +171,8 @@ module.exports = function (grunt) {
     'postcss:dev',
     'concat:dev',
     'jshint:dev',
-    'uglify:dev'
+    'uglify:dev',
+    'clean:dev'
   ]);
   grunt.registerTask('dist', [
     'sass:dist',
