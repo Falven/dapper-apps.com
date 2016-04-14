@@ -235,6 +235,10 @@ footer {
           align-items: top;
 }
 
+.member > h3, .member > h4, .member > p {
+  text-align: left;
+}
+
 .member > h3, .member > h4 {
   font-weight: 400;
   line-height: 1.16667;
@@ -400,10 +404,6 @@ section, footer {
   font-size: 18px;
 }
 
-.member > h3, .member > h4, .member > p {
-  text-align: left;
-}
-
 .member > h3 {
   margin-top: 10px;
 }
@@ -453,7 +453,6 @@ footer > ul > li {
     height: 16px;
     width: 16px;
     bottom: 12px;
-    border-width: 2px;
     left: calc(50% - 8px);
   }
   .active {
@@ -498,41 +497,15 @@ footer > ul > li {
   .member {
     margin-bottom: 50px;
   }
-  #contact > p,
-  .member > p {
-    font-size: 16px;
-  }
   #contact > h2 {
     font-size: 40px;
-  }
-  .member > h3, .member > h4 {
-    font-size: 18px;
-  }
-  .member > h3, .member > h4, .member > p {
-    text-align: center;
-  }
-  .member > h3 {
-    margin-top: 10px;
-  }
-  .member > h4 {
-    margin-bottom: 10px;
-  }
-  .member > p {
-    font-size: 16px;
   }
   .portrait {
     width: 125px;
     height: 125px;
   }
-  .portrait::before {
-    border-width: 2px;
-    box-shadow: 0px 0px 15px 0px black inset;
-  }
   .social-link > img {
     width: 50px;
-  }
-  footer > ul > li {
-    margin: 0 10px;
   }
 }
 
@@ -549,25 +522,10 @@ footer > ul > li {
 }
 
 @media only screen and (min-width: 1024px) {
-  header, section, footer {
-    margin: 10px 15px 10px 15px;
-    border-radius: 4px;
-    box-shadow: 2px 3px 10px 1px rgba(0, 0, 0, 0.3);
-  }
-  section, footer {
-    padding: 60px 35px;
-  }
-  #slider, .slider-stack > * {
-    height: 650px;
-  }
-  .slider-foregrounds {
-    margin-top: -650px;
-  }
   .button {
     height: 24px;
     width: 24px;
     bottom: 12px;
-    border-width: 2px;
     left: calc(50% - 12px);
   }
   .active {
@@ -590,15 +548,6 @@ footer > ul > li {
   .b3 {
     margin-left: 38px;
   }
-  .sf1 > figure > img {
-    width: 200px;
-  }
-  .sf2 > img {
-    width: 400px;
-  }
-  .sf3 > figcaption {
-    font-size: 40px;
-  }
   .sb1 {
     background-image: url(/images/slider/dapper-apps/dapper-background_large.jpg);
   }
@@ -608,48 +557,8 @@ footer > ul > li {
   .sb3 {
     background-image: url(/images/slider/at-franco/franco-background_large.jpg);
   }
-  #contact > h2,
-  .member {
-    margin-bottom: 30px;
-  }
-  #contact > p,
-  .member > p {
-    font-size: 16px;
-  }
-  #contact > h2 {
-    font-size: 40px;
-  }
   .member {
     width: 30%;
-  }
-  .member > h3, .member > h4 {
-    font-size: 18px;
-  }
-  .member > h3, .member > h4, .member > p {
-    text-align: left;
-  }
-  .member > h3 {
-    margin-top: 10px;
-  }
-  .member > h4 {
-    margin-bottom: 10px;
-  }
-  .member > p {
-    font-size: 16px;
-  }
-  .portrait {
-    width: 125px;
-    height: 125px;
-  }
-  .portrait::before {
-    border-width: 2px;
-    box-shadow: 0px 0px 15px 0px black inset;
-  }
-  .social-link > img {
-    width: 50px;
-  }
-  footer > ul > li {
-    margin: 0 10px;
   }
 }
 
@@ -666,55 +575,8 @@ footer > ul > li {
 }
 
 @media only screen and (min-width: 1440px) {
-  header, section, footer {
-    margin: 10px 15px 10px 15px;
-    border-radius: 4px;
-    box-shadow: 2px 3px 10px 1px rgba(0, 0, 0, 0.3);
-  }
-  section, footer {
-    padding: 60px 35px;
-  }
-  #slider, .slider-stack > * {
-    height: 650px;
-  }
-  .slider-foregrounds {
-    margin-top: -650px;
-  }
   .button {
-    height: 24px;
-    width: 24px;
     bottom: 12px;
-    border-width: 2px;
-    left: calc(50% - 12px);
-  }
-  .active {
-    height: 12px;
-    width: 12px;
-    left: calc(50% - 6px - 38px);
-    bottom: 18px;
-  }
-  #radio2:checked ~ .active {
-    -webkit-transform: translateX(38px);
-            transform: translateX(38px);
-  }
-  #radio3:checked ~ .active {
-    -webkit-transform: translateX(76px);
-            transform: translateX(76px);
-  }
-  .b1 {
-    margin-left: -38px;
-  }
-  .b3 {
-    margin-left: 38px;
-  }
-  .sf1 > figure > img {
-    width: 200px;
-  }
-  .sf2 > img {
-    width: 400px;
-  }
-  .sf3 > figcaption {
-    font-size: 40px;
   }
   .sb1 {
     background-image: url(/images/slider/dapper-apps/dapper-background_large.jpg);
@@ -725,42 +587,8 @@ footer > ul > li {
   .sb3 {
     background-image: url(/images/slider/at-franco/franco-background_large.jpg);
   }
-  #contact > h2,
-  .member {
-    margin-bottom: 30px;
-  }
-  #contact > p,
-  .member > p {
-    font-size: 16px;
-  }
-  #contact > h2 {
-    font-size: 40px;
-  }
   .member {
     width: 25%;
-  }
-  .member > h3, .member > h4 {
-    font-size: 18px;
-  }
-  .member > h3, .member > h4, .member > p {
-    text-align: left;
-  }
-  .member > h3 {
-    margin-top: 10px;
-  }
-  .member > h4 {
-    margin-bottom: 10px;
-  }
-  .member > p {
-    font-size: 16px;
-  }
-  .portrait {
-    width: 125px;
-    height: 125px;
-  }
-  .portrait::before {
-    border-width: 2px;
-    box-shadow: 0px 0px 15px 0px black inset;
   }
   .social-link > img {
     width: 50px;

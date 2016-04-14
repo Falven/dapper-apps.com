@@ -125,8 +125,8 @@ $foreground-color: #fff;
 /* Static Header Styles */
 
 @mixin header(
-  $slider-controls-left: null,
-  $slider-controls-bottom: null,
+  $slider-controls-left,
+  $slider-controls-bottom,
   $slider-controls-margin: null,
   $slider-controls-dimensions: null,
   $slider-height: null,

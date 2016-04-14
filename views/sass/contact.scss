@@ -30,6 +30,9 @@ $accent-color: #D4AF82;
 }
 
 .member {
+  > h3, > h4, > p {
+    text-align: left;
+  }
   > h3, > h4 {
     font-weight: 400;
     line-height: 1.16667;
@@ -70,7 +73,6 @@ $accent-color: #D4AF82;
   $title-font-size: null,
   $team-flex-direction: null,
   $member-width: null,
-  $member-text-align: null,
   $portrait-dimensions: null,
   $portrait-border-width: null,
   $portrait-box-shadow: null,
@@ -94,9 +96,6 @@ $accent-color: #D4AF82;
     width: $member-width;
     > h3, > h4 {
       font-size: $name-font-size;
-    }
-    > h3, > h4, > p {
-      text-align: $member-text-align;
     }
     > h3 {
       margin-top: $name-margin;

@@ -13,8 +13,8 @@ footer > ul > li, .social-link, .social-link > img {
 }
 
 @mixin footer(
-  $link-width,
-  $link-margin) {
+  $link-width: null,
+  $link-margin: null) {
   .social-link > img {
     width: $link-width;
   }
