@@ -29,7 +29,8 @@
   $portrait-box-shadow: 0 0 15px 0 black inset,
   $name-font-size: 18px,
   $name-margin: 10px,
-  $description-font-size: 16px
+  $description-font-size: 16px,
+  $border-bottom: 1px solid $separator-color
 );
 @include footer(
   $link-width: 35px,
@@ -77,7 +78,8 @@
   );
   @include header-images("large");
   @include contact(
-    $member-width: 30%
+    $member-width: 30%,
+    $border-bottom: 0 none $page-background-color
   );
 }
 @include respond-min-2x("laptop") {

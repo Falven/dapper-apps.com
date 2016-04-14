@@ -39,8 +39,7 @@ body {
 }
 
 a {
-  color: #D4AF82;
-  pointer-events: all;
+  color: #d4af82;
   display: inline-block;
   white-space: nowrap;
   text-decoration: none;
@@ -211,7 +210,7 @@ footer {
 
 #contact > h2 {
   font-weight: 400;
-  color: #D4AF82;
+  color: #d4af82;
   text-transform: uppercase;
   text-shadow: 0 1px 1px rgba(0, 0, 0, 0.3);
   text-align: center;
@@ -237,14 +236,10 @@ footer {
   -webkit-flex-direction: row;
       -ms-flex-direction: row;
           flex-direction: row;
-  -webkit-box-align: top;
-  -webkit-align-items: top;
-      -ms-flex-align: top;
-          align-items: top;
-}
-
-.member {
-  border-bottom: 1px solid #D4DCE0;
+  -webkit-box-align: baseline;
+  -webkit-align-items: baseline;
+      -ms-flex-align: baseline;
+          align-items: baseline;
 }
 
 .member > h3, .member > h4, .member > p {
@@ -274,7 +269,7 @@ footer {
   right: 0;
   box-shadow: 0 0 35px 0 black inset;
   border-style: solid;
-  border-color: #D4AF82;
+  border-color: #d4af82;
 }
 
 .portrait > img {
@@ -414,6 +409,10 @@ section, footer {
 
 #contact > h2 {
   font-size: 32px;
+}
+
+.member {
+  border-bottom: 1px solid #d4dce0;
 }
 
 .member > h3, .member > h4 {
@@ -587,6 +586,7 @@ footer > ul > li {
   }
   .member {
     width: 30%;
+    border-bottom: 0 none #f2f2f2;
   }
 }
 
