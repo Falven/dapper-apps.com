@@ -76,7 +76,7 @@ $foreground-color: #fff;
   position: relative;
   width: $items * 100%;
   display: flex;
-  > * {
+  > h1, > figure {
     width: 100%;
   }
 }
@@ -84,7 +84,7 @@ $foreground-color: #fff;
 .slider-backgrounds {
   transition: transform $background-transition-speed ease;
   z-index: $background-z-index;
-  > * {
+  > figure {
     background-size: cover;
     background-repeat: no-repeat;
   }
@@ -114,7 +114,7 @@ $foreground-color: #fff;
 .slider-foregrounds {
   transition: transform $foreground-transition-speed ease;
   z-index: $foreground-z-index;
-  > * {
+  > h1, > figure {
     display: flex;
     margin: 0;
     flex-direction: column;
@@ -134,7 +134,9 @@ $foreground-color: #fff;
   $sf1-img-width: null,
   $sf2-img-width: null,
   $sf3-font-size: null) {
-  #slider, .slider-stack > * {
+  #slider,
+  .slider-stack > h1,
+  .slider-stack > figure, {
     height: $slider-height;
   }
   @if $slider-height != null {

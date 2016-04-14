@@ -1,6 +1,5 @@
 /* Font Utilities */
 /* Fonts */
-@import url(https://fonts.googleapis.com/css?family=Raleway:400,300|Pacifico);
 @font-face {
   font-family: "BonvenoCF";
   src: url("/fonts/bonvenocf-web/bonvenocf-light-webfont.eot");
@@ -9,32 +8,33 @@
   font-style: normal;
 }
 
-@font-face {
-  font-family: "Kawoszeh";
-  src: url("/fonts/kawoszeh-web/kawoszeh-webfont.eot");
-  src: url("/fonts/kawoszeh-web/kawoszeh-webfont.eot?#iefix") format("embedded-opentype"), url("/fonts/kawoszeh-web/kawoszeh-webfont.woff2") format("woff2"), url("/fonts/kawoszeh-web/kawoszeh-webfont.woff") format("woff"), url("/fonts/kawoszeh-web/kawoszeh-webfont.ttf") format("truetype"), url("/fonts/kawoszeh-web/kawoszeh-webfont.svg#kawoszeh") format("svg");
-  font-weight: 400;
-  font-style: normal;
-}
-
 /* Fonts */
-* {
+html, body, div, span,
+h1, h2, h3, h4, p,
+a, img, ul, li, label,
+figure, header, section {
   margin: 0;
   padding: 0;
+  border: 0;
+  font-weight: inherit;
+  font-style: inherit;
+  font-size: 100%;
+  font-family: inherit;
+  vertical-align: baseline;
   box-sizing: border-box;
 }
 
 body {
-  font-synthesis: none !important;
-  text-rendering: optimizeLegibility !important;
-  -webkit-font-smoothing: antialiased !important;
-  -moz-osx-font-smoothing: grayscale !important;
-  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.004) !important;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.004);
   font-family: "Raleway", sans-serif;
   font-size: 16px;
   color: #222;
   line-height: 1.66667;
-  letter-spacing: 0em;
+  letter-spacing: 0;
   background-color: #f2f2f2;
 }
 
@@ -130,7 +130,7 @@ footer {
   display: flex;
 }
 
-.slider-stack > * {
+.slider-stack > h1, .slider-stack > figure {
   width: 100%;
 }
 
@@ -142,7 +142,7 @@ footer {
   z-index: -1;
 }
 
-.slider-backgrounds > * {
+.slider-backgrounds > figure {
   background-size: cover;
   background-repeat: no-repeat;
 }
@@ -176,7 +176,7 @@ footer {
   z-index: 0;
 }
 
-.slider-foregrounds > * {
+.slider-foregrounds > h1, .slider-foregrounds > figure {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -272,7 +272,7 @@ footer {
   bottom: 0;
   left: 0;
   right: 0;
-  box-shadow: 0px 0px 35px 0px black inset;
+  box-shadow: 0 0 35px 0 black inset;
   border-style: solid;
   border-color: #D4AF82;
 }
@@ -314,14 +314,16 @@ footer > ul > li, .social-link, .social-link > img {
 header, section, footer {
   margin: 5px 10px 5px 10px;
   border-radius: 2px;
-  box-shadow: 1px 2px 10px 0px rgba(0, 0, 0, 0.3);
+  box-shadow: 1px 2px 10px 0 rgba(0, 0, 0, 0.3);
 }
 
 section, footer {
   padding: 30px 18px;
 }
 
-#slider, .slider-stack > * {
+#slider,
+.slider-stack > h1,
+.slider-stack > figure {
   height: 348px;
 }
 
@@ -437,7 +439,7 @@ section, footer {
 
 .portrait::before {
   border-width: 2px;
-  box-shadow: 0px 0px 15px 0px black inset;
+  box-shadow: 0 0 15px 0 black inset;
 }
 
 .social-link > img {
@@ -457,7 +459,9 @@ footer > ul > li {
   section, footer {
     padding: 60px 95px;
   }
-  #slider, .slider-stack > * {
+  #slider,
+  .slider-stack > h1,
+  .slider-stack > figure {
     height: 650px;
   }
   .slider-foregrounds {
@@ -538,11 +542,13 @@ footer > ul > li {
 }
 
 @media only screen and (min-width: 1024px) {
-  #slider, .slider-stack > * {
-    height: 750px;
+  #slider,
+  .slider-stack > h1,
+  .slider-stack > figure {
+    height: 615px;
   }
   .slider-foregrounds {
-    margin-top: -750px;
+    margin-top: -615px;
   }
   .button {
     height: 24px;
@@ -600,15 +606,6 @@ footer > ul > li {
   .button {
     bottom: 12px;
   }
-  .sb1 {
-    background-image: url(/images/slider/dapper-apps/dapper-background_large.jpg);
-  }
-  .sb2 {
-    background-image: url(/images/slider/kamis-nightmare/kami-background_large.jpg);
-  }
-  .sb3 {
-    background-image: url(/images/slider/at-franco/franco-background_large.jpg);
-  }
   .member {
     width: 25%;
   }
@@ -617,18 +614,6 @@ footer > ul > li {
   }
   footer > ul > li {
     margin: 0 10px;
-  }
-}
-
-@media only screen and (min-width: 1440px) and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min-width: 1440px) and (min-resolution: 1.5dppx), only screen and (min-width: 1440px) and (min-resolution: 144dpi) {
-  .sb1 {
-    background-image: url(/images/slider/dapper-apps/dapper-background_large_2x.jpg);
-  }
-  .sb2 {
-    background-image: url(/images/slider/kamis-nightmare/kami-background_large_2x.jpg);
-  }
-  .sb3 {
-    background-image: url(/images/slider/at-franco/franco-background_large_2x.jpg);
   }
 }
 
