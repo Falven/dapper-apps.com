@@ -127,7 +127,7 @@
     $slider-controls-left: 50%,
     $slider-controls-bottom: 12px,
     $slider-controls-margin: 38px,
-    $slider-controls-dimensions: 28px,
+    $slider-controls-dimensions: 24px,
     $slider-height: 650px,
     $slider-controls-border-width: 2px,
     $sf1-img-width: 200px,
@@ -148,7 +148,7 @@
     $description-font-size: 16px
   );
   @include footer(
-    75px,
+    50px,
     0 10px
   );
 }

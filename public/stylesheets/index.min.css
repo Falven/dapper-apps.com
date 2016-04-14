@@ -150,7 +150,7 @@ footer {
   left: 100%;
   right: 100%;
   background-color: #ea4c89;
-  background-position: bottom;
+  background-position: top;
 }
 
 .sb3 {
@@ -681,17 +681,17 @@ footer > ul > li {
     margin-top: -650px;
   }
   .button {
-    height: 28px;
-    width: 28px;
+    height: 24px;
+    width: 24px;
     bottom: 12px;
     border-width: 2px;
-    left: calc(50% - 14px);
+    left: calc(50% - 12px);
   }
   .active {
-    height: 14px;
-    width: 14px;
-    left: calc(50% - 7px - 38px);
-    bottom: 19px;
+    height: 12px;
+    width: 12px;
+    left: calc(50% - 6px - 38px);
+    bottom: 18px;
   }
   #radio2:checked ~ .active {
     -webkit-transform: translateX(38px);
@@ -763,7 +763,7 @@ footer > ul > li {
     box-shadow: 0px 0px 15px 0px black inset;
   }
   .social-link > img {
-    width: 75px;
+    width: 50px;
   }
   footer > ul > li {
     margin: 0 10px;
