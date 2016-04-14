@@ -9,7 +9,7 @@
   $slider-controls-left: 50%,
   $slider-controls-bottom: 12px,
   $slider-controls-margin: 25px,
-  $slider-controls-dimensions: 13px,
+  $slider-controls-dimensions: 12px,
   $slider-height: 348px,
   $slider-controls-border-width: 2px,
   $sf1-img-width: 125px,
@@ -17,7 +17,7 @@
   $sf3-font-size: 20px
 );
 @include header-images("small");
-@include respond-min-2x("small") {
+@include respond-min-2x("mobile") {
   @include header-images("small_2x");
 }
 @include contact(
@@ -33,16 +33,16 @@
   $description-font-size: 16px
 );
 @include footer(
-  50px,
+  35px,
   0 10px
 );
 
-@include respond-min("medium") {
+@include respond-min("tablet") {
   @include semantic-properties(
     $margin: 10px 15px 10px 15px,
     $border-radius: 4px,
     $box-shadow: 2px 3px 10px 1px rgba(0, 0, 0, 0.3),
-    $padding: 60px 35px
+    $padding: 60px 95px
   );
   @include header(
     $slider-controls-left: 50%,
@@ -57,10 +57,9 @@
   );
   @include header-images("medium");
   @include contact(
-    $vertical-inner-margin: 30px,
+    $vertical-inner-margin: 50px,
     $title-font-size: 40px,
-    $member-width: 45%,
-    $member-text-align: left,
+    $member-text-align: center,
     $portrait-dimensions: 125px,
     $portrait-border-width: 2px,
     $portrait-box-shadow: 0px 0px 15px 0px black inset,
@@ -73,11 +72,11 @@
     0 10px
   );
 }
-@include respond-min-2x("medium") {
+@include respond-min-2x("tablet") {
   @include header-images("medium_2x");
 }
 
-@include respond-min("large") {
+@include respond-min("laptop") {
   @include semantic-properties(
     $margin: 10px 15px 10px 15px,
     $border-radius: 4px,
@@ -87,8 +86,8 @@
   @include header(
     $slider-controls-left: 50%,
     $slider-controls-bottom: 12px,
-    $slider-controls-margin: 30px,
-    $slider-controls-dimensions: 16px,
+    $slider-controls-margin: 38px,
+    $slider-controls-dimensions: 24px,
     $slider-height: 650px,
     $slider-controls-border-width: 2px,
     $sf1-img-width: 200px,
@@ -113,7 +112,47 @@
     0 10px
   );
 }
-@include respond-min-2x("large") {
+@include respond-min-2x("laptop") {
+  @include header-images("large_2x");
+}
+
+@include respond-min("desktop") {
+  @include semantic-properties(
+    $margin: 10px 15px 10px 15px,
+    $border-radius: 4px,
+    $box-shadow: 2px 3px 10px 1px rgba(0, 0, 0, 0.3),
+    $padding: 60px 35px
+  );
+  @include header(
+    $slider-controls-left: 50%,
+    $slider-controls-bottom: 12px,
+    $slider-controls-margin: 38px,
+    $slider-controls-dimensions: 28px,
+    $slider-height: 650px,
+    $slider-controls-border-width: 2px,
+    $sf1-img-width: 200px,
+    $sf2-img-width: 400px,
+    $sf3-font-size: 40px
+  );
+  @include header-images("large");
+  @include contact(
+    $vertical-inner-margin: 30px,
+    $title-font-size: 40px,
+    $member-width: 25%,
+    $member-text-align: left,
+    $portrait-dimensions: 125px,
+    $portrait-border-width: 2px,
+    $portrait-box-shadow: 0px 0px 15px 0px black inset,
+    $name-font-size: 18px,
+    $name-margin: 10px,
+    $description-font-size: 16px
+  );
+  @include footer(
+    75px,
+    0 10px
+  );
+}
+@include respond-min-2x("desktop") {
   @include header-images("large_2x");
 }
 /* Responsive Design */

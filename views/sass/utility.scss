@@ -1,7 +1,8 @@
 $breakpoints: (
-  "small": 0,
-  "medium": 736px,
-  "large": 1440px
+  "mobile": 0,
+  "tablet": 736px,
+  "laptop": 1024px,
+  "desktop": 1440px
 );
 
 @mixin respond-min($key) {

@@ -314,18 +314,18 @@ section, footer {
 }
 
 .button {
-  height: 13px;
-  width: 13px;
+  height: 12px;
+  width: 12px;
   bottom: 12px;
   border-width: 2px;
-  left: calc(50% - 6.5px);
+  left: calc(50% - 6px);
 }
 
 .active {
-  height: 6.5px;
-  width: 6.5px;
-  left: calc(50% - 3.25px - 25px);
-  bottom: 15.25px;
+  height: 6px;
+  width: 6px;
+  left: calc(50% - 3px - 25px);
+  bottom: 15px;
 }
 
 #radio2:checked ~ .active {
@@ -427,7 +427,7 @@ section, footer {
 }
 
 .social-link > img {
-  width: 50px;
+  width: 35px;
 }
 
 footer > ul > li {
@@ -441,7 +441,7 @@ footer > ul > li {
     box-shadow: 2px 3px 10px 1px rgba(0, 0, 0, 0.3);
   }
   section, footer {
-    padding: 60px 35px;
+    padding: 60px 95px;
   }
   #slider, .slider-stack > * {
     height: 650px;
@@ -496,7 +496,7 @@ footer > ul > li {
   }
   #contact > h2,
   .member {
-    margin-bottom: 30px;
+    margin-bottom: 50px;
   }
   #contact > p,
   .member > p {
@@ -505,14 +505,11 @@ footer > ul > li {
   #contact > h2 {
     font-size: 40px;
   }
-  .member {
-    width: 45%;
-  }
   .member > h3, .member > h4 {
     font-size: 18px;
   }
   .member > h3, .member > h4, .member > p {
-    text-align: left;
+    text-align: center;
   }
   .member > h3 {
     margin-top: 10px;
@@ -551,7 +548,7 @@ footer > ul > li {
   }
 }
 
-@media only screen and (min-width: 1440px) {
+@media only screen and (min-width: 1024px) {
   header, section, footer {
     margin: 10px 15px 10px 15px;
     border-radius: 4px;
@@ -567,31 +564,31 @@ footer > ul > li {
     margin-top: -650px;
   }
   .button {
-    height: 16px;
-    width: 16px;
+    height: 24px;
+    width: 24px;
     bottom: 12px;
     border-width: 2px;
-    left: calc(50% - 8px);
+    left: calc(50% - 12px);
   }
   .active {
-    height: 8px;
-    width: 8px;
-    left: calc(50% - 4px - 30px);
-    bottom: 16px;
+    height: 12px;
+    width: 12px;
+    left: calc(50% - 6px - 38px);
+    bottom: 18px;
   }
   #radio2:checked ~ .active {
-    -webkit-transform: translateX(30px);
-            transform: translateX(30px);
+    -webkit-transform: translateX(38px);
+            transform: translateX(38px);
   }
   #radio3:checked ~ .active {
-    -webkit-transform: translateX(60px);
-            transform: translateX(60px);
+    -webkit-transform: translateX(76px);
+            transform: translateX(76px);
   }
   .b1 {
-    margin-left: -30px;
+    margin-left: -38px;
   }
   .b3 {
-    margin-left: 30px;
+    margin-left: 38px;
   }
   .sf1 > figure > img {
     width: 200px;
@@ -650,6 +647,123 @@ footer > ul > li {
   }
   .social-link > img {
     width: 50px;
+  }
+  footer > ul > li {
+    margin: 0 10px;
+  }
+}
+
+@media only screen and (min-width: 1024px) and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min-width: 1024px) and (min-resolution: 1.5dppx), only screen and (min-width: 1024px) and (min-resolution: 144dpi) {
+  .sb1 {
+    background-image: url(/images/slider/dapper-apps/dapper-background_large_2x.jpg);
+  }
+  .sb2 {
+    background-image: url(/images/slider/kamis-nightmare/kami-background_large_2x.jpg);
+  }
+  .sb3 {
+    background-image: url(/images/slider/at-franco/franco-background_large_2x.jpg);
+  }
+}
+
+@media only screen and (min-width: 1440px) {
+  header, section, footer {
+    margin: 10px 15px 10px 15px;
+    border-radius: 4px;
+    box-shadow: 2px 3px 10px 1px rgba(0, 0, 0, 0.3);
+  }
+  section, footer {
+    padding: 60px 35px;
+  }
+  #slider, .slider-stack > * {
+    height: 650px;
+  }
+  .slider-foregrounds {
+    margin-top: -650px;
+  }
+  .button {
+    height: 28px;
+    width: 28px;
+    bottom: 12px;
+    border-width: 2px;
+    left: calc(50% - 14px);
+  }
+  .active {
+    height: 14px;
+    width: 14px;
+    left: calc(50% - 7px - 38px);
+    bottom: 19px;
+  }
+  #radio2:checked ~ .active {
+    -webkit-transform: translateX(38px);
+            transform: translateX(38px);
+  }
+  #radio3:checked ~ .active {
+    -webkit-transform: translateX(76px);
+            transform: translateX(76px);
+  }
+  .b1 {
+    margin-left: -38px;
+  }
+  .b3 {
+    margin-left: 38px;
+  }
+  .sf1 > figure > img {
+    width: 200px;
+  }
+  .sf2 > img {
+    width: 400px;
+  }
+  .sf3 > figcaption {
+    font-size: 40px;
+  }
+  .sb1 {
+    background-image: url(/images/slider/dapper-apps/dapper-background_large.jpg);
+  }
+  .sb2 {
+    background-image: url(/images/slider/kamis-nightmare/kami-background_large.jpg);
+  }
+  .sb3 {
+    background-image: url(/images/slider/at-franco/franco-background_large.jpg);
+  }
+  #contact > h2,
+  .member {
+    margin-bottom: 30px;
+  }
+  #contact > p,
+  .member > p {
+    font-size: 16px;
+  }
+  #contact > h2 {
+    font-size: 40px;
+  }
+  .member {
+    width: 25%;
+  }
+  .member > h3, .member > h4 {
+    font-size: 18px;
+  }
+  .member > h3, .member > h4, .member > p {
+    text-align: left;
+  }
+  .member > h3 {
+    margin-top: 10px;
+  }
+  .member > h4 {
+    margin-bottom: 10px;
+  }
+  .member > p {
+    font-size: 16px;
+  }
+  .portrait {
+    width: 125px;
+    height: 125px;
+  }
+  .portrait::before {
+    border-width: 2px;
+    box-shadow: 0px 0px 15px 0px black inset;
+  }
+  .social-link > img {
+    width: 75px;
   }
   footer > ul > li {
     margin: 0 10px;
