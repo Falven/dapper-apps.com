@@ -72,7 +72,8 @@
     $slider-controls-left: 50%,
     $slider-controls-bottom: 12px,
     $slider-controls-margin: 38px,
-    $slider-controls-dimensions: 24px
+    $slider-controls-dimensions: 24px,
+    $slider-height: 750px
   );
   @include header-images("large");
   @include contact(

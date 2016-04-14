@@ -522,6 +522,12 @@ footer > ul > li {
 }
 
 @media only screen and (min-width: 1024px) {
+  #slider, .slider-stack > * {
+    height: 750px;
+  }
+  .slider-foregrounds {
+    margin-top: -750px;
+  }
   .button {
     height: 24px;
     width: 24px;
