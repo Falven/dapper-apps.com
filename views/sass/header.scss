@@ -51,10 +51,6 @@ $foreground-color: #fff;
   > figure {
     text-align: center;
   }
-  figcaption {
-    font-family: 'Petit Formal Script', cursive;
-    color: $foreground-color;
-  }
 }
 
 .sf3 {
@@ -136,8 +132,6 @@ $foreground-color: #fff;
   $slider-height: null,
   $slider-controls-border-width: null,
   $sf1-img-width: null,
-  $sf1-font-size: null,
-  $sf1-separation: null,
   $sf2-img-width: null,
   $sf3-font-size: null) {
   #slider, .slider-stack > * {
@@ -189,10 +183,6 @@ $foreground-color: #fff;
   .sf1 > figure {
     > img {
       width: $sf1-img-width;
-      margin-bottom: $sf1-separation;
-    }
-    > figcaption {
-      font-size: $sf1-font-size;
     }
   }
   .sf2 > img {

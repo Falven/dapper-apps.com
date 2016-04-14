@@ -78,4 +78,9 @@ $font-styles: (
   "BonvenoCF",
   $font-weight: "light"
 );
+
+@include fontsquirrel-face(
+  "Kawoszeh",
+  $font-weight: ""
+);
 /* Fonts */

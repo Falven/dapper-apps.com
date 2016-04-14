@@ -9,6 +9,14 @@
   font-style: normal;
 }
 
+@font-face {
+  font-family: "Kawoszeh";
+  src: url("/fonts/kawoszeh-web/kawoszeh-webfont.eot");
+  src: url("/fonts/kawoszeh-web/kawoszeh-webfont.eot?#iefix") format("embedded-opentype"), url("/fonts/kawoszeh-web/kawoszeh-webfont.woff2") format("woff2"), url("/fonts/kawoszeh-web/kawoszeh-webfont.woff") format("woff"), url("/fonts/kawoszeh-web/kawoszeh-webfont.ttf") format("truetype"), url("/fonts/kawoszeh-web/kawoszeh-webfont.svg#kawoszeh") format("svg");
+  font-weight: 400;
+  font-style: normal;
+}
+
 /* Fonts */
 * {
   margin: 0;
@@ -83,11 +91,6 @@ footer {
 
 .sf1 > figure {
   text-align: center;
-}
-
-.sf1 figcaption {
-  font-family: 'Petit Formal Script', cursive;
-  color: #fff;
 }
 
 .sf3 > figcaption {
@@ -187,11 +190,6 @@ footer {
 }
 
 /* Static Header Styles */
-#contact > h2,
-#contact > p {
-  text-align: center;
-}
-
 .portrait > img, .portrait::before {
   border-radius: 50%;
   box-sizing: border-box;
@@ -208,6 +206,7 @@ footer {
   color: #D4AF82;
   text-transform: uppercase;
   text-shadow: 0 1px 1px rgba(0, 0, 0, 0.3);
+  text-align: center;
 }
 
 #contact > p {
@@ -315,49 +314,44 @@ section, footer {
 }
 
 .button {
-  height: 16px;
-  width: 16px;
+  height: 13px;
+  width: 13px;
   bottom: 12px;
   border-width: 2px;
-  left: calc(50% - 8px);
+  left: calc(50% - 6.5px);
 }
 
 .active {
-  height: 8px;
-  width: 8px;
-  left: calc(50% - 4px - 30px);
-  bottom: 16px;
+  height: 6.5px;
+  width: 6.5px;
+  left: calc(50% - 3.25px - 25px);
+  bottom: 15.25px;
 }
 
 #radio2:checked ~ .active {
-  -webkit-transform: translateX(30px);
-          transform: translateX(30px);
+  -webkit-transform: translateX(25px);
+          transform: translateX(25px);
 }
 
 #radio3:checked ~ .active {
-  -webkit-transform: translateX(60px);
-          transform: translateX(60px);
+  -webkit-transform: translateX(50px);
+          transform: translateX(50px);
 }
 
 .b1 {
-  margin-left: -30px;
+  margin-left: -25px;
 }
 
 .b3 {
-  margin-left: 30px;
+  margin-left: 25px;
 }
 
 .sf1 > figure > img {
-  width: 100px;
-  margin-bottom: 25px;
-}
-
-.sf1 > figure > figcaption {
-  font-size: 12px;
+  width: 125px;
 }
 
 .sf2 > img {
-  width: 200px;
+  width: 250px;
 }
 
 .sf3 > figcaption {
@@ -404,6 +398,10 @@ section, footer {
 
 .member > h3, .member > h4 {
   font-size: 18px;
+}
+
+.member > h3, .member > h4, .member > p {
+  text-align: left;
 }
 
 .member > h3 {
@@ -480,10 +478,6 @@ footer > ul > li {
   }
   .sf1 > figure > img {
     width: 200px;
-    margin-bottom: 25px;
-  }
-  .sf1 > figure > figcaption {
-    font-size: 28px;
   }
   .sf2 > img {
     width: 400px;
@@ -516,6 +510,9 @@ footer > ul > li {
   }
   .member > h3, .member > h4 {
     font-size: 18px;
+  }
+  .member > h3, .member > h4, .member > p {
+    text-align: left;
   }
   .member > h3 {
     margin-top: 10px;
@@ -598,10 +595,6 @@ footer > ul > li {
   }
   .sf1 > figure > img {
     width: 200px;
-    margin-bottom: 25px;
-  }
-  .sf1 > figure > figcaption {
-    font-size: 28px;
   }
   .sf2 > img {
     width: 400px;
@@ -634,6 +627,9 @@ footer > ul > li {
   }
   .member > h3, .member > h4 {
     font-size: 18px;
+  }
+  .member > h3, .member > h4, .member > p {
+    text-align: left;
   }
   .member > h3 {
     margin-top: 10px;

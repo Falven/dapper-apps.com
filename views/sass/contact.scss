@@ -1,12 +1,4 @@
-// #b9874c
-// #D4AF8A
-// #D4AF60
 $accent-color: #D4AF82;
-
-#contact > h2,
-#contact > p {
-  text-align: center;
-}
 
 .portrait > img, .portrait::before {
   border-radius: 50%;
@@ -22,6 +14,7 @@ $accent-color: #D4AF82;
     color: $accent-color;
     text-transform: uppercase;
     text-shadow: 0 1px 1px rgba(0, 0, 0, 0.3);
+    text-align: center;
   }
   > p {
     font-weight: 300;
@@ -77,6 +70,7 @@ $accent-color: #D4AF82;
   $title-font-size: null,
   $team-flex-direction: null,
   $member-width: null,
+  $member-text-align: null,
   $portrait-dimensions: null,
   $portrait-border-width: null,
   $portrait-box-shadow: null,
@@ -100,6 +94,9 @@ $accent-color: #D4AF82;
     width: $member-width;
     > h3, > h4 {
       font-size: $name-font-size;
+    }
+    > h3, > h4, > p {
+      text-align: $member-text-align;
     }
     > h3 {
       margin-top: $name-margin;
