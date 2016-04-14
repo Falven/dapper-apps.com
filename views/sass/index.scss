@@ -14,7 +14,6 @@ body {
   -webkit-font-smoothing: antialiased !important;
   -moz-osx-font-smoothing: grayscale !important;
   text-shadow: 1px 1px 1px rgba(0,0,0,0.004) !important;
-  // Roboto, Open Sans, Lato
   font-family: "Raleway", sans-serif;
   font-size: 16px;
   color: #222;
@@ -24,7 +23,6 @@ body {
 }
 
 a {
-  // #08c
   color: $accent-color;
   pointer-events: all;
   display: inline-block;
