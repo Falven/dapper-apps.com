@@ -30,6 +30,7 @@ $accent-color: #D4AF82;
 }
 
 .member {
+  border-bottom: 1px solid #D4DCE0;
   > h3, > h4, > p {
     text-align: left;
   }
@@ -69,7 +70,7 @@ $accent-color: #D4AF82;
 }
 
 @mixin contact(
-  $vertical-inner-margin: null,
+  $vertical-spacing: null,
   $title-font-size: null,
   $team-flex-direction: null,
   $member-width: null,
@@ -80,8 +81,10 @@ $accent-color: #D4AF82;
   $name-margin: null,
   $description-font-size: null) {
   #contact > h2,
+  #contact > p,
   .member {
-    margin-bottom: $vertical-inner-margin;
+    padding-bottom: $vertical-spacing;
+    margin-top: $vertical-spacing;
   }
   #contact > p,
   .member > p {

@@ -235,6 +235,10 @@ footer {
           align-items: top;
 }
 
+.member {
+  border-bottom: 1px solid #D4DCE0;
+}
+
 .member > h3, .member > h4, .member > p {
   text-align: left;
 }
@@ -387,8 +391,10 @@ section, footer {
 }
 
 #contact > h2,
+#contact > p,
 .member {
-  margin-bottom: 30px;
+  padding-bottom: 30px;
+  margin-top: 30px;
 }
 
 #contact > p,
@@ -458,22 +464,22 @@ footer > ul > li {
   .active {
     height: 8px;
     width: 8px;
-    left: calc(50% - 4px - 30px);
+    left: calc(50% - 4px - 50px);
     bottom: 16px;
   }
   #radio2:checked ~ .active {
-    -webkit-transform: translateX(30px);
-            transform: translateX(30px);
+    -webkit-transform: translateX(50px);
+            transform: translateX(50px);
   }
   #radio3:checked ~ .active {
-    -webkit-transform: translateX(60px);
-            transform: translateX(60px);
+    -webkit-transform: translateX(100px);
+            transform: translateX(100px);
   }
   .b1 {
-    margin-left: -30px;
+    margin-left: -50px;
   }
   .b3 {
-    margin-left: 30px;
+    margin-left: 50px;
   }
   .sf1 > figure > img {
     width: 200px;
@@ -494,8 +500,10 @@ footer > ul > li {
     background-image: url(/images/slider/at-franco/franco-background_medium.jpg);
   }
   #contact > h2,
+  #contact > p,
   .member {
-    margin-bottom: 50px;
+    padding-bottom: 35px;
+    margin-top: 35px;
   }
   #contact > h2 {
     font-size: 40px;
