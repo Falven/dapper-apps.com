@@ -86,8 +86,8 @@ footer {
 }
 
 #radio1:checked ~ .active {
-  -webkit-transform: translateX(0) !important;
-          transform: translateX(0) !important;
+  -webkit-transform: translateX(0);
+          transform: translateX(0);
 }
 
 .b2 {
@@ -108,18 +108,18 @@ footer {
 }
 
 #radio1:checked ~ .slider-stack {
-  -webkit-transform: translateX(0) !important;
-          transform: translateX(0) !important;
+  -webkit-transform: translateX(0);
+          transform: translateX(0);
 }
 
 #radio2:checked ~ .slider-stack {
-  -webkit-transform: translateX(-33.3333333333%) !important;
-          transform: translateX(-33.3333333333%) !important;
+  -webkit-transform: translateX(-33.3333333333%);
+          transform: translateX(-33.3333333333%);
 }
 
 #radio3:checked ~ .slider-stack {
-  -webkit-transform: translateX(-66.6666666667%) !important;
-          transform: translateX(-66.6666666667%) !important;
+  -webkit-transform: translateX(-66.6666666667%);
+          transform: translateX(-66.6666666667%);
 }
 
 .slider-stack {
@@ -345,13 +345,13 @@ section, footer {
 }
 
 #radio2:checked ~ .active {
-  -webkit-transform: translateX(25px) !important;
-          transform: translateX(25px) !important;
+  -webkit-transform: translateX(25px);
+          transform: translateX(25px);
 }
 
 #radio3:checked ~ .active {
-  -webkit-transform: translateX(50px) !important;
-          transform: translateX(50px) !important;
+  -webkit-transform: translateX(50px);
+          transform: translateX(50px);
 }
 
 .b1 {
@@ -482,12 +482,12 @@ footer > ul > li {
     bottom: 16px;
   }
   #radio2:checked ~ .active {
-    -webkit-transform: translateX(50px) !important;
-            transform: translateX(50px) !important;
+    -webkit-transform: translateX(50px);
+            transform: translateX(50px);
   }
   #radio3:checked ~ .active {
-    -webkit-transform: translateX(100px) !important;
-            transform: translateX(100px) !important;
+    -webkit-transform: translateX(100px);
+            transform: translateX(100px);
   }
   .b1 {
     margin-left: -50px;
@@ -565,12 +565,12 @@ footer > ul > li {
     bottom: 18px;
   }
   #radio2:checked ~ .active {
-    -webkit-transform: translateX(38px) !important;
-            transform: translateX(38px) !important;
+    -webkit-transform: translateX(38px);
+            transform: translateX(38px);
   }
   #radio3:checked ~ .active {
-    -webkit-transform: translateX(76px) !important;
-            transform: translateX(76px) !important;
+    -webkit-transform: translateX(76px);
+            transform: translateX(76px);
   }
   .b1 {
     margin-left: -38px;

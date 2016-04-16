@@ -37,7 +37,7 @@ $foreground-color: #fff;
 }
 
 #radio1:checked ~ .active {
-  transform: translateX(0) !important;
+  transform: translateX(0);
 }
 
 .b2 {
@@ -61,15 +61,15 @@ $foreground-color: #fff;
 }
 
 #radio1:checked ~ .slider-stack {
-  transform: translateX(0) !important;
+  transform: translateX(0);
 }
 
 #radio2:checked ~ .slider-stack {
-  transform: translateX(-100% / $items) !important;
+  transform: translateX(-100% / $items);
 }
 
 #radio3:checked ~ .slider-stack {
-  transform: translateX(-100% / $items * 2) !important;
+  transform: translateX(-100% / $items * 2);
 }
 
 .slider-stack {
@@ -170,10 +170,10 @@ $foreground-color: #fff;
   }
   @if $slider-controls-margin != null {
     #radio2:checked ~ .active {
-      transform: translateX($slider-controls-margin) !important;
+      transform: translateX($slider-controls-margin);
     }
     #radio3:checked ~ .active {
-      transform: translateX($slider-controls-margin * 2) !important;
+      transform: translateX($slider-controls-margin * 2);
     }
     .b1 {
       margin-left: -$slider-controls-margin;
