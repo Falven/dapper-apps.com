@@ -78,14 +78,16 @@ footer {
 
 .active {
   z-index: 2;
-  -webkit-transition: all 700ms ease;
-  transition: all 700ms ease;
+  -webkit-transition: -webkit-transform 700ms ease;
+  transition: -webkit-transform 700ms ease;
+  transition: transform 700ms ease;
+  transition: transform 700ms ease, -webkit-transform 700ms ease;
   background-color: #fff;
 }
 
 #radio1:checked ~ .active {
-  -webkit-transform: translateX(0);
-          transform: translateX(0);
+  -webkit-transform: translateX(0) !important;
+          transform: translateX(0) !important;
 }
 
 .b2 {
@@ -106,18 +108,18 @@ footer {
 }
 
 #radio1:checked ~ .slider-stack {
-  -webkit-transform: translateX(0);
-          transform: translateX(0);
+  -webkit-transform: translateX(0) !important;
+          transform: translateX(0) !important;
 }
 
 #radio2:checked ~ .slider-stack {
-  -webkit-transform: translateX(-33.3333333333%);
-          transform: translateX(-33.3333333333%);
+  -webkit-transform: translateX(-33.3333333333%) !important;
+          transform: translateX(-33.3333333333%) !important;
 }
 
 #radio3:checked ~ .slider-stack {
-  -webkit-transform: translateX(-66.6666666667%);
-          transform: translateX(-66.6666666667%);
+  -webkit-transform: translateX(-66.6666666667%) !important;
+          transform: translateX(-66.6666666667%) !important;
 }
 
 .slider-stack {
@@ -343,13 +345,13 @@ section, footer {
 }
 
 #radio2:checked ~ .active {
-  -webkit-transform: translateX(25px);
-          transform: translateX(25px);
+  -webkit-transform: translateX(25px) !important;
+          transform: translateX(25px) !important;
 }
 
 #radio3:checked ~ .active {
-  -webkit-transform: translateX(50px);
-          transform: translateX(50px);
+  -webkit-transform: translateX(50px) !important;
+          transform: translateX(50px) !important;
 }
 
 .b1 {
@@ -480,12 +482,12 @@ footer > ul > li {
     bottom: 16px;
   }
   #radio2:checked ~ .active {
-    -webkit-transform: translateX(50px);
-            transform: translateX(50px);
+    -webkit-transform: translateX(50px) !important;
+            transform: translateX(50px) !important;
   }
   #radio3:checked ~ .active {
-    -webkit-transform: translateX(100px);
-            transform: translateX(100px);
+    -webkit-transform: translateX(100px) !important;
+            transform: translateX(100px) !important;
   }
   .b1 {
     margin-left: -50px;
@@ -563,12 +565,12 @@ footer > ul > li {
     bottom: 18px;
   }
   #radio2:checked ~ .active {
-    -webkit-transform: translateX(38px);
-            transform: translateX(38px);
+    -webkit-transform: translateX(38px) !important;
+            transform: translateX(38px) !important;
   }
   #radio3:checked ~ .active {
-    -webkit-transform: translateX(76px);
-            transform: translateX(76px);
+    -webkit-transform: translateX(76px) !important;
+            transform: translateX(76px) !important;
   }
   .b1 {
     margin-left: -38px;

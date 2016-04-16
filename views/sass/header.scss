@@ -32,12 +32,12 @@ $foreground-color: #fff;
 
 .active {
   z-index: $active-z-index;
-  transition: all $active-transition-speed ease;
+  transition: transform $active-transition-speed ease;
   background-color: $foreground-color;
 }
 
 #radio1:checked ~ .active {
-  transform: translateX(0);
+  transform: translateX(0) !important;
 }
 
 .b2 {
@@ -61,15 +61,15 @@ $foreground-color: #fff;
 }
 
 #radio1:checked ~ .slider-stack {
-  transform: translateX(0);
+  transform: translateX(0) !important;
 }
 
 #radio2:checked ~ .slider-stack {
-  transform: translateX(-100% / $items);
+  transform: translateX(-100% / $items) !important;
 }
 
 #radio3:checked ~ .slider-stack {
-  transform: translateX(-100% / $items * 2);
+  transform: translateX(-100% / $items * 2) !important;
 }
 
 .slider-stack {
@@ -170,10 +170,10 @@ $foreground-color: #fff;
   }
   @if $slider-controls-margin != null {
     #radio2:checked ~ .active {
-      transform: translateX($slider-controls-margin);
+      transform: translateX($slider-controls-margin) !important;
     }
     #radio3:checked ~ .active {
-      transform: translateX($slider-controls-margin * 2);
+      transform: translateX($slider-controls-margin * 2) !important;
     }
     .b1 {
       margin-left: -$slider-controls-margin;

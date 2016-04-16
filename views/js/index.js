@@ -3,10 +3,15 @@ document.addEventListener("DOMContentLoaded", domLoaded);
 
 function domLoaded() {
   injectEmail();
-  // new sliderTouchController(
-  //   document.getElementById('slider'),
-  //   document.getElementsByClassName('slider-items')
-  //   );
+  if("ontouchstart" in window) {
+    var sliderController = new SliderTouchController(
+      document.getElementById('slider'),
+      document.getElementsByClassName('slider-foregrounds'),
+      document.getElementsByClassName('slider-backgrounds'),
+      document.getElementsByClassName('button'),
+      document.getElementsByClassName('active')
+    ).attach();
+  }
 }
 
 function injectEmail() {
@@ -29,48 +34,4 @@ function injectEmail() {
   };
   var mailto = document.getElementById('mailto');
   mailto.href = email.part1 + email.part2 + email.part3 + email.part4 + email.part5 + email.part6 + email.part7 + email.part8 + email.part9 + email.part10 + email.part11 + email.part12 + email.part13 + email.part14 + email.part15;
-}
-
-function sliderTouchController(slider, sliderItems) {
-  var sliderItem = sliderItems[0];
-  var startX = 0;
-  var endX = 0;
-  var translateX = 0;
-  var sliderWidth = slider.offsetWidth;
-  var translateSuccess = sliderWidth / 5;
-
-  this.onSliderTouchStart = function(event) {
-    console.log('onSliderItemsTouchStart');
-    if (event.targetTouches.length === 1) {
-      var touch = event.targetTouches[0];
-      startX = touch.clientX;
-      console.log('startX = ' + startX);
-    }
-  };
-
-  this.onSliderTouchMove = function(event) {
-    if (event.targetTouches.length === 1) {
-      var touch = event.targetTouches[0];
-      translateX = (touch.clientX - startX);
-      if(Math.abs(translateX) < translateSuccess) {
-        sliderItem.style.transform = 'translateX(' + translateX + 'px)';
-      } else {
-        console.log('translate success.');
-        sliderItem.style.transform = '';
-      }
-    }
-  };
-
-  this.onSliderTouchEnd = function(event) {
-    console.log('onSliderItemsTouchEnd');
-    if (event.targetTouches.length === 1) {
-      this.endTouch = event.targetTouches[0];
-      endX = touch.clientX;
-      console.log('endX = ' + endX);
-    }
-  };
-
-  slider.addEventListener('touchstart', this.onSliderTouchStart, false);
-  slider.addEventListener('touchmove', this.onSliderTouchMove, false);
-  slider.addEventListener('touchend', this.onSliderTouchEnd, false);
 }
