@@ -94,7 +94,7 @@ function SliderTouchController(slider, sliderForegrounds, sliderBackgrounds, sli
   };
 
   var onSliderTouchMove = function(event) {
-    event.preventDefault();
+    // event.preventDefault();
     targetTouches = event.targetTouches;
     if (targetTouches.length === 1) {
       if(!isDragging) {
