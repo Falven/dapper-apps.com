@@ -1,5 +1,5 @@
 function SliderTouchController(slider, sliderForegrounds, sliderBackgrounds, sliderButtons, sliderActive) {
-  var threshold = 0.2;
+  var threshold = 0.15;
   var foreground,
       background,
       buttons,
