@@ -1,11 +1,10 @@
 function SliderTouchController(slider, sliderForegrounds, sliderBackgrounds, sliderButtons, sliderActive) {
-  var foreground = sliderForegrounds[0];
-  var background = sliderBackgrounds[0];
-  var buttons = sliderButtons;
-  var active = sliderActive[0];
-
-  var threshold = 0.33;
-  var isDragging,
+  var threshold = 0.2;
+  var foreground,
+      background,
+      buttons,
+      active,
+      isDragging,
       isTapping,
       startX,
       endX,
@@ -74,17 +73,10 @@ function SliderTouchController(slider, sliderForegrounds, sliderBackgrounds, sli
     if(isTapping) {
       event.preventDefault();
       event.stopPropagation();
+
       active.removeAttribute('style');
       foreground.removeAttribute('style');
       background.removeAttribute('style');
-
-      active.style.setProperty('transition', '');
-      foreground.style.setProperty('transition', '');
-      background.style.setProperty('transition', '');
-      
-      active.style.setProperty('transform', '');
-      foreground.style.setProperty('transform', '');
-      background.style.setProperty('transform', '');
 
       event.target.click();
       // event.target.
@@ -154,6 +146,11 @@ function SliderTouchController(slider, sliderForegrounds, sliderBackgrounds, sli
   };
 
   this.attach = function() {
+    foreground = sliderForegrounds[0];
+    background = sliderBackgrounds[0];
+    buttons = sliderButtons;
+    active = sliderActive[0];
+
     for (var i = 0; i < buttons.length; ++i) {
       buttons[i].addEventListener('touchstart', onButtonTouchStart, false);
       buttons[i].addEventListener('touchcancel', onButtonTouchCancel, false);
