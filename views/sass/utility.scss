@@ -34,15 +34,7 @@ $breakpoints: (
 }
 
 @mixin semantic-properties(
-$margin: null,
-$border-radius: null,
-$box-shadow: null,
 $padding: null) {
-  header, section, footer {
-    margin: $margin;
-    border-radius: $border-radius;
-    box-shadow: $box-shadow;
-  }
   section, footer {
     padding: $padding;
   }

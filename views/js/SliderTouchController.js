@@ -7,8 +7,12 @@ function SliderTouchController(slider, sliderForegrounds, sliderBackgrounds, sli
       isDragging,
       isTapping,
       startX,
+      startY,
       endX,
+      endY,
       translateX,
+      translateY,
+      lockY,
       targetTouches;
   var index = 0;
   var offsetX = 0;
@@ -55,6 +59,14 @@ function SliderTouchController(slider, sliderForegrounds, sliderBackgrounds, sli
     return window.getComputedStyle(buttons[Math.trunc(buttons.length / 2) - 1]).marginLeft.replace('px', '');
   };
 
+  getOffsetFor = function(i) {
+    return -i * getSlideWidth();
+  };
+
+  getActiveOffsetFor = function(i) {
+    return -i * getActiveOffset();
+  };
+
   var onButtonTouchStart = function(event) {
     if(!isTapping) {
       event.preventDefault();
@@ -78,23 +90,29 @@ function SliderTouchController(slider, sliderForegrounds, sliderBackgrounds, sli
       foreground.removeAttribute('style');
       background.removeAttribute('style');
 
-      event.target.click();
-      // event.target.
-      index = offsetX = activeOffsetX = 0;
+      var button = event.target;
+      for(var i = 0; i < buttons.length; ++i) {
+        if(button === buttons[i]) {
+          offsetX = getOffsetFor(i);
+          activeOffsetX = getActiveOffsetFor(i);
+          index = i;
+          break;
+        }
+      }
+      button.click();
       isTapping = false;
     }
   };
 
   var onSliderTouchStart = function(event) {
-    isDragging = false;
     targetTouches = event.targetTouches;
     if (targetTouches.length === 1) {
       startX = targetTouches[0].clientX;
+      startY = targetTouches[0].clientY;
     }
   };
 
   var onSliderTouchMove = function(event) {
-    // event.preventDefault();
     targetTouches = event.targetTouches;
     if (targetTouches.length === 1) {
       if(!isDragging) {
@@ -103,36 +121,44 @@ function SliderTouchController(slider, sliderForegrounds, sliderBackgrounds, sli
         background.style.setProperty('transition', 'transform 0ms');
       }
       translateX = (targetTouches[0].clientX - startX);
-      var pos = (offsetX + translateX);
-      foreground.style.setProperty('transform', 'translateX(' + pos + 'px)');
-      background.style.setProperty('transform', 'translateX(' + pos + 'px)');
+      translateY = (targetTouches[0].clientY - startY);
+      if(!lockY) {
+        if(Math.abs(translateY) > Math.abs(translateX)) {
+          lockY = true;
+        } else {
+          event.preventDefault();
+          var pos = (offsetX + translateX);
+          foreground.style.setProperty('transform', 'translateX(' + pos + 'px)');
+          background.style.setProperty('transform', 'translateX(' + pos + 'px)');
+        }
+      }
     }
   };
 
   var onSliderTouchCancel = function(event) {
     if(isDragging) {
-      isDragging = false;
+      isDragging = lockY = false;
     }
   };
 
   var onSliderTouchEnd = function(event) {
     if(isDragging) {
-      isDragging = false;
       endX = targetTouches[0].clientX;
+      endY = targetTouches[0].clientY;
       var translationalThreshold = threshold * getSlideWidth();
       if(Math.abs(translateX) > translationalThreshold) {
+        var nextIndex;
         if(translateX < 0) {
-            if(index + 1 <= getMaxIndex()) {
-              offsetX = -(++index) * getSlideWidth();
-              activeOffsetX = -(index) * getActiveOffset();
-            }
+            nextIndex = index + 1;
         } else {
           if(translateX > 0) {
-            if(index - 1 > -1) {
-              offsetX = -(--index) * getSlideWidth();
-              activeOffsetX = -(index) * getActiveOffset();
-            }
+            nextIndex = index - 1;
           }
+        }
+        if(nextIndex !== index && nextIndex > -1 && nextIndex <= getMaxIndex()) {
+          offsetX = getOffsetFor(nextIndex);
+          activeOffsetX = getActiveOffsetFor(nextIndex);
+          index = nextIndex;
         }
       }
       active.style.setProperty('transition', '');
@@ -142,6 +168,8 @@ function SliderTouchController(slider, sliderForegrounds, sliderBackgrounds, sli
       active.style.setProperty('transform', 'translateX(' + activeOffsetX + 'px)');
       foreground.style.setProperty('transform', 'translateX(' + offsetX + 'px)');
       background.style.setProperty('transform', 'translateX(' + offsetX + 'px)');
+
+      isDragging = lockY = false;
     }
   };
 
