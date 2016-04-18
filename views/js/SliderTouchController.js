@@ -77,14 +77,13 @@ function SliderTouchController(slider, sliderStack, sliderForegrounds, sliderBac
   var onButtonTouchStart = function(event) {
     stopPreview = true;
     if(!isTapping) {
-      event.preventDefault();
-      event.stopPropagation();
       isTapping = true;
     }
   };
 
   var onButtonTouchCancel = function(event) {
     if(isTapping) {
+      event.preventDefault();
       isTapping = false;
     }
   };
@@ -92,7 +91,6 @@ function SliderTouchController(slider, sliderStack, sliderForegrounds, sliderBac
   var onButtonTouchEnd = function(event) {
     if(isTapping) {
       event.preventDefault();
-      event.stopPropagation();
 
       active.removeAttribute('style');
       foreground.removeAttribute('style');
@@ -190,6 +188,7 @@ function SliderTouchController(slider, sliderStack, sliderForegrounds, sliderBac
       buttons[i].addEventListener('touchstart', onButtonTouchStart, false);
       buttons[i].addEventListener('touchcancel', onButtonTouchCancel, false);
       buttons[i].addEventListener('touchend', onButtonTouchEnd, false);
+      buttons[i].addEventListener('click', onButtonTouchStart, false);
     }
 
     slider.addEventListener('touchstart', onSliderTouchStart, false);
