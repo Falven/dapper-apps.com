@@ -6,6 +6,7 @@ function domLoaded() {
   if("ontouchstart" in window) {
     var sliderController = new SliderTouchController(
       document.getElementById('slider'),
+      document.getElementsByClassName('slider-stack'),
       document.getElementsByClassName('slider-foregrounds'),
       document.getElementsByClassName('slider-backgrounds'),
       document.getElementsByClassName('button'),

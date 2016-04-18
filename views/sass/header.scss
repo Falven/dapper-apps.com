@@ -1,5 +1,5 @@
 /* Static Header Styles */
-$items: 3;
+$slider-items: 3;
 $foreground-transition-speed: 700ms;
 $active-transition-speed: $foreground-transition-speed;
 $background-transition-speed: 900ms;
@@ -30,7 +30,16 @@ $foreground-color: #fff;
   border-color: $foreground-color;
 }
 
+.active, .slider-stack {
+  animation-duration: 20s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease;
+  animation-direction: normal;
+  animation-play-state: running;
+}
+
 .active {
+  animation-name: previewActive;
   z-index: $active-z-index;
   transition: transform $active-transition-speed ease;
   background-color: $foreground-color;
@@ -65,16 +74,64 @@ $foreground-color: #fff;
 }
 
 #radio2:checked ~ .slider-stack {
-  transform: translateX(-100% / $items);
+  transform: translateX(-100% / $slider-items);
 }
 
 #radio3:checked ~ .slider-stack {
-  transform: translateX(-100% / $items * 2);
+  transform: translateX(-100% / $slider-items * 2);
 }
 
+@mixin animate-preview($name, $items, $item-width, $freeze-time, $slide-time) {
+  @if $items > 1 {
+    @keyframes #{$name} {
+      $divisions: (2 * $items - 1) + (($items - 1) * 2 - 1);
+      $halfdiv: $divisions / 2;
+      $freeze-percent: 100 / ((($slide-time / $freeze-time) * $halfdiv) + $halfdiv);
+      $slide-percent: 100 / ((($freeze-time / $slide-time) * $halfdiv) + $halfdiv);
+      $percent: 0;
+      #{$percent}% {
+        transform: translateX(0);
+      }
+      $percent: $percent + $freeze-percent;
+      #{$percent}% {
+        transform: translateX(0);
+      }
+      @for $i from 1 through floor($items / 2) {
+        $translation: $item-width * $i;
+        $percent: $percent + $slide-percent;
+        #{$percent}% {
+          transform: translateX($translation);
+        }
+        $percent: $percent + $freeze-percent;
+        #{$percent}% {
+          transform: translateX($translation);
+        }
+      }
+      @for $i from floor($items / 2 + 1) through 1 {
+        $translation: $item-width * $i;
+        $percent: $percent + $slide-percent;
+        #{$percent}% {
+          transform: translateX($translation);
+        }
+        $percent: $percent + $freeze-percent;
+        #{$percent}% {
+          transform: translateX($translation);
+        }
+      }
+      $percent: $percent + $slide-percent;
+      #{$percent}% {
+        transform: translateX(0);
+      }
+    }
+  }
+}
+
+@include animate-preview(previewStack, $slider-items, -100% / $slider-items, 5, .5);
+
 .slider-stack {
+  animation-name: previewStack;
   position: relative;
-  width: $items * 100%;
+  width: $slider-items * 100%;
   display: flex;
   > h1, > figure {
     width: 100%;
@@ -169,6 +226,7 @@ $foreground-color: #fff;
     }
   }
   @if $slider-controls-margin != null {
+    @include animate-preview(previewActive, $slider-items, $slider-controls-margin, 5, .5);
     #radio2:checked ~ .active {
       transform: translateX($slider-controls-margin);
     }

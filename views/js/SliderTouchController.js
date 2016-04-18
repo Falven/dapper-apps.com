@@ -1,4 +1,10 @@
-function SliderTouchController(slider, sliderForegrounds, sliderBackgrounds, sliderButtons, sliderActive) {
+function SliderTouchController(slider, sliderStack, sliderForegrounds, sliderBackgrounds, sliderButtons, sliderActive) {
+  foreground = sliderForegrounds[0];
+  background = sliderBackgrounds[0];
+  buttons = sliderButtons;
+  active = sliderActive[0];
+  stack = sliderStack[0];
+
   var threshold = 0.1;
   var foreground,
       background,
@@ -13,7 +19,8 @@ function SliderTouchController(slider, sliderForegrounds, sliderBackgrounds, sli
       translateX,
       translateY,
       lockY,
-      targetTouches;
+      targetTouches,
+      stopPreview;
   var index = 0;
   var offsetX = 0;
   var activeOffsetX = 0;
@@ -66,8 +73,9 @@ function SliderTouchController(slider, sliderForegrounds, sliderBackgrounds, sli
   getActiveOffsetFor = function(i) {
     return -i * getActiveOffset();
   };
-
+  
   var onButtonTouchStart = function(event) {
+    stopPreview = true;
     if(!isTapping) {
       event.preventDefault();
       event.stopPropagation();
@@ -105,6 +113,7 @@ function SliderTouchController(slider, sliderForegrounds, sliderBackgrounds, sli
   };
 
   var onSliderTouchStart = function(event) {
+    stopPreview = true;
     targetTouches = event.targetTouches;
     if (targetTouches.length === 1) {
       startX = targetTouches[0].clientX;
@@ -120,8 +129,10 @@ function SliderTouchController(slider, sliderForegrounds, sliderBackgrounds, sli
         foreground.style.setProperty('transition', 'transform 0ms');
         background.style.setProperty('transition', 'transform 0ms');
       }
+
       translateX = (targetTouches[0].clientX - startX);
       translateY = (targetTouches[0].clientY - startY);
+
       if(!lockY) {
         if(Math.abs(translateY) > Math.abs(translateX)) {
           lockY = true;
@@ -161,6 +172,7 @@ function SliderTouchController(slider, sliderForegrounds, sliderBackgrounds, sli
           index = nextIndex;
         }
       }
+
       active.style.setProperty('transition', '');
       foreground.style.setProperty('transition', '');
       background.style.setProperty('transition', '');
@@ -174,16 +186,12 @@ function SliderTouchController(slider, sliderForegrounds, sliderBackgrounds, sli
   };
 
   this.attach = function() {
-    foreground = sliderForegrounds[0];
-    background = sliderBackgrounds[0];
-    buttons = sliderButtons;
-    active = sliderActive[0];
-
     for (var i = 0; i < buttons.length; ++i) {
       buttons[i].addEventListener('touchstart', onButtonTouchStart, false);
       buttons[i].addEventListener('touchcancel', onButtonTouchCancel, false);
       buttons[i].addEventListener('touchend', onButtonTouchEnd, false);
     }
+
     slider.addEventListener('touchstart', onSliderTouchStart, false);
     slider.addEventListener('touchmove', onSliderTouchMove, false);
     slider.addEventListener('touchcancel', onSliderTouchCancel, false);
@@ -196,6 +204,7 @@ function SliderTouchController(slider, sliderForegrounds, sliderBackgrounds, sli
       buttons[i].removeEventListener(onButtonTouchCancel);
       buttons[i].removeEventListener(onButtonTouchEnd);
     }
+
     slider.removeEventListener(onSliderTouchStart);
     slider.removeEventListener(onSliderTouchMove);
     slider.removeEventListener(onSliderTouchCancel);
