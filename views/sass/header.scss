@@ -70,7 +70,7 @@ $foreground-color: #fff;
 @mixin animate-preview($name, $items, $item-width, $freeze-time, $slide-time) {
   @if $items > 1 {
     @keyframes #{$name} {
-      $divisions: (2 * $items - 1) + (($items - 1) * 2 - 1);
+      $divisions: (2 * $items);
       $halfdiv: $divisions / 2;
       $freeze-percent: 100 / ((($slide-time / $freeze-time) * $halfdiv) + $halfdiv);
       $slide-percent: 100 / ((($freeze-time / $slide-time) * $halfdiv) + $halfdiv);
@@ -82,18 +82,7 @@ $foreground-color: #fff;
       #{$percent}% {
         transform: translateX(0);
       }
-      @for $i from 1 through floor($items / 2) {
-        $translation: $item-width * $i;
-        $percent: $percent + $slide-percent;
-        #{$percent}% {
-          transform: translateX($translation);
-        }
-        $percent: $percent + $freeze-percent;
-        #{$percent}% {
-          transform: translateX($translation);
-        }
-      }
-      @for $i from floor($items / 2 + 1) through 1 {
+      @for $i from 1 to $items {
         $translation: $item-width * $i;
         $percent: $percent + $slide-percent;
         #{$percent}% {
