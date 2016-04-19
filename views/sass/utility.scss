@@ -32,10 +32,3 @@ $breakpoints: (
         + "Please make sure it is defined in `$breakpoints` map.";
   }
 }
-
-@mixin semantic-properties(
-$padding: null) {
-  section, footer {
-    padding: $padding;
-  }
-}

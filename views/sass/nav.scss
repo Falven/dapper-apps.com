@@ -1,0 +1,17 @@
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 3;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.75);
+  transition: background-color 0.2s
+}
+
+@mixin header(
+  $height: null) {
+  header {
+    height: $height;
+  }
+}

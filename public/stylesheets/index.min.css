@@ -45,15 +45,22 @@ a {
   text-decoration: none;
 }
 
-section {
-  background-color: #fff;
-}
-
 footer {
   background-color: #222;
 }
 
-/* Static Header Styles */
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 3;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.75);
+  -webkit-transition: background-color 0.2s;
+  transition: background-color 0.2s;
+}
+
+/* Static Slider Styles */
 #slider {
   position: relative;
   overflow: hidden;
@@ -72,8 +79,7 @@ footer {
 .button {
   cursor: pointer;
   z-index: 1;
-  border-style: solid;
-  border-color: #fff;
+  border: solid #fff;
 }
 
 .active, .slider-stack {
@@ -159,22 +165,19 @@ footer {
 .sb1 {
   left: 0%;
   right: 200%;
-  background-color: #8e44ad;
-  background-position: bottom;
+  background: #8e44ad bottom;
 }
 
 .sb2 {
   left: 100%;
   right: 100%;
-  background-color: #ea4c89;
-  background-position: top;
+  background: #ea4c89 top;
 }
 
 .sb3 {
   left: 200%;
   right: 0%;
-  background-color: #75c1e8;
-  background-position: center;
+  background: #75c1e8 center;
 }
 
 .slider-foregrounds {
@@ -206,7 +209,7 @@ footer {
           justify-content: center;
 }
 
-/* Static Header Styles */
+/* Static Slider Styles */
 .portrait > img, .portrait::before {
   border-radius: 50%;
   box-sizing: border-box;
@@ -216,13 +219,12 @@ footer {
 
 #contact {
   text-align: center;
+  background-color: #fff;
 }
 
 #contact > h2 {
   font-weight: 400;
   color: #d4af82;
-  text-transform: uppercase;
-  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.3);
   text-align: center;
 }
 
@@ -235,10 +237,9 @@ footer {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -webkit-justify-content: space-around;
+      -ms-flex-pack: distribute;
+          justify-content: space-around;
   -webkit-flex-wrap: wrap;
       -ms-flex-wrap: wrap;
           flex-wrap: wrap;
@@ -317,8 +318,8 @@ footer > ul > li, .social-link, .social-link > img {
 }
 
 /* Responsive Design */
-section, footer {
-  padding: 30px 18px;
+header {
+  height: 40px;
 }
 
 #slider,
@@ -332,18 +333,18 @@ section, footer {
 }
 
 .button {
-  height: 12px;
-  width: 12px;
+  height: 16px;
+  width: 16px;
   bottom: 12px;
   border-width: 2px;
-  left: calc(50% - 6px);
+  left: calc(50% - 8px);
 }
 
 .active {
-  height: 6px;
-  width: 6px;
-  left: calc(50% - 3px - 25px);
-  bottom: 15px;
+  height: 8px;
+  width: 8px;
+  left: calc(50% - 4px - 30px);
+  bottom: 16px;
 }
 
 #radio1:checked ~ .active {
@@ -352,17 +353,17 @@ section, footer {
 }
 
 #radio2:checked ~ .active {
-  -webkit-transform: translateX(25px);
-          transform: translateX(25px);
+  -webkit-transform: translateX(30px);
+          transform: translateX(30px);
 }
 
 #radio3:checked ~ .active {
-  -webkit-transform: translateX(50px);
-          transform: translateX(50px);
+  -webkit-transform: translateX(60px);
+          transform: translateX(60px);
 }
 
 .b1 {
-  margin-left: -25px;
+  margin-left: -30px;
 }
 
 .b2 {
@@ -370,7 +371,7 @@ section, footer {
 }
 
 .b3 {
-  margin-left: 25px;
+  margin-left: 30px;
 }
 
 .sf1 > figure > img {
@@ -421,8 +422,12 @@ section, footer {
   font-size: 16px;
 }
 
+#contact {
+  padding: 30px 18px;
+}
+
 #contact > h2 {
-  font-size: 32px;
+  font-size: 36px;
 }
 
 .member {
@@ -455,6 +460,10 @@ section, footer {
   box-shadow: 0 0 15px 0 black inset;
 }
 
+footer {
+  padding: 30px 18px;
+}
+
 .social-link > img {
   width: 35px;
 }
@@ -464,9 +473,6 @@ footer > ul > li {
 }
 
 @media only screen and (min-width: 736px) {
-  section, footer {
-    padding: 60px 95px;
-  }
   #slider,
   .slider-stack > h1,
   .slider-stack > figure {
@@ -476,16 +482,16 @@ footer > ul > li {
     margin-top: -650px;
   }
   .button {
-    height: 16px;
-    width: 16px;
+    height: 24px;
+    width: 24px;
     bottom: 12px;
-    left: calc(50% - 8px);
+    left: calc(50% - 12px);
   }
   .active {
-    height: 8px;
-    width: 8px;
-    left: calc(50% - 4px - 50px);
-    bottom: 16px;
+    height: 12px;
+    width: 12px;
+    left: calc(50% - 6px - 50px);
+    bottom: 18px;
   }
   #radio1:checked ~ .active {
     -webkit-transform: translateX(0px);
@@ -532,12 +538,18 @@ footer > ul > li {
     padding-bottom: 35px;
     margin-top: 35px;
   }
+  #contact {
+    padding: 60px 95px;
+  }
   #contact > h2 {
     font-size: 40px;
   }
   .portrait {
     width: 125px;
     height: 125px;
+  }
+  footer {
+    padding: 60px 95px;
   }
   .social-link > img {
     width: 50px;
@@ -574,7 +586,7 @@ footer > ul > li {
   .active {
     height: 12px;
     width: 12px;
-    left: calc(50% - 6px - 38px);
+    left: calc(50% - 6px - 48px);
     bottom: 18px;
   }
   #radio1:checked ~ .active {
@@ -582,21 +594,21 @@ footer > ul > li {
             transform: translateX(0px);
   }
   #radio2:checked ~ .active {
-    -webkit-transform: translateX(38px);
-            transform: translateX(38px);
+    -webkit-transform: translateX(48px);
+            transform: translateX(48px);
   }
   #radio3:checked ~ .active {
-    -webkit-transform: translateX(76px);
-            transform: translateX(76px);
+    -webkit-transform: translateX(96px);
+            transform: translateX(96px);
   }
   .b1 {
-    margin-left: -38px;
+    margin-left: -48px;
   }
   .b2 {
     margin-left: 0px;
   }
   .b3 {
-    margin-left: 38px;
+    margin-left: 48px;
   }
   .sb1 {
     background-image: url(/images/slider/dapper-apps/dapper-background_large.jpg);

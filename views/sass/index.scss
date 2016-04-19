@@ -33,15 +33,13 @@ a {
   text-decoration: none;
 }
 
-section {
-  background-color: $section-background-color;
-}
-
 footer {
   background-color: $footer-background-color;
 }
 
-@import "header";
+//@import "nav";
+
+@import "slider";
 
 @import "contact";
 

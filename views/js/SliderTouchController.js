@@ -14,8 +14,7 @@ function SliderTouchController(slider, sliderStack, sliderForegrounds, sliderBac
       _translateX,
       _translateY,
       _lockY,
-      _targetTouches,
-      _stopPreview;
+      _targetTouches;
   var _index = 0;
   var _offsetX = 0;
   var _activeOffsetX = 0;
@@ -34,38 +33,18 @@ function SliderTouchController(slider, sliderStack, sliderForegrounds, sliderBac
   };
 
   var getActivePos = function() {
-    return _active.getBoundingClientRect().marginLeft;
+    return _active.getBoundingClientRect().left;
   };
 
-  getOffsetFor = function(i) {
+  var getOffsetFor = function(i) {
     return -i * getSlideWidth();
   };
 
-  getActiveOffsetFor = function(i) {
+  var getActiveOffsetFor = function(i) {
     return -i * window.getComputedStyle(_buttons[Math.trunc(_buttons.length / 2) - 1]).marginLeft.replace('px', '');
   };
-  
-  _stopPreview = function() {
-    var i;
-    for(i = 0; i < _stack.length; ++i) {
-      _stack[i].style.setProperty('animation-play-state', 'paused');
-    }
-    _active.style.setProperty('animation-play-state', 'paused');
 
-    var stackOffset = getSlideOffset();
-    for(i = 0; i < _stack.length; ++i) {
-      _stack[i].style.setProperty('transform', 'translateX(' + stackOffset + 'px)');
-    }
-    _active.style.setProperty('transform', 'translateX(' + getActiveOffset() + 'px)');
-
-    for(i = 0; i < _stack.length; ++i) {
-      _stack[i].style.setProperty('animation', 'none');
-    }
-    _active.style.setProperty('animation', 'none');
-  };
-
-  var onButtonTouchStart = function(event) {
-    // stopPreview();
+  var onButtonTouchStart = function() {
     if(!_isTapping) {
       _isTapping = true;
     }
@@ -101,7 +80,6 @@ function SliderTouchController(slider, sliderStack, sliderForegrounds, sliderBac
   };
 
   var onSliderTouchStart = function(event) {
-    // stopPreview();
     _targetTouches = event.targetTouches;
     if (_targetTouches.length === 1) {
       _startX = _targetTouches[0].clientX;
@@ -114,8 +92,8 @@ function SliderTouchController(slider, sliderStack, sliderForegrounds, sliderBac
     if (_targetTouches.length === 1) {
       if(!_isDragging) {
         _isDragging = true;
-        _foreground.style.setProperty('transition', 'transform 0ms');
-        _background.style.setProperty('transition', 'transform 0ms');
+        _foreground.style.setProperty('transition', 'transform 0ms', '');
+        _background.style.setProperty('transition', 'transform 0ms', '');
       }
 
       _translateX = (_targetTouches[0].clientX - _startX);
@@ -127,8 +105,8 @@ function SliderTouchController(slider, sliderStack, sliderForegrounds, sliderBac
         } else {
           event.preventDefault();
           var pos = (_offsetX + _translateX);
-          _foreground.style.setProperty('transform', 'translateX(' + pos + 'px)');
-          _background.style.setProperty('transform', 'translateX(' + pos + 'px)');
+          _foreground.style.setProperty('transform', 'translateX(' + pos + 'px)', '');
+          _background.style.setProperty('transform', 'translateX(' + pos + 'px)', '');
         }
       }
     }
@@ -161,13 +139,13 @@ function SliderTouchController(slider, sliderStack, sliderForegrounds, sliderBac
         }
       }
 
-      _active.style.setProperty('transition', '');
-      _foreground.style.setProperty('transition', '');
-      _background.style.setProperty('transition', '');
+      _active.style.setProperty('transition', '', '');
+      _foreground.style.setProperty('transition', '', '');
+      _background.style.setProperty('transition', '', '');
 
-      _active.style.setProperty('transform', 'translateX(' + _activeOffsetX + 'px)');
-      _foreground.style.setProperty('transform', 'translateX(' + _offsetX + 'px)');
-      _background.style.setProperty('transform', 'translateX(' + _offsetX + 'px)');
+      _active.style.setProperty('transform', 'translateX(' + _activeOffsetX + 'px)', '');
+      _foreground.style.setProperty('transform', 'translateX(' + _offsetX + 'px)', '');
+      _background.style.setProperty('transform', 'translateX(' + _offsetX + 'px)', '');
 
       _isDragging = _lockY = false;
     }

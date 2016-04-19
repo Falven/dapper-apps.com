@@ -1,25 +1,25 @@
 /* Responsive Design */
-@include semantic-properties(
-  $padding: 30px 18px
-);
 @include header(
+  $height: 40px
+);
+@include slider(
   50%,
   12px,
-  $slider-controls-margin: 25px,
-  $slider-controls-dimensions: 12px,
+  $slider-controls-margin: 30px,
+  $slider-controls-dimensions: 16px,
   $slider-height: 348px,
   $slider-controls-border-width: 2px,
   $sf1-img-width: 125px,
   $sf2-img-width: 250px,
   $sf3-font-size: 20px
 );
-@include header-images("small");
+@include slider-images("small");
 @include respond-min-2x("mobile") {
-  @include header-images("small_2x");
+  @include slider-images("small_2x");
 }
 @include contact(
   $vertical-spacing: 30px,
-  $title-font-size: 32px,
+  $title-font-size: 36px,
   $team-flex-direction: column,
   $portrait-dimensions: 100px,
   $portrait-border-width: 2px,
@@ -27,61 +27,62 @@
   $name-font-size: 18px,
   $name-margin: 10px,
   $description-font-size: 16px,
-  $border-bottom: 1px solid $separator-color
+  $border-bottom: 1px solid $separator-color,
+  $padding: 30px 18px
 );
 @include footer(
   $link-width: 35px,
-  $link-margin: 0 10px
+  $link-margin: 0 10px,
+  $padding: 30px 18px
 );
 
 @include respond-min("tablet") {
-  @include semantic-properties(
-    $padding: 60px 95px
-  );
-  @include header(
+  @include slider(
     50%,
     12px,
     $slider-controls-margin: 50px,
-    $slider-controls-dimensions: 16px,
+    $slider-controls-dimensions: 24px,
     $slider-height: 650px,
     $sf1-img-width: 200px,
     $sf2-img-width: 400px,
     $sf3-font-size: 40px
   );
-  @include header-images("medium");
+  @include slider-images("medium");
   @include contact(
     $vertical-spacing: 35px,
     $title-font-size: 40px,
-    $portrait-dimensions: 125px
+    $portrait-dimensions: 125px,
+    $padding: 60px 95px
   );
   @include footer(
-    $link-width: 50px
+    $link-width: 50px,
+    $padding: 60px 95px
   );
 }
 @include respond-min-2x("tablet") {
-  @include header-images("medium_2x");
+  @include slider-images("medium_2x");
 }
 
 @include respond-min("laptop") {
-  @include header(
+  @include slider(
     $slider-controls-left: 50%,
     $slider-controls-bottom: 12px,
-    $slider-controls-margin: 38px,
+    $slider-controls-margin: 48px,
     $slider-controls-dimensions: 24px,
     $slider-height: 615px
   );
-  @include header-images("large");
+  @include slider-images("large");
   @include contact(
     $member-width: 30%,
     $border-bottom: 0 none $page-background-color
   );
 }
 @include respond-min-2x("laptop") {
-  @include header-images("large_2x");
+  @include slider-images("large_2x");
 }
 
 @include respond-min("desktop") {
-  @include header(
+  @include slider(
     50%,
     12px
   );

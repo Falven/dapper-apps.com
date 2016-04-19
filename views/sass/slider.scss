@@ -1,4 +1,4 @@
-/* Static Header Styles */
+/* Static Slider Styles */
 $slider-items: 3;
 $foreground-transition-speed: 700ms;
 $active-transition-speed: $foreground-transition-speed;
@@ -26,8 +26,7 @@ $foreground-color: #fff;
 .button {
   cursor: pointer;
   z-index: $button-z-index;
-  border-style: solid;
-  border-color: $foreground-color;
+  border: solid $foreground-color;
 }
 
 .active, .slider-stack {
@@ -101,7 +100,7 @@ $foreground-color: #fff;
   }
 }
 
-// @include animate-preview(previewStack, $slider-items, -100% / $slider-items, 5, .5);
+//@include animate-preview(previewStack, $slider-items, -100% / $slider-items, 5, .5);
 
 .slider-stack {
   animation-name: previewStack;
@@ -127,16 +126,13 @@ $foreground-color: #fff;
     left: #{($i - 1) * 100%};
     right: #{($slider-items - $i) * 100%};
     @if $i == 1 {
-      background-color: #8e44ad;
-      background-position: bottom;
+      background: #8e44ad bottom;
     }
     @if $i == 2 {
-      background-color: #ea4c89;
-      background-position: top;
+      background: #ea4c89 top;
     }
     @if $i == 3 {
-      background-color: #75c1e8;
-      background-position: center;
+      background: #75c1e8 center;
     }
   }
 }
@@ -152,9 +148,9 @@ $foreground-color: #fff;
     justify-content: center;
   }
 }
-/* Static Header Styles */
+/* Static Slider Styles */
 
-@mixin header(
+@mixin slider(
   $slider-controls-left,
   $slider-controls-bottom,
   $slider-controls-margin: null,
@@ -199,7 +195,7 @@ $foreground-color: #fff;
     }
   }
   @if $slider-controls-margin != null {
-    // @include animate-preview(previewActive, $slider-items, $slider-controls-margin, 5, .5);
+    //@include animate-preview(previewActive, $slider-items, $slider-controls-margin, 5, .5);
     @for $i from 0 to $slider-items {
       #radio#{$i + 1}:checked ~ .active {
         transform: translateX($slider-controls-margin * $i);
@@ -229,7 +225,7 @@ $foreground-color: #fff;
   }
 }
 
-@mixin header-images($img-class) {
+@mixin slider-images($img-class) {
   .sb1 {
     background-image: url(/images/slider/dapper-apps/dapper-background_#{$img-class}.jpg);
   }

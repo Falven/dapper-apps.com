@@ -7,11 +7,12 @@
 
 #contact {
   text-align: center;
+  background-color: $section-background-color;
   > h2 {
     font-weight: 400;
     color: $accent-color;
-    text-transform: uppercase;
-    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.3);
+    //text-transform: uppercase;
+    //text-shadow: 0 1px 1px rgba(0, 0, 0, 0.3);
     text-align: center;
   }
   > p {
@@ -21,7 +22,7 @@
 
 .team {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   flex-wrap: wrap;
   flex-direction: row;
   align-items: baseline;
@@ -77,7 +78,8 @@
   $name-font-size: null,
   $name-margin: null,
   $description-font-size: null,
-  $border-bottom: null) {
+  $border-bottom: null,
+  $padding: null) {
   #contact > h2,
   #contact > p,
   .member {
@@ -89,6 +91,7 @@
     font-size: $description-font-size;
   }
   #contact {
+    padding: $padding;
     > h2 {
       font-size: $title-font-size;
     }
