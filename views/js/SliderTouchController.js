@@ -1,45 +1,40 @@
-var SliderTouchController = {
-
-};
-
 function SliderTouchController(slider, sliderStack, sliderForegrounds, sliderBackgrounds, sliderButtons, sliderActive) {
-
-  var threshold = 0.1;
-  var foreground,
-      background,
-      buttons,
-      active,
-      stack,
-      isDragging,
-      isTapping,
-      startX,
-      startY,
-      endX,
-      endY,
-      translateX,
-      translateY,
-      lockY,
-      targetTouches,
-      stopPreview;
-  var index = 0;
-  var offsetX = 0;
-  var activeOffsetX = 0;
+  var _threshold = 0.1;
+  var _foreground,
+      _background,
+      _buttons,
+      _active,
+      _stack,
+      _isDragging,
+      _isTapping,
+      _startX,
+      _startY,
+      _endX,
+      _endY,
+      _translateX,
+      _translateY,
+      _lockY,
+      _targetTouches,
+      _stopPreview;
+  var _index = 0;
+  var _offsetX = 0;
+  var _activeOffsetX = 0;
 
   // All calculations based on foreground elements.
   var getNumSlides = function() {
-    return foreground.childNodes.length;
+    return _foreground.childNodes.length;
   };
 
   var getSlidePos = function() {
-    return foreground.getBoundingClientRect().left - slider.getBoundingClientRect().left;
+    return _foreground.getBoundingClientRect().left - slider.getBoundingClientRect().left;
   };
 
   var getSlideWidth = function() {
-    return foreground.childNodes[0].getBoundingClientRect().width;
+    return _foreground.childNodes[0].getBoundingClientRect().width;
   };
 
   var getActivePos = function() {
-    return active.getBoundingClientRect().marginLeft;
+    return _active.getBoundingClientRect().marginLeft;
   };
 
   getOffsetFor = function(i) {
@@ -47,149 +42,149 @@ function SliderTouchController(slider, sliderStack, sliderForegrounds, sliderBac
   };
 
   getActiveOffsetFor = function(i) {
-    return -i * window.getComputedStyle(buttons[Math.trunc(buttons.length / 2) - 1]).marginLeft.replace('px', '');
+    return -i * window.getComputedStyle(_buttons[Math.trunc(_buttons.length / 2) - 1]).marginLeft.replace('px', '');
   };
   
-  stopPreview = function() {
+  _stopPreview = function() {
     var i;
-    for(i = 0; i < stack.length; ++i) {
-      stack[i].style.setProperty('animation-play-state', 'paused');
+    for(i = 0; i < _stack.length; ++i) {
+      _stack[i].style.setProperty('animation-play-state', 'paused');
     }
-    active.style.setProperty('animation-play-state', 'paused');
+    _active.style.setProperty('animation-play-state', 'paused');
 
     var stackOffset = getSlideOffset();
-    for(i = 0; i < stack.length; ++i) {
-      stack[i].style.setProperty('transform', 'translateX(' + stackOffset + 'px)');
+    for(i = 0; i < _stack.length; ++i) {
+      _stack[i].style.setProperty('transform', 'translateX(' + stackOffset + 'px)');
     }
-    active.style.setProperty('transform', 'translateX(' + getActiveOffset() + 'px)');
+    _active.style.setProperty('transform', 'translateX(' + getActiveOffset() + 'px)');
 
-    for(i = 0; i < stack.length; ++i) {
-      stack[i].style.setProperty('animation', 'none');
+    for(i = 0; i < _stack.length; ++i) {
+      _stack[i].style.setProperty('animation', 'none');
     }
-    active.style.setProperty('animation', 'none');
+    _active.style.setProperty('animation', 'none');
   };
 
   var onButtonTouchStart = function(event) {
     // stopPreview();
-    if(!isTapping) {
-      isTapping = true;
+    if(!_isTapping) {
+      _isTapping = true;
     }
   };
 
   var onButtonTouchCancel = function(event) {
-    if(isTapping) {
+    if(_isTapping) {
       event.preventDefault();
-      isTapping = false;
+      _isTapping = false;
     }
   };
 
   var onButtonTouchEnd = function(event) {
-    if(isTapping) {
+    if(_isTapping) {
       event.preventDefault();
 
-      active.removeAttribute('style');
-      foreground.removeAttribute('style');
-      background.removeAttribute('style');
+      _active.removeAttribute('style');
+      _foreground.removeAttribute('style');
+      _background.removeAttribute('style');
       var button = event.target;
-      for(var i = 0; i < buttons.length; ++i) {
-        if(button === buttons[i]) {
-          offsetX = getOffsetFor(i);
-          activeOffsetX = getActiveOffsetFor(i);
-          index = i;
+      for(var i = 0; i < _buttons.length; ++i) {
+        if(button === _buttons[i]) {
+          _offsetX = getOffsetFor(i);
+          _activeOffsetX = getActiveOffsetFor(i);
+          _index = i;
           break;
         }
       }
       button.click();
 
-      isTapping = false;
+      _isTapping = false;
     }
   };
 
   var onSliderTouchStart = function(event) {
     // stopPreview();
-    targetTouches = event.targetTouches;
-    if (targetTouches.length === 1) {
-      startX = targetTouches[0].clientX;
-      startY = targetTouches[0].clientY;
+    _targetTouches = event.targetTouches;
+    if (_targetTouches.length === 1) {
+      _startX = _targetTouches[0].clientX;
+      _startY = _targetTouches[0].clientY;
     }
   };
 
   var onSliderTouchMove = function(event) {
-    targetTouches = event.targetTouches;
-    if (targetTouches.length === 1) {
-      if(!isDragging) {
-        isDragging = true;
-        foreground.style.setProperty('transition', 'transform 0ms');
-        background.style.setProperty('transition', 'transform 0ms');
+    _targetTouches = event.targetTouches;
+    if (_targetTouches.length === 1) {
+      if(!_isDragging) {
+        _isDragging = true;
+        _foreground.style.setProperty('transition', 'transform 0ms');
+        _background.style.setProperty('transition', 'transform 0ms');
       }
 
-      translateX = (targetTouches[0].clientX - startX);
-      translateY = (targetTouches[0].clientY - startY);
+      _translateX = (_targetTouches[0].clientX - _startX);
+      _translateY = (_targetTouches[0].clientY - _startY);
 
-      if(!lockY) {
-        if(Math.abs(translateY) > Math.abs(translateX)) {
-          lockY = true;
+      if(!_lockY) {
+        if(Math.abs(_translateY) > Math.abs(_translateX)) {
+          _lockY = true;
         } else {
           event.preventDefault();
-          var pos = (offsetX + translateX);
-          foreground.style.setProperty('transform', 'translateX(' + pos + 'px)');
-          background.style.setProperty('transform', 'translateX(' + pos + 'px)');
+          var pos = (_offsetX + _translateX);
+          _foreground.style.setProperty('transform', 'translateX(' + pos + 'px)');
+          _background.style.setProperty('transform', 'translateX(' + pos + 'px)');
         }
       }
     }
   };
 
   var onSliderTouchCancel = function(event) {
-    if(isDragging) {
-      isDragging = lockY = false;
+    if(_isDragging) {
+      _isDragging = _lockY = false;
     }
   };
 
   var onSliderTouchEnd = function(event) {
-    if(isDragging) {
-      endX = targetTouches[0].clientX;
-      endY = targetTouches[0].clientY;
-      var translationalThreshold = threshold * getSlideWidth();
-      if(Math.abs(translateX) > translationalThreshold) {
+    if(_isDragging) {
+      _endX = _targetTouches[0].clientX;
+      _endY = _targetTouches[0].clientY;
+      var translationalThreshold = _threshold * getSlideWidth();
+      if(Math.abs(_translateX) > translationalThreshold) {
         var nextIndex;
-        if(translateX < 0) {
-            nextIndex = index + 1;
+        if(_translateX < 0) {
+            nextIndex = _index + 1;
         } else {
-          if(translateX > 0) {
-            nextIndex = index - 1;
+          if(_translateX > 0) {
+            nextIndex = _index - 1;
           }
         }
-        if(nextIndex !== index && nextIndex > -1 && nextIndex < getNumSlides()) {
-          offsetX = getOffsetFor(nextIndex);
-          activeOffsetX = getActiveOffsetFor(nextIndex);
-          index = nextIndex;
+        if(nextIndex !== _index && nextIndex > -1 && nextIndex < getNumSlides()) {
+          _offsetX = getOffsetFor(nextIndex);
+          _activeOffsetX = getActiveOffsetFor(nextIndex);
+          _index = nextIndex;
         }
       }
 
-      active.style.setProperty('transition', '');
-      foreground.style.setProperty('transition', '');
-      background.style.setProperty('transition', '');
+      _active.style.setProperty('transition', '');
+      _foreground.style.setProperty('transition', '');
+      _background.style.setProperty('transition', '');
 
-      active.style.setProperty('transform', 'translateX(' + activeOffsetX + 'px)');
-      foreground.style.setProperty('transform', 'translateX(' + offsetX + 'px)');
-      background.style.setProperty('transform', 'translateX(' + offsetX + 'px)');
+      _active.style.setProperty('transform', 'translateX(' + _activeOffsetX + 'px)');
+      _foreground.style.setProperty('transform', 'translateX(' + _offsetX + 'px)');
+      _background.style.setProperty('transform', 'translateX(' + _offsetX + 'px)');
 
-      isDragging = lockY = false;
+      _isDragging = _lockY = false;
     }
   };
 
   this.attach = function() {
-    foreground = sliderForegrounds[0];
-    background = sliderBackgrounds[0];
-    buttons = sliderButtons;
-    active = sliderActive[0];
-    stack = sliderStack;
+    _foreground = sliderForegrounds[0];
+    _background = sliderBackgrounds[0];
+    _buttons = sliderButtons;
+    _active = sliderActive[0];
+    _stack = sliderStack;
 
-    for (var i = 0; i < buttons.length; ++i) {
-      buttons[i].addEventListener('touchstart', onButtonTouchStart, false);
-      buttons[i].addEventListener('touchcancel', onButtonTouchCancel, false);
-      buttons[i].addEventListener('touchend', onButtonTouchEnd, false);
-      buttons[i].addEventListener('click', onButtonTouchStart, false);
+    for (var i = 0; i < _buttons.length; ++i) {
+      _buttons[i].addEventListener('touchstart', onButtonTouchStart, false);
+      _buttons[i].addEventListener('touchcancel', onButtonTouchCancel, false);
+      _buttons[i].addEventListener('touchend', onButtonTouchEnd, false);
+      _buttons[i].addEventListener('click', onButtonTouchStart, false);
     }
 
     slider.addEventListener('touchstart', onSliderTouchStart, false);
@@ -199,10 +194,10 @@ function SliderTouchController(slider, sliderStack, sliderForegrounds, sliderBac
   };
 
   this.detach = function() {
-    for (var i = 0; i < buttons.length; ++i) {
-      buttons[i].removeEventListener(onButtonTouchStart);
-      buttons[i].removeEventListener(onButtonTouchCancel);
-      buttons[i].removeEventListener(onButtonTouchEnd);
+    for (var i = 0; i < _buttons.length; ++i) {
+      _buttons[i].removeEventListener(onButtonTouchStart);
+      _buttons[i].removeEventListener(onButtonTouchCancel);
+      _buttons[i].removeEventListener(onButtonTouchEnd);
     }
 
     slider.removeEventListener(onSliderTouchStart);
